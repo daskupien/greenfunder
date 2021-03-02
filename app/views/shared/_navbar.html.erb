@@ -1,36 +1,44 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "/", class: "navbar-brand" do %>
-    <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614249655/assets/Logo_new_ujtxee.png") %>
+
+<div class="navbar sticky-top">
+  <div class="d-flex justify-content-start">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614249655/assets/Logo_new_ujtxee.png") %>
     <% end %>
+    <li class="nav-item">
+        <%= link_to "About Us", "#", class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Categories", "#", class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Community", "#", class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Support", "#", class: "nav-link" %>
+    </li>
+  </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Home", "/", class: "nav-link" %>
-      </li>
-      <% if user_signed_in? %>
+   <div class="d-flex justify-content-end">
+    <% if user_signed_in? %>
       <li class="nav-item" id="avatar-items">
         <%= link_to current_user.first_name, user_path(current_user), class: "nav-link" %>
 
-          <% if current_user.photo.attached? %>
-            <%= link_to cl_image_tag(current_user.photo.key, :height=>40), user_path(current_user), class: "avatar" %> 
-          <% else %>
-            <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png", :height=>40), user_path(current_user), class: "avatar" %>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+        <% if current_user.photo.attached? %>
+          <%= link_to cl_image_tag(current_user.photo.key, :height=>40), user_path(current_user), class: "avatar" %>
+        <% else %>
+          <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png", :height=>40), user_path(current_user), class: "avatar" %>
+        <% end %>
+      </li>
+      <li class="btn-normal-white log-out">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="btn-normal-white log-in">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="btn-normal-green resister">
+        <%= link_to "Resister", "#", class: "nav-link" %>
+      </li>
+    <% end %>
   </div>
 </div>

@@ -1,12 +1,25 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+  height: 68px;
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-item {
+  list-style-type: none;
+  padding: 7px 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-link {
+  color: $master;
+}
+
+.log-in {
+  margin-right: 10px;
+}
+
+.log-out {
+  margin-right: 10px;
+}
+
+.resister {
+  margin-right: 50px;
 }
