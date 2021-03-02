@@ -3,11 +3,15 @@
   <ul>
     <li><strong>Punchline: </strong><%= @project.punchline %></li>
     <li><strong>Category: </strong><%= @project.category %></li>
-    <li><strong>investment_goal: </strong><%= @project.investment_goal %></li>
-    <li><strong>description: </strong><%= @project.description %></li>
+    <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
+    <li><strong>Description: </strong><%= @project.description %></li>
+    <li><strong>Video: </strong><iframe width="560" height="315" src="<%= @project.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+
   </ul>
 </div>
 
 <div>
   <%= link_to 'Invest in this project', new_project_investment_path(@project) %></li>
 </div>
+
+

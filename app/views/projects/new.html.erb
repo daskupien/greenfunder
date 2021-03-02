@@ -5,18 +5,7 @@
         <%= f.input :name, placeholder: "My awesome project" %>
         <%= f.input :punchline, placeholder: "We aim to save the world" %>
         <%= f.input :description, placeholder: "Cool description" %>
-    <div style="display:flex">
-     <div>
-        <%= f.label "Photo" %>
-        <br>
-        <%= f.file_field :image, direct_upload: true %><br><br>
-     </div>
-     <div>
-        <%= f.label "Video" %>
-        <br>
-        <%= f.file_field :video, direct_upload: true %><br><br>
-     </div>
-    </div>
+        <%= f.input :video , placeholder: "https://www.youtube.com/watch?v=Ubjq7DaP6Yc" %>
         <%= f.input :category, :collection => ['trees', 'bees', 'other'] %>
         <%= f.input :investment_goal, placeholder: "e.g. €10.000" %>
         <%= f.input :investment_goal_date, placeholder: "2021-04-21"%>
