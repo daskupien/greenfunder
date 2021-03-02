@@ -1,0 +1,9 @@
+<h1>Invest in <%= @project.name %></h1>
+
+<div>
+  <%= simple_form_for [ @project, @investment ] do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :investment_amount %>
+    <%= f.submit %>
+  <% end %>
+</div>
