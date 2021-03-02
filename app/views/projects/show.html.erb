@@ -1,3 +1,5 @@
+<div class="container-general">
+
 <h1><%= @project.name %></h1>
 <div>
   <ul>
@@ -5,13 +7,15 @@
     <li><strong>Category: </strong><%= @project.category %></li>
     <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
     <li><strong>Description: </strong><%= @project.description %></li>
-    <li><strong>Video: </strong><iframe width="560" height="315" src="<%= @project.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-
+    <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %></li>
+    <li><strong>Video: </strong><iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
   </ul>
 </div>
 
 <div>
   <%= link_to 'Invest in this project', new_project_investment_path(@project) %></li>
+</div>
+
 </div>
 
 
