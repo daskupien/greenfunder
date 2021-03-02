@@ -1,3 +1,25 @@
+.navbar {
+  height: 68px;
+  background-color: white;
+}
+
 .nav-item {
   list-style-type: none;
+  padding: 7px 0;
+}
+
+.nav-link {
+  color: $master;
+}
+
+.log-in {
+  margin-right: 10px;
+}
+
+.log-out {
+  margin-right: 10px;
+}
+
+.resister {
+  margin-right: 50px;
 }
