@@ -1,0 +1,15 @@
+  <div class="container-profile">
+    <%# USER-PROFILE %>
+    <h1>Hi <%= current_user.first_name %> 👋🏼</h1>
+    <br>
+    <div class="user-profile">
+        <p><strong>Email:</strong> <%= @user.email %></p>
+      <br>
+
+
+    <%# UPDATE-PROFILE %>
+      <div>
+        <%= link_to "Edit profile", edit_user_registration_path(current_user), class: "btn btn-normal" %>
+      </div>
+    </div>
+  </div>
