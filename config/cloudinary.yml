@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: rentmylife
+  api_key: "969975487121973"
+  api_secret: 8HEeze5EN2TGRWeg8vWWH3f9eTA
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: rentmylife
+  api_key: "969975487121973"
+  api_secret: 8HEeze5EN2TGRWeg8vWWH3f9eTA
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: rentmylife
+  api_key: "969975487121973"
+  api_secret: 8HEeze5EN2TGRWeg8vWWH3f9eTA
+  enhance_image_tag: true
+  static_file_support: false
