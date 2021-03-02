@@ -1,3 +1,6 @@
+
+// BTN NORMAL - WHITE + GREEN
+
 .btn-normal-white {
   border: 1px solid;
   border-color: $master;
@@ -7,6 +10,7 @@
   text-align: center;
   padding: 0;
   list-style-type: none;
+  text-decoration: none;
 }
 
 .btn-normal-white .nav-link {
@@ -27,6 +31,7 @@
   text-align: center;
   padding: 0;
   list-style-type: none;
+  text-decoration: none;
 }
 
 .btn-normal-green .nav-link {
@@ -34,5 +39,45 @@
 }
 
 .btn-normal-green .nav-link:hover {
+  background-color: #689b6b;
+}
+
+// BTN LARGE - WHITE + GREEN
+
+.btn-large-white {
+  border: 1px solid;
+  border-color: $master;
+  color: $master;
+  background-color: white;
+  border-radius: $border-radius;
+  text-align: center;
+  padding: 10px 40px;
+  text-decoration: none;
+}
+
+.btn-large-white .nav-link {
+  color: $master;
+}
+
+.btn-large-white .nav-link:hover {
+  font-weight: bolder;
+}
+
+.btn-large-green {
+  border: 1px solid;
+  border-color: $master;
+  color: white;
+  background-color: $master;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 40px;
+  text-decoration: none;
+}
+
+.btn-large-green .nav-link {
+  color: white;
+}
+
+.btn-large-green .nav-link:hover {
   background-color: #689b6b;
 }
