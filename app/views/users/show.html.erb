@@ -11,5 +11,21 @@
       <div>
         <%= link_to "Edit profile", edit_user_registration_path(current_user), class: "btn btn-normal" %>
       </div>
+
+      <br>
+    <%# SHOW INVESTMENTS %>
+      <h1>My Investments</h1>
+      <div>
+        <% @investments.each do |investment| %>
+          <div>
+            <ul>
+              <li><strong>Project: </strong><%= investment.project.name %></li>
+              <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
+              <li><strong>Category: </strong><%= investment.project.category %></li>
+              <li><strong>Investment: </strong><%= investment.investment_amount %> €</li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>

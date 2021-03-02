@@ -5,6 +5,11 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @investment = Investment.new
+  end
+
+  def new
+    @project = Project.new
   end
 
   def create
@@ -15,6 +20,12 @@ class ProjectsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to user_path(current_user)
   end
 
   private
@@ -32,3 +43,4 @@ class ProjectsController < ApplicationController
     )
   end
 end
+
