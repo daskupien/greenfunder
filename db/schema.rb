@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_065424) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "punchline"
-    t.string "description"
+    t.text "description"
     t.string "video"
     t.string "image"
     t.string "category"
