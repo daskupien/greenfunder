@@ -1,29 +1,38 @@
 .navbar {
-  height: 68px;
+  height: 63px;
   background-color: white;
 }
+
 
 .nav-item {
   list-style-type: none;
   padding: 7px 0;
 }
 
+
+.dropdown-button {
+  color: #696969;
+}
+.dropdown-button:focus {
+  box-shadow: none;
+}
+
+
 .nav-link {
   color: #696969;
 }
-
 .nav-link:hover {
   color: $master;
 }
 
+
+
 .log-in {
   margin-right: 10px;
 }
-
 .log-out {
   margin-right: 10px;
 }
-
 .resister {
   margin-right: 50px;
 }
