@@ -8,16 +8,18 @@
 }
 
 .hero-banner h1 {
-  color: white;
   font-size: 40px;
   font-weight: 600;
-  text-align: center;
+  color: white;
 }
 
 .hero-banner h3 {
-  color: white;
   font-size: 22px;
   font-weight: normal;
-  text-align: center;
+  color: white;
 }
 
+.hero-content {
+  text-align: center;
+  padding: 140px 0 110px 0;
+}
