@@ -10,7 +10,7 @@ class InvestmentsController < ApplicationController
     @investment.user = current_user
     @investment.project = project
     if @investment.save
-      redirect_to project
+      redirect_to current_user
     else
       render 'new'
     end
