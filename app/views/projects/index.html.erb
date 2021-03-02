@@ -1,0 +1,14 @@
+<h1>Projects#index</h1>
+
+<div>
+  <% @projects.each do |project| %>
+    <div>
+      <ul>
+        <li><strong>Name: </strong><%= project.name %></li>
+        <li><strong>Punchline: </strong><%= project.punchline %></li>
+        <li><strong>Category: </strong><%= project.category %></li>
+        <li><strong>investment_goal: </strong><%= project.investment_goal %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

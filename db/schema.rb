@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_174810) do
+ActiveRecord::Schema.define(version: 2021_03_02_065424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "investments", force: :cascade do |t|
+    t.string "comment"
+    t.integer "investment_amount"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_investments_on_project_id"
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.string "punchline"
+    t.text "description"
+    t.string "video"
+    t.string "image"
+    t.string "category"
+    t.integer "investment_goal"
+    t.date "investment_goal_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "updates", force: :cascade do |t|
+    t.string "title"
+    t.string "images"
+    t.text "content"
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_updates_on_project_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +59,15 @@ ActiveRecord::Schema.define(version: 2021_03_01_174810) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "investments", "projects"
+  add_foreign_key "investments", "users"
+  add_foreign_key "projects", "users"
+  add_foreign_key "updates", "projects"
 end
