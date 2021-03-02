@@ -5,8 +5,7 @@
     <li><strong>Category: </strong><%= @project.category %></li>
     <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
     <li><strong>Description: </strong><%= @project.description %></li>
-    <li><strong>Video: </strong><iframe width="560" height="315" src="<%= @project.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-
+    <li><strong>Video: </strong><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtu\.be\/|youtube.com\/(?:watch\?.*\bv=|embed\/|v\/)|ytimg\.com\/vi\/)(.+?)(?:[^-a-zA-Z0-9]|$)/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
   </ul>
 </div>
 
