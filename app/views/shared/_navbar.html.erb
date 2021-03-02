@@ -1,6 +1,6 @@
 
 <div class="navbar sticky-top">
-  <div class="d-flex justify-content-start">
+  <div class="d-flex justify-content-start taps">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614698393/logo_aghnot.png") %>
     <% end %>
@@ -25,7 +25,7 @@
     </li>
   </div>
 
-   <div class="d-flex justify-content-end">
+   <div class="d-flex justify-content-end account">
     <% if user_signed_in? %>
       <li class="nav-item dropdown" id="avatar-items">
         <%= link_to current_user.first_name, user_path(current_user), class: "nav-link username" %>
@@ -47,7 +47,7 @@
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
       </li>
       <li class="btn-normal-green resister">
-        <%= link_to "Resister", "#", class: "nav-link" %>
+        <%= link_to "Register", "#", class: "nav-link" %>
       </li>
     <% end %>
   </div>
