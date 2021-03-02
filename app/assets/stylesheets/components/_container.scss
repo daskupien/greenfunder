@@ -3,8 +3,10 @@
 }
 
 .container-general {
-  padding: 60px 80px 60px 80px;
-  margin: 0 100px 0 100px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
   background-color: white;
 }
 
@@ -13,3 +15,4 @@
   margin: 0 200px 0 200px;
   background-color: white;
 }
+
