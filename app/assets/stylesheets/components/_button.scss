@@ -10,7 +10,6 @@
   text-align: center;
   padding: 0;
   list-style-type: none;
-  text-decoration: none;
 }
 
 .btn-normal-white .nav-link {
@@ -31,7 +30,6 @@
   text-align: center;
   padding: 0;
   list-style-type: none;
-  text-decoration: none;
 }
 
 .btn-normal-green .nav-link {
@@ -39,45 +37,48 @@
 }
 
 .btn-normal-green .nav-link:hover {
-  background-color: #689b6b;
+  background-color: $master;
 }
 
 // BTN LARGE - WHITE + GREEN
 
 .btn-large-white {
-  border: 1px solid;
+  display:inline-block;
+  width: 20%;
   border-color: $master;
   color: $master;
   background-color: white;
+  font-size: 17px;
   border-radius: $border-radius;
   text-align: center;
-  padding: 10px 40px;
+  padding: 10px;
   text-decoration: none;
+  opacity: 0.8;
 }
 
-.btn-large-white .nav-link {
+.btn-large-white:hover {
+  font-weight: bold;
+  text-decoration: none;
   color: $master;
 }
 
-.btn-large-white .nav-link:hover {
-  font-weight: bolder;
-}
-
 .btn-large-green {
+  display:inline-block;
+  width: 20%;
   border: 1px solid;
   border-color: $master;
   color: white;
+  font-size: 17px;
   background-color: $master;
   border-radius: 5px;
   text-align: center;
-  padding: 10px 40px;
+  padding: 10px;
   text-decoration: none;
+  opacity: 0.9;
 }
 
-.btn-large-green .nav-link {
+.btn-large-green:hover {
+  font-weight: bold;
+  text-decoration: none;
   color: white;
-}
-
-.btn-large-green .nav-link:hover {
-  background-color: #689b6b;
 }
