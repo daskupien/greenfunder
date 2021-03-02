@@ -4,12 +4,10 @@
 .btn-normal-white {
   border: 1px solid;
   border-color: $master;
-  width: 126px;
-  height: 42px;
   border-radius: $border-radius;
   text-align: center;
-  padding: 0;
   list-style-type: none;
+  padding: 0 22px;
 }
 
 .btn-normal-white .nav-link {
@@ -24,11 +22,9 @@
   border: 1px solid;
   border-color: $master;
   background-color: $master;
-  width: 126px;
-  height: 42px;
   border-radius: 5px;
   text-align: center;
-  padding: 0;
+  padding: 0 22px;
   list-style-type: none;
 }
 
