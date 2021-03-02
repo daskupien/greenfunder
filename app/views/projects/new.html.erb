@@ -1,0 +1,28 @@
+<div class="container-narrow">
+    <div class="container">
+      <h1>Create Your Project</h1>
+      <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
+        <%= f.input :name, placeholder: "My awesome project" %>
+        <%= f.input :punchline, placeholder: "We aim to save the world" %>
+        <%= f.input :description, placeholder: "Cool description" %>
+    <div style="display:flex">
+     <div>
+        <%= f.label "Photo" %>
+        <br>
+        <%= f.file_field :image, direct_upload: true %><br><br>
+     </div>
+     <div>
+        <%= f.label "Video" %>
+        <br>
+        <%= f.file_field :video, direct_upload: true %><br><br>
+     </div>
+    </div>
+        <%= f.input :category, :collection => ['trees', 'bees', 'other'] %>
+        <%= f.input :investment_goal, placeholder: "e.g. €10.000" %>
+        <%= f.input :investment_goal_date, placeholder: "2021-04-21"%>
+        <br>
+        <%= f.submit class: "btn btn-success" %>
+      <% end %>
+    </div>
+</div>
+
