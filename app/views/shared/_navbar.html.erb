@@ -28,7 +28,7 @@
    <div class="d-flex justify-content-end">
     <% if user_signed_in? %>
       <li class="nav-item dropdown" id="avatar-items">
-        <%= link_to current_user.first_name, user_path(current_user), class: "nav-link" %>
+        <%= link_to current_user.first_name, user_path(current_user), class: "nav-link username" %>
 
         <% if current_user.photo.attached? %>
           <%= link_to cl_image_tag(current_user.photo.key, :height=>40), user_path(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
