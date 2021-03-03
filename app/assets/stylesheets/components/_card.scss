@@ -1,23 +1,27 @@
-// How Investing Works
+// CARDS HOW INVESTING WORKS
+
 .cards-hiw-header {
   margin: 40px 0 20px 0;
 }
+
 .cards-hiw-all {
-  padding: 10px 80px 10px 80px;
+  padding: 10px 80px 30px 80px;
 }
 
 .card-hiw {
   position: relative;
   width: 300px;
   height: 350px;
-  padding-top: 24px;
+  padding: 24px;
 }
+
 .card-hiw-content {
   width: 300px;
   height: 300px;
   border-radius: 50%;
   border: 1px solid;
 }
+
 .card-hiw-number {
   background-color: $master-opacity;
   position: absolute;
@@ -30,15 +34,36 @@
 
 // CARDS HOME
 
+.card-home-header {
+  margin-bottom: 40px;
+}
+
 .card-home-all {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: grey;
+  padding-bottom: 40px;
 }
 
 .card-home {
-  width: 300px;
-  height: 582px;
+  width: 320px;
+  box-shadow: $box-shadow;
+}
+
+.card-home img {
+  width: 260px;
+  height: 189px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
 }
 
 
