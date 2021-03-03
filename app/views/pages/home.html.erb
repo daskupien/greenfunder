@@ -33,34 +33,37 @@
       </div>
     </div>
 
-  <h2 class="card-home-header text-center">Our Recommended Projects</h2>
+
 
   <%# HOME CARDS %>
-  <div class="card-home-all">
-    <% @projects.each do | project | %>
-      <div class="card-home">
-        <% if project.image.attached? %>
-          <div class="card-home-image">
-            <%= cl_image_tag project.image.key, crop: :fill %>
-          </div>
-        <% else %>
-          <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
-          </div>
-        <% end %>
-        <div class="card-content">
-          <div class="card-title">
-            <%= project.name %>
-          </div>
-          <div class="card-text">
-            <p class="punchline"><%= project.punchline %> </p>
-            <p class="category"><strong>Category: </strong><%= project.category %> </p>
-            <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
-          </div>
-          <div class="text-center">
-            <%= link_to "Invest now", project_path(project), class: "btn-normal-green" %>
+  <div class="background-image-cards">
+    <h2 class="card-home-header text-center">Our Recommended Projects</h2>
+    <div class="card-home-all">
+      <% @projects.each do | project | %>
+        <div class="card-home">
+          <% if project.image.attached? %>
+            <div class="card-home-image">
+              <%= cl_image_tag project.image.key, crop: :fill %>
+            </div>
+          <% else %>
+            <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
+            </div>
+          <% end %>
+          <div class="card-content">
+            <div class="card-title">
+              <%= project.name %>
+            </div>
+            <div class="card-text">
+              <p class="punchline"><%= project.punchline %> </p>
+              <p class="category"><strong>Category: </strong><%= project.category %> </p>
+              <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
+            </div>
+            <div class="text-center">
+              <%= link_to "Invest now", project_path(project), class: "btn-normal-green" %>
+            </div>
           </div>
         </div>
+      <% end %>
       </div>
-    <% end %>
     </div>
 </div>
