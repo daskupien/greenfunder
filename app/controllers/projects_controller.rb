@@ -5,6 +5,13 @@ class ProjectsController < ApplicationController
     else
       @projects = Project.all
     end
+
+    @markers = @projects.geocoded.map do |project|
+      {
+        lat: project.latitude,
+        lng: project.longitude
+      }
+    end
   end
 
   def show
@@ -40,6 +47,7 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :name,
+      :address,
       :punchline,
       :description,
       :video,
