@@ -1,26 +1,22 @@
 <div class="container-wide">
-    <div class="hero-banner">
-      <div>
-        <%= form_tag projects_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for category..."
-          %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-      <div class="hero-content">
-        <h1>Green Booster</h1>
-        <h3>investing green to make our world better</h3>
-      </div>
-      <div class="text-center">
-        <a class="btn-large-white btn-hero" href="#">Invest Now</a>
-        <a class="btn-large-green btn-hero" href="#">Create Project</a>
-      </div>
+  <div class="hero-banner">
+    <div>
+      <%= form_tag projects_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for category..."%>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
+    <div class="hero-content">
+      <h1>Green Booster</h1>
+      <h3>investing green to make our world better</h3>
+    </div>
+    <div class="hero-buttons text-center">
+      <a class="btn-large-white btn-hero" href="#">Invest Now</a>
+      <a class="btn-large-green btn-hero" href="#">Create Project</a>
+    </div>
+  </div>
 
-    <!-- How investing Works -->
+    <%# HOW INVESTING WORKS %>
     <h2 class="cards-hiw-header text-center">How Investing Works!</h2>
     <div class="cards-hiw d-flex justify-content-around row">
       <div class="card-hiw col-sm-4 col-md-3">
@@ -37,13 +33,32 @@
       </div>
     </div>
 
-    <div class="cards-home">
-      <div class="cards-home-header">
+  <h2 class="cards-home-header text-center">Our Recommended Projects</h2>
 
-       </div>
-      <div class="cards-home-content">
-
+  <%# HOME CARDS %>
+  <div class="card-home-all">
+    <% @projects.each do | project | %>
+      <div class="card-home">
+        <% if project.image.attached? %>
+          <div class="card-home-image">
+            <%= cl_image_tag project.photo.key, crop: :fill %>
+          </div>
+        <% else %>
+          <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
+          </div>
+        <% end %>
+        <div class="card-content">
+          <div class="card-title">
+            <%= project.name %>
+          </div>
+          <div class="card-text">
+            <p class="punchline"><%= project.punchline %> </p>
+            <p class="category"><strong>Category: </strong><%= project.category %> </p>
+            <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
+          </div>
+          <%= link_to "Invest now", project_path(project), {:class => "btn-normal-green"} %>
+        </div>
       </div>
+    <% end %>
     </div>
 </div>
-
