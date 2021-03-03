@@ -21,7 +21,7 @@
 .btn-normal-green {
   border: 1px solid;
   border-color: $master;
-  background-color: $master;
+  background-color: $master-opacity;
   border-radius: 5px;
   text-align: center;
   padding: 0 22px;
@@ -66,12 +66,11 @@
   border-color: $master;
   color: white;
   font-size: 17px;
-  background-color: $master;
+  background-color: $master-opacity;
   border-radius: 5px;
   text-align: center;
   padding: 10px;
   text-decoration: none;
-  opacity: 0.9;
 }
 
 .btn-large-green:hover {
