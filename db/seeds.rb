@@ -29,6 +29,7 @@ project1 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Berlin',
     user_id: begana.id,
 )
 project1.save
@@ -41,6 +42,7 @@ project2 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Munich',
     user_id: loretta.id,
 )
 project2.save
@@ -53,7 +55,8 @@ project3 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
-    user_id: loretta.id,
+    address: 'Dresden',
+    user_id: jonas.id,
 )
 project3.save
 
@@ -65,6 +68,7 @@ project4 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Hamburg',
     user_id: daniel.id,
 )
 project4.save

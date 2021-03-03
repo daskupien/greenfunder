@@ -1,5 +1,5 @@
 <div class="container-narrow">
-    <div class="container">
+    
       <h1>Create Your Project</h1>
       <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
         <%= f.input :name, placeholder: "Our awesome project" %>
@@ -24,6 +24,6 @@
         <br>
         <%= f.submit class: "btn btn-success" %>
       <% end %>
-    </div>
+   
 </div>
 
