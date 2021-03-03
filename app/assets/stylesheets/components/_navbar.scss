@@ -1,5 +1,7 @@
 .navbar {
   height: 70px;
+  width: 100%;
+  justify-content: space-between;
   background-color: white;
 }
 
@@ -9,7 +11,13 @@
   padding: 7px 0;
 }
 
-
+#navbarSupportedContent{
+  background-color: white;
+  padding: 10px;
+}
+.dropdown {
+  background-color: white;
+}
 .dropdown-button {
   color: #696969;
 }
@@ -32,10 +40,9 @@
 .log-in {
   margin-right: 10px;
 }
-.resister {
-  margin-right: 50px;
+.register {
+  margin-right: 10px;
 }
-
 
 #avatar-items {
   margin-right: 50px;
