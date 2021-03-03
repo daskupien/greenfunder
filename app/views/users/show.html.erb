@@ -19,7 +19,7 @@
         <% @investments.each do |investment| %>
           <div>
             <ul>
-              <li><strong>Project: </strong><%= investment.project.name %></li>
+              <li><strong>Project: </strong><%= link_to investment.project.name, project_path(investment.project) %></li>
               <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
               <li><strong>Category: </strong><%= investment.project.category %></li>
               <li><strong>Investment: </strong><%= investment.investment_amount %> €</li>

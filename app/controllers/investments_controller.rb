@@ -7,6 +7,9 @@ class InvestmentsController < ApplicationController
   def create
     @investment = Investment.new(investment_params)
     project = Project.find(params[:project_id])
+    new_investment_sum = @investment.investment_amount + project.current_investment_sum
+    project.current_investment_sum = new_investment_sum
+    project.save
     @investment.user = current_user
     @investment.project = project
     if @investment.save
