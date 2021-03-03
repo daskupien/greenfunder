@@ -121,6 +121,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    mapbox-gl-rails (1.10.1)
+      railties (>= 3.2)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
@@ -276,6 +278,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  mapbox-gl-rails
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
@@ -298,4 +301,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.4
+   2.1.4
