@@ -29,8 +29,11 @@ project1 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Berlin',
     user_id: begana.id,
 )
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614783406/assets/eastern-white-pine-trees-4125586-04-3b9e60ad3ac14efba38ce0ec72b6770d_qjvux8.jpg')
+project1.image.attach(io: file, filename: 'seed1.jpg', content_type: 'image/jpg')
 project1.save
 
 project2 = Project.new(
@@ -41,8 +44,11 @@ project2 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Munich',
     user_id: loretta.id,
 )
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614783937/assets/bee-146810332_sszmax.jpg')
+project2.image.attach(io: file, filename: 'seed2.jpg', content_type: 'image/jpg')
 project2.save
 
 project3 = Project.new(
@@ -53,8 +59,11 @@ project3 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
-    user_id: loretta.id,
+    address: 'Dresden',
+    user_id: jonas.id,
 )
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614783993/assets/water_nlvy2t.jpg')
+project3.image.attach(io: file, filename: 'seed3.jpg', content_type: 'image/jpg')
 project3.save
 
 project4 = Project.new(
@@ -65,8 +74,12 @@ project4 = Project.new(
     category: 'gardening',
     investment_goal: 10000,
     current_investment_sum: 0,
+    address: 'Hamburg',
     user_id: daniel.id,
 )
+file = URI.open('https://res.cloudinary.com/rentmylife/image/upload/v1614784027/assets/jade-planting-growing_ejx8kn.jpg')
+project4.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg')
 project4.save
 
 puts 'seed finished'
+
