@@ -65,4 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #geocoder
 gem 'geocoder'
-gem 'mapbox-gl-rails', '~> 0.44.0'
+gem 'mapbox-gl-rails'
