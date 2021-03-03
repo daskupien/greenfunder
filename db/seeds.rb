@@ -28,6 +28,7 @@ project1 = Project.new(
     video: 'https://www.youtube.com/watch?v=XDdpfWgS4kM',
     category: 'gardening',
     investment_goal: 5000,
+    current_investment_sum: 0,
     user_id: begana.id,
 )
 project1.save
@@ -39,6 +40,7 @@ project2 = Project.new(
     video: 'https://www.youtube.com/watch?v=XDdpfWgS4kM',
     category: 'gardening',
     investment_goal: 5000,
+    current_investment_sum: 0,
     user_id: loretta.id,
 )
 project2.save
@@ -50,6 +52,7 @@ project3 = Project.new(
     video: 'https://www.youtube.com/watch?v=XDdpfWgS4kM',
     category: 'gardening',
     investment_goal: 5000,
+    current_investment_sum: 0,
     user_id: loretta.id,
 )
 project3.save
@@ -61,6 +64,7 @@ project4 = Project.new(
     video: 'https://www.youtube.com/watch?v=XDdpfWgS4kM',
     category: 'gardening',
     investment_goal: 5000,
+    current_investment_sum: 0,
     user_id: daniel.id,
 )
 project4.save
