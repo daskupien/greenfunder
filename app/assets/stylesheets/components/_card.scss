@@ -36,6 +36,7 @@
 
 .card-home-header {
   margin-bottom: 40px;
+  color: white;
 }
 
 .card-home-all {
@@ -44,22 +45,34 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding-bottom: 40px;
+
+}
+
+.background-image-cards {
+  background: linear-gradient(#385439, rgba(0, 61, 43, 0.05)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 40px;
 }
 
 .card-home {
   width: 320px;
   box-shadow: $box-shadow;
+  background-color: white;
+  border-radius: $border-radius;
 }
 
 .card-home img {
-  width: 260px;
-  height: 189px;
+  width: 320px;
+  height: 220px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
   margin-bottom: 5px;
   object-fit: cover;
+  border-radius: $border-radius;
 }
 
 .card-content {
