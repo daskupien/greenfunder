@@ -1,3 +1,28 @@
+<div class="projectcontent">
+<div class="projectcards">
+  <% @projects.each do |project| %>
+    <div class="card-product">
+    <%= link_to cl_image_tag(project.image.key, :height=>40), user_path(current_user), id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <div class="card-product-infos">
+    <h2><%= project.name %></h2>
+    <p><%= project.punchline %></p>
+    <p><%= project.address %></p>
+    <p>Goal: <%= project.investment_goal %>€</p>
+  </div>
+</div>
+
+
+  <% end %>
+</div>
+  <div id="map"
+      style="width: 50%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
+  </div>
+</div>
+
+<%# BEGANA CODE %>
+<%# 
 <div class="cards-projects">
   <h1>Category: Packaging</h1>
   <p>Check Out different projects to reduce packaging! Less plastic and a smaller carbon footprint!</p>
@@ -8,26 +33,8 @@
       <p class="cards-projects-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
   </div>
-</div>
+</div> %>
 
-<div class="projectcontent">
-<div class="projectcards">
-  <% @projects.each do |project| %>
-    <div>
-      <ul>
-        <li><strong>Name: </strong><%= project.name %></li>
-        <li><strong>Punchline: </strong><%= project.punchline %></li>
-        <li><strong>Category: </strong><%= project.category %></li>
-        <li><strong>investment_goal: </strong><%= project.investment_goal %></li>
-      </ul>
-    </div>
-  <% end %>
-</div>
-  <div id="map"
-      style="width: 50%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
-  </div>
-</div>
+
 
 
