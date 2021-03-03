@@ -1,0 +1,18 @@
+.projectcontent {
+  display: flex;
+  position: relative;
+}
+.projectcards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  padding-top: 70px !important;
+  top: 0;
+}

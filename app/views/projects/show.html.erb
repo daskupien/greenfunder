@@ -1,21 +1,31 @@
 <div class="container-general">
 
-<h1><%= @project.name %></h1>
-<div>
-  <ul>
-    <li><strong>Punchline: </strong><%= @project.punchline %></li>
-    <li><strong>Category: </strong><%= @project.category %></li>
-    <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
-    <li><strong>Description: </strong><%= @project.description %></li>
-    <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %></li>
-    <li><strong>Video: </strong><iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-  </ul>
-</div>
+  <h1><%= @project.name %></h1>
 
-<div>
-  <%= link_to 'Invest in this project', new_project_investment_path(@project) %></li>
-</div>
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
 
+  <div>
+    <p>Currently invested: <%= @project.current_investment_sum %> €</p>
+    <p>Goal: <%= @project.investment_goal %> €</p>
+    <p>Percentage: <%= @investement_percentage %>%</p>
+  </div>
+
+  <div>
+    <p><%= link_to 'Invest in this project', new_project_investment_path(@project) %></p>
+  </div>
+
+  <div>
+    <ul>
+      <li><strong>Punchline: </strong><%= @project.punchline %></li>
+      <li><strong>Category: </strong><%= @project.category %></li>
+      <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
+      <li><strong>Description: </strong><%= @project.description %></li>
+      <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
+      <li><strong>Video: </strong><iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+    </ul>
+  </div>
 </div>
 
 

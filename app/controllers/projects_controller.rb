@@ -5,11 +5,21 @@ class ProjectsController < ApplicationController
     else
       @projects = Project.all
     end
+
+    @markers = @projects.geocoded.map do |project|
+      {
+        lat: project.latitude,
+        lng: project.longitude
+      }
+    end
   end
 
   def show
     @project = Project.find(params[:id])
     @investment = Investment.new
+    current_investment_sum = @project.current_investment_sum
+    investment_goal = @project.investment_goal
+    @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0
   end
 
   def new
@@ -37,6 +47,7 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(
       :name,
+      :address,
       :punchline,
       :description,
       :video,
