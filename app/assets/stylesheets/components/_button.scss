@@ -1,7 +1,7 @@
 
-// BTN NORMAL - WHITE + GREEN
+// BTN NAVBAR - WHITE + GREEN
 
-.btn-normal-white {
+.btn-normal-white-nav {
   border: 1px solid;
   border-color: $master;
   border-radius: $border-radius;
@@ -10,15 +10,15 @@
   padding: 0 22px;
 }
 
-.btn-normal-white .nav-link {
+.btn-normal-white-nav .nav-link {
   color: $master;
 }
 
-.btn-normal-white .nav-link:hover {
+.btn-normal-white-nav .nav-link:hover {
   font-weight: bolder;
 }
 
-.btn-normal-green {
+.btn-normal-green-nav {
   border: 1px solid;
   border-color: $master;
   background-color: $master-opacity;
@@ -28,12 +28,52 @@
   list-style-type: none;
 }
 
-.btn-normal-green .nav-link {
+.btn-normal-green-nav .nav-link {
   color: white;
 }
 
-.btn-normal-green .nav-link:hover {
+.btn-normal-green-nav .nav-link:hover {
   background-color: $master;
+}
+
+// BTN NORMAL - WHITE + GREEN
+
+.btn-normal-green {
+  display: inline-block;
+  width: 140px;
+  border: 1px solid;
+  border-color: $master;
+  background-color: $master-opacity;
+  color: white;
+  border-radius: $border-radius;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.btn-normal-green:hover {
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-normal-white {
+  display: inline-block;
+  width: 140px;
+  border: 1px solid;
+  border-color: $master;
+  background-color: white;
+  color: $master;
+  border-radius: $border-radius;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.btn-normal-white:hover {
+  font-weight: bold;
+  text-decoration: none;
+  color: $master;
 }
 
 // BTN LARGE - WHITE + GREEN
