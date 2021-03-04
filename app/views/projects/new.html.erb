@@ -1,29 +1,33 @@
-<div class="container-narrow">
-    
+<div class="container-wide">
+  <div class="container-general">
+    <div class="projects-header">
       <h1>Create Your Project</h1>
-      <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
-        <%= f.input :name, placeholder: "Our awesome project" %>
-        <%= f.input :punchline, placeholder: "We aim to save the world" %>
-        <%= f.input :description, placeholder: "Cool description" %>
-    <div style="display:flex;">
-      <div style="width:25%">
-        <%= f.label "Photos" %>
-        <br>
-        <%= f.file_field :image, direct_upload: true %>
-      </div>
-      <div style="width:75%">
-        <%= f.input :video, :label => "YouTube Video" , placeholder: "https://www.youtube.com/watch?v=Ubjq7DaP6Yc" %>
-      </div>
     </div>
-        <%= f.input :category, :collection => ['trees', 'bees', 'other'] %>
-        <%= f.input :address, placeholder: "Berlin" %>
-        <%= f.input :investment_goal, placeholder: "e.g. €10.000" %>
-        <%= f.input :investment_goal_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 1,
-                              order: [:day, :month, :year] %>
-        <br>
-        <%= f.submit class: "btn btn-success" %>
-      <% end %>
-   
-</div>
+        <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
+          <%= f.input :name, placeholder: "Our awesome project" %>
+          <%= f.input :punchline, placeholder: "We aim to save the world" %>
+          <%= f.input :description, placeholder: "Cool description" %>
+      <div style="display:flex;">
+        <div style="width:25%">
+          <%= f.label "Photos" %>
+          <br>
+          <%= f.file_field :image, direct_upload: true %>
+        </div>
+        <div style="width:75%">
+          <%= f.input :video, :label => "YouTube Video" , placeholder: "https://www.youtube.com/watch?v=Ubjq7DaP6Yc" %>
+        </div>
+      </div>
+          <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'] %>
+          <%= f.input :address, placeholder: "Berlin" %>
+          <%= f.input :investment_goal, placeholder: "e.g. 10.000€" %>
+          <%= f.input :investment_goal_date, as: :date, start_year: Date.today.year,
+                                end_year: Date.today.year + 1,
+                                order: [:day, :month, :year] %>
+          <br>
+        <div class="submit-btn">
+          <%= f.submit class: "btn-normal-green w-100" %>
+        </div>
+        <% end %>
 
+  </div>
+</div>
