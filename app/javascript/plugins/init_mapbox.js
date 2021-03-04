@@ -11,9 +11,11 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup({ offset: [0, -20] }).setHTML(
-      marker.infoWindow
-    ); // add this
+    const popup = new mapboxgl.Popup({
+      offset: [0, -20],
+      closeButton: false,
+      showCompass: false,
+    }).setHTML(marker.infoWindow); // add this
 
     const element = document.createElement("div");
     element.className = "marker";
