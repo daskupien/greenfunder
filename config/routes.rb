@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :investments, only: [:new, :create]
   end
   resources :users, only: [:show]
+  resources :charges
 end
