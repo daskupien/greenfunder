@@ -48,7 +48,7 @@
     <%# HOME CARDS %>
     <h2 class="card-home-header text-center">Our Recommended Projects</h2>
     <div class="card-home-all">
-      <% @projects.each do | project | %>
+      <% @projects.first(4).each do | project | %>
         <div class="card-home">
           <% if project.image.attached? %>
             <div class="card-home-image">
@@ -66,6 +66,18 @@
               <p class="punchline"><%= project.punchline %> </p>
               <p class="category"><strong>Category: </strong><%= project.category %> </p>
               <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
+              <div class="card-project-progress">
+                <% current_investment_sum = project.current_investment_sum
+                investment_goal = project.investment_goal
+                @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
+                <div class="progress-bar bg-success"
+                      role="progressbar"
+                      style="width: <%= @investement_percentage %>%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100">
+                </div>
+              </div>
             </div>
             <div class="text-center">
               <%= link_to "Invest now", project_path(project), class: "btn-normal-green" %>
