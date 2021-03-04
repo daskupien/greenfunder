@@ -1,2 +1,4 @@
+
+<%= link_to cl_image_tag(project.image.key, :height=>40), project_path(project), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, target: :_blank %>
 <h4><%= project.name %></h4>
 <p><%= project.address %></p>
