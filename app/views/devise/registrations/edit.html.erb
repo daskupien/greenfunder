@@ -1,58 +1,80 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-
-    <div class="form-group">
+<div class="container-wide">
+  <div class="container-general">
+    <div class="devise-content container">
       <div class="row">
-      <% if current_user.photo.attached? %>
-        <div class="col-sm-4">
-          <%= f.label "Current Avatar" %>
-            <br>
-          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
-        </div>
-      <% else %>
-        <div class="col-sm-2 text-center">
-          <%= f.label "Current Avatar" %>
-          <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png", size: "40x40")%>
-        </div>
-      <% end %>
+        <div class="col-12 col-md-6 offset-md-3">
 
-        <div class="col-sm-8">
-          <%= f.label "Change Avatar" %>
-            <br>
-          <%= f.file_field :photo, direct_upload: true %>
+          <div class="devise-header">
+            <h2>Edit Your Profile:</h2>
+          </div>
+
+          <dev class="devise-form">
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :email, required: true, autofocus: true %>
+
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+
+                <%= f.input :password,
+                            hint: "leave it blank if you don't want to change it",
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :current_password,
+                            hint: "we need your current password to confirm your changes",
+                            required: true,
+                            input_html: { autocomplete: "current-password" } %>
+
+                <div class="form-group devise-avatar">
+                  <div class="row">
+                  <% if current_user.photo.attached? %>
+                    <div class="col-sm-6">
+                      <%= f.label "Current Avatar" %>
+                    </div>
+                    <div class="col-sm-6">
+                      <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+                    </div>
+                  <% else %>
+                    <div class="col-sm-6">
+                      <%= f.label "Your Current Avatar:", class: "me-3" %>
+                    </div>
+                    <div class="col-sm6">
+                      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png", size: "40x40")%>
+                    </div>
+                  <% end %>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <%= f.label "Change Avatar:" %>
+                    </div>
+                    <div class="col-sm-6 p-0">
+                      <%= f.file_field :photo, direct_upload: true %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions devise-button">
+                <%= f.button :submit, "Update profile", class: "btn-normal-green w-100" %>
+              </div>
+            <% end %>
+
+            <p>More Options:</p>
+            <div class="shared-links">
+              <%= link_to "Delete My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+              <br>
+              <%= link_to "Back", :back %>
+            </div>
+          </dev>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update profile" %>
-  </div>
-<% end %>
-
-<p>Unhappy? <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
-
+</div>
