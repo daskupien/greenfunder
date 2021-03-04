@@ -1,7 +1,6 @@
 <div class="container-general">
-
   <h1 class="project-name"><%= @project.name %></h1>
-  <div class="project-sub-banner d-flex justify-content-space-between">
+  <div class="project-sub-banner d-flex justify-content-between">
     <div class="project-punchline">
       <h3><strong>"<%= @project.punchline %>"</strong></h3>
     </div>
@@ -11,20 +10,29 @@
   </div>
 
   <div class="project-content">
-    <div class="progress-status">
-      <p>Currently invested: <%= @project.current_investment_sum %> €</p>
-      <p>Goal: <%= @project.investment_goal %> €</p>
-      <p>Percentage: <%= @investement_percentage %>%</p>
-    </div>
 
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-card-project" %>
 
-    <div>
-      <ul>
-        <li><strong>Punchline: </strong><%= @project.punchline %></li>
+    <p style="text-align: end;">(<%= @investement_percentage %>%)</p>
+
+    <div class="progress-status">
+      <div class="d-flex justify-content-between">
+        <h4>CURRENTLY INVESTED : </h4>
+        <H4><%= @project.current_investment_sum %> €</h4>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h4>GOAL : </h4>
+        <H4><%= @project.investment_goal %> €</H4>
+      </div>
+    </div>
+
+    <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-card-project", style: "height: 55px; font-size: 24px;" %>
+
+
+    <div class="project-paragraph">
+      <h3 style="text-align: center; margin: 20px; margin-top: 45px;"><%= @project.punchline %></h3>
         <li><strong>Category: </strong><%= @project.category %></li>
         <li><strong>Investment_goal: </strong><%= @project.investment_goal %></li>
         <li><strong>Description: </strong><%= @project.description %></li>
