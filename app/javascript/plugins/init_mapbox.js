@@ -5,15 +5,24 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/streets-v10",
+    style: "mapbox://styles/jonnasson/cklusjp8s3pyn17qng38fyox6",
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    const popup = new mapboxgl.Popup({ offset: [0, -20] }).setHTML(
+      marker.infoWindow
+    ); // add this
 
-    new mapboxgl.Marker()
+    const element = document.createElement("div");
+    element.className = "marker";
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = "contain";
+    element.style.width = "30px";
+    element.style.height = "30px";
+
+    new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup) // add this
       .addTo(map);

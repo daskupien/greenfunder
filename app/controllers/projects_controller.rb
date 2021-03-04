@@ -10,7 +10,8 @@ class ProjectsController < ApplicationController
       {
         lat: project.latitude,
         lng: project.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { project: project})
+        infoWindow: render_to_string(partial: "info_window", locals: { project: project}),
+        image_url: helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1614858978/assets/tree-1578_t6y8ak.png')
       }
     end
   end
