@@ -83,21 +83,19 @@
   color: black;
 }
 
+
+
 // PROJECTS CARDS
 .cards-projects {
   width: 60%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   margin-bottom: 80px;
 }
 .card-project {
   border: 1px solid;
   width: 500px;
-  height: 500px;
+  height: 600px;
+  margin: 26px;
   margin-top: 50px;
-  margin-right: 10px;
   padding: 0;
 }
 .card-project-image img {
