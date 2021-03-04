@@ -1,2 +1,15 @@
-<h4><%= project.name %></h4>
-<p><%= project.address %></p>
+<div class="mapboxgl-popup">
+    <div class="mapboxgl-popup-content">
+        <a href="<%= project_path(project)%>" target="_blank">
+            <div class="map-popup">
+                <div class="map-img">
+                    <%= cl_image_tag(project.image.key, :height=>40) %>
+                </div>
+                <div class="map-meta">
+                    <h4><%= project.name %></h4>
+                    <p><%= project.address %></p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
