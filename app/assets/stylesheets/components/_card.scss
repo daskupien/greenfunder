@@ -91,23 +91,39 @@
   margin-bottom: 80px;
 }
 .card-project {
-  border: 1px solid;
-  width: 500px;
-  height: 600px;
+  display: flex;
+  border-radius: $border-radius;
+  width: 860px;
+  height: 350px;
   margin: 26px;
   margin-top: 50px;
   padding: 0;
+  align-items: center;
+  box-shadow: $box-shadow;
+}
+.card-project-content {
+  height: 100%;
+  width: 499px;
+}
+.card-project-image {
+  height: 100%;
+  width: 400px;
 }
 .card-project-image img {
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
 }
 .card-project-body {
   padding: 20px;
+  width: 490px;
+}
+.card-project-body h2 {
+  padding-bottom: 20px;
 }
 .card-project-body p {
   margin-bottom: 1px;
+  padding-bottom: 20px;
 }
 .card-project-progress {
   border: 1px solid;
