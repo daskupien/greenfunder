@@ -1,14 +1,15 @@
 <div class="container-wide">
   <div class="container-general">
 
-    <div class="login-content container">
+    <div class="devise-content container">
       <div class="row">
         <div class="col-12 col-md-6 offset-md-3">
-          <div class="login-header">
+
+          <div class="devise-header">
             <h2>Log In</h2>
           </div>
 
-          <div class="login-form">
+          <div class="devise-form">
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="form-inputs">
                 <%= f.input :email,
@@ -22,7 +23,7 @@
               </div>
           </div>
 
-              <div class="form-actions login-button">
+              <div class="form-actions devise-button">
                 <%= f.button :submit, "Log In", class: "btn-normal-white w-100" %>
               </div>
             <% end %>

@@ -1,18 +1,20 @@
-// LOGIN PAGE
+// GENERAL
 
-.login-content {
+.devise-content {
   padding-top: 80px;
 }
 
-.login-header {
+.devise-header {
   padding-bottom: 40px;
 }
 
-.login-form {
+.devise-form {
   padding-bottom: 20px;
 }
 
-.login-button {
+// LOGIN PAGE
+
+.devise-button {
   padding-bottom: 60px;
 }
 
@@ -30,4 +32,6 @@
   font-size: 16px;
   color: $master;
 }
+
+// SIGNUP PAGE
 
