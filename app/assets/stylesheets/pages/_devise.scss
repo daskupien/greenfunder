@@ -1,7 +1,7 @@
 // LOGIN PAGE
 
 .login-content {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 .login-header {
@@ -9,9 +9,25 @@
 }
 
 .login-form {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .login-button {
   padding-bottom: 60px;
 }
+
+.shared-links {
+  padding-bottom: 40px;
+}
+
+.shared-links p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.shared-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: $master;
+}
+

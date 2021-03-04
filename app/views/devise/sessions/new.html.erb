@@ -1,7 +1,12 @@
 <div class="container-wide">
   <div class="container-general">
 
-    <div class="login-content">
+    <div class="login-content container">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+
+
+
       <div class="login-header">
         <h2>Log In</h2>
       </div>
@@ -12,26 +17,28 @@
             <%= f.input :email,
                         required: false,
                         autofocus: true,
-                        input_html: { autocomplete: "email" } %>
+                        input_html: { autocomplete: "email", :style=> 'width: 100%' } %>
             <%= f.input :password,
                         required: false,
-                        input_html: { autocomplete: "current-password" } %>
+                        input_html: { autocomplete: "current-password", :style=> 'width: 100%' } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
       </div>
 
       <div class="login-button">
           <div class="form-actions">
-            <%= f.button :submit, "Log In", class: "btn-normal-white" %>
+            <%= f.button :submit, "Log In", class: "btn-normal-white w-100" %>
           </div>
         <% end %>
       </div>
-    </div>
 
-    <div class="shared-links">
-      <p>Not a Member yet?</p>
-      <%= render "devise/shared/links" %>
-    </div>
 
+      <div class="shared-links">
+        <p>Not yet a Member? No Password?</p>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+   </div>
   </div>
 </div>
