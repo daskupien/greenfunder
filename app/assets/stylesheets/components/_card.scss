@@ -130,19 +130,48 @@
   padding-bottom: 20px;
 }
 .card-project-progress {
-  border: 1px solid;
-  border-radius: $border-radius;
+  border: 1px solid $master;
+  border-radius: 5px;
   margin-bottom: 14px;
   height: 20px;
   width: 100%;
 }
 
-/*Smallest device*/
-@media (min-width: 100px) and (max-width: 800px) {
-  .cards-projects {
-    grid-template-columns: 1fr;
-  }
-  #map {
-    display: none;
-  }
+
+// PROJECTS/:ID CARDS
+.project-name {
+  text-align: center;
+  padding-top: 40px;
+  font-size: 48px;
+}
+.project-sub-banner {
+  height: 350px;
+  padding: 40px;
+}
+.project-punchline {
+  margin-top: 75px;
+}
+.project-video iframe {
+  height: 100%;
+}
+
+.project-content {
+  padding: 40px;
+}
+
+.progress-bar {
+  background-color: $master;
+}
+.progress-status {
+  text-align: center;
+  width: 555px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.project-paragraph {
+  padding: 40px;
+}
+.project-paragraph li {
+  margin-top: 10px;
 }
