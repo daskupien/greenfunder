@@ -2,27 +2,34 @@
   <footer>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-sm-8 col-md-8 item">
-          <h2>Ready to green Germany?</h3>
-        </div>
-      </div>
-      <div class="row justify-content-center">
         <div class="col-sm-4 col-md-3 item">
-          <%= link_to "Browse projects", projects_path, class: "nav-link" %>
-        </div>
-        <div class="col-sm-4 col-md-3 item">
-          <%= link_to "About Us", "#", class: "nav-link" %>
+          <h3>Categories</h3>
+          <ul>
+              <li class="category-list"><i class="fas fa-seedling"></i> <%= link_to "Planting", "/projects?query=planting", class: "nav-link" %></li>
+              <li class="category-list"><i class="fas fa-solar-panel"></i> <%= link_to "Energy", "/projects?query=energy", class: "nav-link" %></li>
+              <li class="category-list"><i class="fab fa-forumbee"></i> <%= link_to "Animals", "/projects?query=animals", class: "nav-link" %></li>
+              <li class="category-list"><i class="fas fa-box-open"></i> <%= link_to "Plastic alternatives", "/projects?query=plastic+alternatives", class: "nav-link" %></li>
+          </ul>
         </div>
         <div class="col-sm-4 col-md-3 item">
-          <%= link_to "Create Project", new_project_path, class: "nav-link" %>
+          <h3>About</h3>
+          <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Legacy</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="item social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a>
+        <div class="col-sm-4 col-md-3 item">
+          <h3>Careers</h3>
+          <ul>
+            <li><a href="#">Job openings</a></li>
+            <li><a href="#">Employee success</a></li>
+            <li><a href="#">Benefits</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <p class="copyright">GreenBooster © <%= Time.zone.now.year %></p>
+        <div class="col-lg-3 item social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a>
+          <p class="copyright">GreenBooster © <%= Time.zone.now.year %></p>
+        </div>
       </div>
     </div>
   </footer>
