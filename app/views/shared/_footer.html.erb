@@ -2,29 +2,19 @@
   <footer>
     <div class="container">
       <div class="row justify-content-center">
+        <div class="col-sm-8 col-md-8 item">
+          <h2>Ready to green Germany?</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
         <div class="col-sm-4 col-md-3 item">
-          <h3>Services</h3>
-          <ul>
-              <li><a href="#">Investment</a></li>
-              <li><a href="#">Development</a></li>
-              <li><a href="#">Hosting</a></li>
-          </ul>
+          <%= link_to "Browse projects", projects_path, class: "nav-link" %>
         </div>
         <div class="col-sm-4 col-md-3 item">
-          <h3>About</h3>
-          <ul>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Legacy</a></li>
-          </ul>
+          <%= link_to "About Us", "#", class: "nav-link" %>
         </div>
         <div class="col-sm-4 col-md-3 item">
-          <h3>Careers</h3>
-          <ul>
-            <li><a href="#">Job openings</a></li>
-            <li><a href="#">Employee success</a></li>
-            <li><a href="#">Benefits</a></li>
-          </ul>
+          <%= link_to "Create Project", new_project_path, class: "nav-link" %>
         </div>
       </div>
       <div class="row justify-content-center">
