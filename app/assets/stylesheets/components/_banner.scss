@@ -25,6 +25,12 @@
   padding: 220px 0 60px 0;
 }
 
+// SUB HERO
+
+.sub-hero-banner {
+
+}
+
 // SUB-BANNER FOR PROJECTS/:ID PAGE
 .project-sub-banner {
   height: 350px;
@@ -32,9 +38,11 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
+
 .project-sub-banner-punchline {
   margin-top: 75px;
 }
+
 .project-sub-banner-video iframe {
   height: 100%;
 }
