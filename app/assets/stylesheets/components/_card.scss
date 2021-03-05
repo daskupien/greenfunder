@@ -15,11 +15,19 @@
   padding: 24px;
 }
 
+.card-hiw p {
+  padding: 0px 20px;
+}
+
 .card-hiw-content {
-  width: 300px;
-  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  border: 1px solid;
+  box-shadow: $box-shadow;
 }
 
 .card-hiw-number {
@@ -157,7 +165,6 @@
   width: 100%;
 }
 
-
 // PROJECTS/:ID CARDS
 
 .project-name {
@@ -166,7 +173,6 @@
   font-size: 48px;
   padding-bottom: 24px;
 }
-
 
 .project-content {
   padding: 40px;
@@ -228,7 +234,6 @@
   padding: 30px 60px;
 }
 
-
 .project-other-option {
   display: flex;
   margin-top: 94px;
@@ -241,7 +246,7 @@
   overflow: hidden;
   height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
