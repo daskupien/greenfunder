@@ -157,7 +157,6 @@
   width: 100%;
 }
 
-
 // PROJECTS/:ID CARDS
 
 .project-name {
@@ -166,7 +165,6 @@
   font-size: 48px;
   padding-bottom: 24px;
 }
-
 
 .project-content {
   padding: 40px;
@@ -228,12 +226,11 @@
   padding: 30px 60px;
 }
 
-
 .project-other-option {
   display: flex;
   margin-top: 94px;
   justify-content: space-around;
-
+}
 
 // PROFILE CARDS
 
@@ -241,7 +238,7 @@
   overflow: hidden;
   height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
