@@ -166,12 +166,14 @@
 }
 
 // PROJECTS/:ID CARDS
+
 .project-name {
   text-align: center;
   padding-top: 40px;
   font-size: 48px;
   padding-bottom: 24px;
 }
+
 
 .project-content {
   padding: 40px;
@@ -233,6 +235,16 @@
   padding: 30px 60px;
 }
 
+<<<<<<< HEAD
+=======
+
+.project-other-option {
+  display: flex;
+  margin-top: 94px;
+  justify-content: space-around;
+
+
+>>>>>>> master
 // PROFILE CARDS
 
 .card-profile-project {
@@ -247,4 +259,8 @@
   height: 200px;
   width: 300px;
   object-fit: cover;
+}
+
+.card-project-infos {
+  margin-right: 60px;
 }
