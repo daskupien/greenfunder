@@ -159,12 +159,14 @@
 
 
 // PROJECTS/:ID CARDS
+
 .project-name {
   text-align: center;
   padding-top: 40px;
   font-size: 48px;
   padding-bottom: 24px;
 }
+
 
 .project-content {
   padding: 40px;
@@ -225,6 +227,12 @@
   text-align: justify;
   padding: 30px 60px;
 }
+
+
+.project-other-option {
+  display: flex;
+  margin-top: 94px;
+  justify-content: space-around;
 
 
 // PROFILE CARDS
