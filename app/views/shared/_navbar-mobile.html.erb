@@ -19,9 +19,10 @@
           Categories
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Animal</a>
-          <a class="dropdown-item" href="#">Trees</a>
-          <a class="dropdown-item" href="#">Plastic</a>
+          <p class="dropdown-item d-flex"><i class="fas fa-seedling category-dropdown-icon"></i><%= link_to "Planting", "/projects?query=planting", class: "nav-link category-dropdown-link" %></p>
+          <p class="dropdown-item d-flex"><i class="fas fa-solar-panel category-dropdown-icon"></i><%= link_to "Energy", "/projects?query=energy", class: "nav-link category-dropdown-link" %></p>
+          <p class="dropdown-item d-flex"><i class="fab fa-forumbee category-dropdown-icon"></i><%= link_to "Animals", "/projects?query=animals", class: "nav-link category-dropdown-link" %></p>
+          <p class="dropdown-item d-flex"><i class="fas fa-box-open category-dropdown-icon"></i><%= link_to "Plastic alternatives", "/projects?query=plastic+alternatives", class: "nav-link category-dropdown-link" %></p>
         </div>
       </div>
 
