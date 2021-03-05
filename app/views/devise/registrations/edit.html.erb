@@ -8,7 +8,7 @@
             <h2>Edit Your Profile:</h2>
           </div>
 
-          <dev class="devise-form">
+          <div class="devise-form">
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= f.error_notification %>
 
@@ -72,7 +72,7 @@
               <br>
               <%= link_to "Back", :back %>
             </div>
-          </dev>
+          </div>
         </div>
       </div>
     </div>

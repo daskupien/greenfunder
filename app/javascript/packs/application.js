@@ -27,6 +27,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from "../plugins/init_mapbox";
+// import { stripeAmount } from "./stripeamount";
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
+  // stripeAmount();
 });

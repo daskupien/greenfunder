@@ -1,9 +1,14 @@
+<div class="container-general">
+<div class="project-content">
 <h1>Invest in <%= @project.name %></h1>
 
 <div>
   <%= simple_form_for [ @project, @investment ] do |f| %>
     <%= f.input :comment %>
     <%= f.input :investment_amount %>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this Projekt" data-amount="5000" data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
   <% end %>
 </div>
+</div>
+</div>
+
