@@ -14,8 +14,9 @@
               <%= simple_form_for [ @project, @investment ] do |f| %>
                 <%= f.input :comment %>
                 <%= f.input :investment_amount %>
-            </div>
                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
+            </div>
+                
               <% end %>
           </div>
 
