@@ -16,16 +16,16 @@
 }
 
 .card-hiw p {
-  width: 200px;
+  padding: 0px 20px;
 }
 
 .card-hiw-content {
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-bottom: 40px;
-  width: 300px;
-  height: 300px;
+  align-items: center;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   box-shadow: $box-shadow;
 }
@@ -174,7 +174,6 @@
   padding-bottom: 24px;
 }
 
-
 .project-content {
   padding: 40px;
 }
@@ -235,16 +234,6 @@
   padding: 30px 60px;
 }
 
-<<<<<<< HEAD
-=======
-
-.project-other-option {
-  display: flex;
-  margin-top: 94px;
-  justify-content: space-around;
-
-
->>>>>>> master
 // PROFILE CARDS
 
 .card-profile-project {
