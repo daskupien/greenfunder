@@ -1,14 +1,26 @@
-<div class="container-general">
-<div class="project-content">
-<h1>Invest in <%= @project.name %></h1>
+<div class="container-wide">
+  <div class="container-general">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
 
-<div>
-  <%= simple_form_for [ @project, @investment ] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :investment_amount %>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
-  <% end %>
-</div>
-</div>
-</div>
 
+          <div class="investment-content">
+            <div class="investment-header">
+              <h2>Invest In:</h2>
+              <h2><%= @project.name %></h2>
+            </div>
+            <div class="investment-form">
+              <%= simple_form_for [ @project, @investment ] do |f| %>
+                <%= f.input :comment %>
+                <%= f.input :investment_amount %>
+            </div>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
+              <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
