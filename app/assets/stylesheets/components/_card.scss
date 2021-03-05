@@ -234,7 +234,11 @@
   padding: 30px 60px;
 }
 
-// PROFILE CARDS
+.project-other-option {
+  display: flex;
+  margin-top: 94px;
+  justify-content: space-around;
+}
 
 .card-profile-project {
   overflow: hidden;
