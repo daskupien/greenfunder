@@ -1,23 +1,28 @@
-  <div class="container-profile">
-    <%# USER-PROFILE %>
-    <h1>Hi <%= current_user.first_name %> 👋🏼</h1>
-    <br>
-    <div class="user-profile">
-        <p><strong>Email:</strong> <%= @user.email %></p>
-      <br>
+<div class="container-wide">
+  <div class="container-general">
+    <div class="profile-content">
 
-
-    <%# UPDATE-PROFILE %>
-      <div>
-        <%= link_to "Edit profile", edit_user_registration_path(current_user), class: "btn btn-normal" %>
+      <%# USER-PROFILE %>
+      <div class="profile-header">
+        <h2>Hi <%= current_user.first_name %> 👋🏼</h2>
       </div>
 
-      <br>
-    <%# SHOW INVESTMENTS %>
-      <h1>My Investments</h1>
-      <div>
-        <% @investments.each do |investment| %>
-          <div>
+      <div class="user-information">
+        <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
+        <p><strong>Email:</strong> <%= @user.email %></p>
+      </div>
+
+      <%# UPDATE-PROFILE %>
+      <div class="profile-edit">
+        <%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "btn-normal-green" %>
+      </div>
+
+      <%# SHOW INVESTMENTS %>
+      <div class="profile-investments">
+        <h2>My Investments</h2>
+        <div>
+          <% @investments.each do |investment| %>
+            <div>
               <strong>Project: </strong><%= link_to investment.project.name, project_path(investment.project) %>
               <div class="progress">
                 <% current_investment_sum = investment.project.current_investment_sum
@@ -25,13 +30,15 @@
                 @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
                 <div class="progress-bar bg-success" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            <ul>
-              <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
-              <li><strong>Category: </strong><%= investment.project.category %></li>
-              <li><strong>My Investment: </strong><%= investment.investment_amount %> €</li>
-            </ul>
-          </div>
-        <% end %>
+              <ul>
+                <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
+                <li><strong>Category: </strong><%= investment.project.category %></li>
+                <li><strong>My Investment: </strong><%= investment.investment_amount %> €</li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+</div>
