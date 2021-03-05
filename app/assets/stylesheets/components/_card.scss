@@ -98,11 +98,13 @@
 .projectcontent {
   display: flex;
 }
+
 .cards-projects {
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr;
 }
+
 .card-project {
   display: flex;
   border-radius: $border-radius;
@@ -114,14 +116,17 @@
   align-items: center;
   box-shadow: $box-shadow;
 }
+
 .card-project-content {
   height: 100%;
   width: 499px;
 }
+
 .card-project-image {
   height: 100%;
   width: 400px;
 }
+
 .card-project-image img {
   width: 100%;
   height: 100%;
@@ -129,17 +134,21 @@
   border-bottom-left-radius: 4px;
   object-fit: cover;
 }
+
 .card-project-body {
   padding: 20px;
   width: 490px;
 }
+
 .card-project-body h2 {
   padding-bottom: 20px;
 }
+
 .card-project-body p {
   margin-bottom: 1px;
   padding-bottom: 20px;
 }
+
 .card-project-progress {
   border: 1px solid $master;
   border-radius: 5px;
@@ -154,25 +163,25 @@
   text-align: center;
   padding-top: 40px;
   font-size: 48px;
-}
-.project-sub-banner {
-  height: 350px;
-  padding: 40px;
-}
-.project-punchline {
-  margin-top: 75px;
-}
-.project-video iframe {
-  height: 100%;
+  padding-bottom: 24px;
 }
 
 .project-content {
   padding: 40px;
 }
 
+.project-content li {
+  list-style-type: none;
+}
+
+.project-progress {
+  margin-bottom: 50px;
+}
+
 .progress-bar {
   background-color: $master;
 }
+
 .progress-status {
   text-align: center;
   width: 555px;
@@ -180,9 +189,56 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .project-paragraph {
   padding: 40px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
 }
-.project-paragraph li {
-  margin-top: 10px;
+
+.project-paragraph img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.project-category {
+  width: 47%;
+  text-align: center;
+  border-right: 1px solid;
+}
+
+.p-sub {
+  margin-bottom: 0;
+}
+
+.p-con {
+  font-size: 32px;
+}
+
+.project-goal {
+  width: 50%;
+  text-align: center;
+}
+
+.project-description {
+  text-align: justify;
+  padding: 30px 60px;
+}
+
+
+// PROFILE CARDS
+
+.card-profile-project {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+.card-profile-project img {
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
 }
