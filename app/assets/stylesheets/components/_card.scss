@@ -15,11 +15,19 @@
   padding: 24px;
 }
 
+.card-hiw p {
+  width: 200px;
+}
+
 .card-hiw-content {
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-content: center;
+  padding-bottom: 40px;
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  border: 1px solid;
+  box-shadow: $box-shadow;
 }
 
 .card-hiw-number {
@@ -157,7 +165,6 @@
   width: 100%;
 }
 
-
 // PROJECTS/:ID CARDS
 .project-name {
   text-align: center;
@@ -226,14 +233,13 @@
   padding: 30px 60px;
 }
 
-
 // PROFILE CARDS
 
 .card-profile-project {
   overflow: hidden;
   height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
