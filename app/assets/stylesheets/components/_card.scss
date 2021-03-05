@@ -98,11 +98,13 @@
 .projectcontent {
   display: flex;
 }
+
 .cards-projects {
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr;
 }
+
 .card-project {
   display: flex;
   border-radius: $border-radius;
@@ -114,14 +116,17 @@
   align-items: center;
   box-shadow: $box-shadow;
 }
+
 .card-project-content {
   height: 100%;
   width: 499px;
 }
+
 .card-project-image {
   height: 100%;
   width: 400px;
 }
+
 .card-project-image img {
   width: 100%;
   height: 100%;
@@ -129,17 +134,21 @@
   border-bottom-left-radius: 4px;
   object-fit: cover;
 }
+
 .card-project-body {
   padding: 20px;
   width: 490px;
 }
+
 .card-project-body h2 {
   padding-bottom: 20px;
 }
+
 .card-project-body p {
   margin-bottom: 1px;
   padding-bottom: 20px;
 }
+
 .card-project-progress {
   border: 1px solid $master;
   border-radius: 5px;
@@ -150,12 +159,14 @@
 
 
 // PROJECTS/:ID CARDS
+
 .project-name {
   text-align: center;
   padding-top: 40px;
   font-size: 48px;
   padding-bottom: 24px;
 }
+
 
 .project-content {
   padding: 40px;
@@ -167,9 +178,11 @@
 .project-progress {
   margin-bottom: 50px;
 }
+
 .progress-bar {
   background-color: $master;
 }
+
 .progress-status {
   text-align: center;
   width: 555px;
@@ -194,17 +207,27 @@
   text-align: center;
   border-right: 1px solid;
 }
+
 .p-sub {
   margin-bottom: 0;
 }
+
 .p-con {
   font-size: 32px;
 }
+
 .project-goal {
   width: 50%;
   text-align: center;
 }
+
 .project-description {
   text-align: justify;
   padding: 30px 60px;
+}
+
+.project-other-option {
+  display: flex;
+  margin-top: 94px;
+  justify-content: space-around;
 }
