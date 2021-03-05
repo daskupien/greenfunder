@@ -44,11 +44,6 @@
     </div>
   </div>
 
-  <%# BAR %>
-  <div class="background-image-bar">
-
-  </div>
-
   <%# HOME CARDS %>
   <h2 class="card-home-header text-center">Our Recommended Projects</h2>
   <div class="card-home-all">
@@ -56,6 +51,7 @@
       <div class="card-home">
         <% if project.image.attached? %>
           <div class="card-home-image">
+            <div class="picture-layer"></div>
             <%= cl_image_tag project.image.key, crop: :fill %>
           </div>
         <% else %>
@@ -84,10 +80,13 @@
             </div>
           </div>
           <div class="text-center">
-            <%= link_to "Invest now", project_path(project), class: "btn-normal-green" %>
+            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+
+  <%# BAR %>
+  <div class="background-image-bar"></div>
 </div>

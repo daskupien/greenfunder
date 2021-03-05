@@ -55,7 +55,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 40px;
 }
 
 .card-home {
@@ -73,6 +72,18 @@
   margin-bottom: 5px;
   object-fit: cover;
   border-radius: 5px 5px 0 0;
+}
+
+.picture-layer {
+  position: absolute;
+  width: 320px;
+  height: 220px;
+  background-color: $master;
+  opacity: 0.25;
+}
+
+.picture-layer:hover {
+  opacity: 0;
 }
 
 .card-content {
