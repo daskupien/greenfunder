@@ -1,8 +1,8 @@
 <div class="container-wide">
   <div class="container-general">
-    <div class="profile-content">
 
-      <%# USER-PROFILE %>
+    <%# USER-PROFILE %>
+    <div class="profile-content">
       <div class="profile-header">
         <h2>Hi <%= current_user.first_name %> 👋🏼</h2>
       </div>
@@ -38,6 +38,32 @@
             </div>
           <% end %>
         </div>
+      </div>
+
+      <%# MY PROJECTS %>
+      <div class="profile-header">
+        <h2>My Projects</h2>
+      </div>
+      <div class="profile-projects">
+          <% @projects.each do |project| %>
+            <div class="card-product">
+              <div class="d-flex justify-content-between w-100 align-items-center">
+                <div class="d-flex justify-content-start">
+                  <%= cl_image_tag project.image.key, crop: :fill %>
+                  <div class="card-product-infos">
+                    <h2><%= project.name %></h2>
+                    <p><strong>Punchline:</strong> <%= project.punchline  %></p>
+                    <p><strong>Category:</strong> <%= project.category %></p>
+                    <p><strong>Investment Goal:</strong> <%= project.investment_goal %></p>
+                  </div>
+                </div>
+                <div>
+                  <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
       </div>
     </div>
   </div>
