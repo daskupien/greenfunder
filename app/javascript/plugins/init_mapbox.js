@@ -6,6 +6,7 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/jonnasson/cklusjp8s3pyn17qng38fyox6",
+    interactive: false,
   });
 };
 

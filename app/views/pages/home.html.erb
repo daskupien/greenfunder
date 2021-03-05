@@ -25,7 +25,6 @@
 
   <%# STATIC MAP %>
   <%# TODO Add static map with markers, user cannot do anything %>
-
   <%# HOW INVESTING WORKS %>
   <%# TODO add content %>
   <h2 class="cards-hiw-header text-center">How to invest</h2>
@@ -41,6 +40,14 @@
     <div class="card-hiw col-sm-4 col-md-3">
       <div class="card-hiw-number text-center">3</div>
       <div class="card-hiw-content text-center">Get your rewards if the investment goal is reached</div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div id="map"
+       style="width: 100%; height: 80vh; margin-right: 0;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
     </div>
   </div>
 
