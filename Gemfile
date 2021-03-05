@@ -69,3 +69,5 @@ gem 'mapbox-gl-rails'
 
 #stripe
 gem 'stripe'
+
+gem 'jquery-rails'
