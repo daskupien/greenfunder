@@ -13,8 +13,50 @@
             <div class="investment-form">
               <%= simple_form_for [ @project, @investment ] do |f| %>
                 <%= f.input :comment %>
-                <%= f.input :investment_amount %>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
+                <%= f.input :investment_amount, input_html: { name: 'amount' }  %>
+                <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+                <script src="https://checkout.stripe.com/checkout.js"></script>
+                <script>
+                $(document).ready(function () {
+
+  var stripe_helpers = {
+    getAmount: function(raw_amount) {
+      // Parses raw input and returns $-value in cents
+      if (raw_amount.indexOf('.') === -1) {
+        raw_amount = raw_amount + '.00';
+      }
+      return parseInt(parseFloat(raw_amount) * 100);
+    }
+  };
+
+  var handler = StripeCheckout.configure({
+    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+    image: "<%= cl_image_path (@project.image.key) %>",
+    locale: 'en',
+    token: function(token) {
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+
+  $('.btn-card-project').on('click', function(e) {
+    // Open Checkout with further options
+    var amount = stripe_helpers.getAmount($('input[name="amount"]').val());
+    handler.open({
+      name: '<%= @project.name %>',
+      description: 'Invest in this project',
+      amount: amount
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation
+  $(window).on('popstate', function() {
+    handler.close();
+  });
+});
+                </script>
+                <button class="btn-card-project">Charge</button>
             </div>
                 
               <% end %>
@@ -25,3 +67,5 @@
     </div>
   </div>
 </div>
+
+
