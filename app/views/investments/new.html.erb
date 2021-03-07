@@ -12,11 +12,22 @@
             </div>
             <div class="investment-form">
               <%= simple_form_for [ @project, @investment ] do |f| %>
-                <%= f.input :comment %>
-                <%= f.input :investment_amount%>
+                <%= f.input :investment_amount, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
               <% end %>
+                <button class="btn-card-project" turbolinks="true">Charge</button>
                 
-<script src="https://checkout.stripe.com/checkout.js" data-turbolinks="false"></script>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script>
   $(document).ready(function () {
@@ -39,7 +50,26 @@
     token: function(token) {
     // Use the token to create the charge with a server-side script.
     // You can access the token ID with `token.id`
-    }
+       // Prevent user from leaving page
+
+    // Dynamically create a form element to submit the results
+    // to your backend server
+    var form = document.getElementById("new_investment");
+    form.setAttribute('method', "POST");
+    form.setAttribute('action', "<%= project_investments_path %>")
+
+    // Add the token ID as a hidden field to the form payment-form
+    var inputToken = document.createElement("input");
+    inputToken.setAttribute('type', "hidden");
+    inputToken.setAttribute('name', "stripeToken");
+    inputToken.setAttribute('value', token.id);
+    form.appendChild(inputToken);
+
+        // Finally, submit the form
+    document.body.appendChild(form);
+
+    document.forms["new_investment"].submit()
+  }
   });
 
   $('.btn-card-project').on('click', function(e) {
@@ -59,14 +89,3 @@
   });
 });
 </script>
-                <button class="btn-card-project">Charge</button>
-                
-              
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
