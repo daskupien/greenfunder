@@ -1,7 +1,25 @@
 <div class="container-wide">
 <div class="projectcontent">
   <div class="cards-projects">
+
+    <%# SEARCH BAR %>
+    <%# deleted class 'searchbar' for now, so it is a own row %>
+    <div class="">
+      <%= form_tag projects_path, class: "search-form", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-input",
+          placeholder: "Search for category..."
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+
     <h1 style="padding: 78px 109px 30px 30px;">Check out our awesome projects <br> and make the first move for the planet!</h1>
+
+    <%# PROJECTS %>
     <% @projects.each do |project| %>
       <div class="card-project">
         <%= link_to cl_image_tag(project.image.key), user_path(current_user), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
