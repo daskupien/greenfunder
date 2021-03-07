@@ -14,13 +14,17 @@
             <% current_investment_sum = project.current_investment_sum
             investment_goal = project.investment_goal
             @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
-              <div class="progress-bar bg-success"
-                    role="progressbar"
-                    style="width: <%= @investement_percentage %>%"
-                    aria-valuenow="25"
-                    aria-valuemin="0"
-                    aria-valuemax="100">
+            <div class="project-progress">
+              <div class="progress">
+                <div class="progress-bar"
+                      role="progressbar"
+                      style="width: <%= @investement_percentage %>%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100">
+                </div>
               </div>
+            </div>
            </div>
            <%= link_to "Invest now", project_path(project), class: "btn-card-project" %>
         </div>
