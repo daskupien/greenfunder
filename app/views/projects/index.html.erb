@@ -1,7 +1,25 @@
 <div class="container-wide">
 <div class="projectcontent">
   <div class="cards-projects">
+
+    <%# SEARCH BAR %>
+    <%# deleted class 'searchbar' for now, so it is a own row %>
+    <div class="">
+      <%= form_tag projects_path, class: "search-form", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-input",
+          placeholder: "Search for category..."
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+
     <h1 style="padding: 78px 109px 30px 30px;">Check out our awesome projects <br> and make the first move for the planet!</h1>
+
+    <%# PROJECTS %>
     <% @projects.each do |project| %>
       <div class="card-project">
         <%= link_to cl_image_tag(project.image.key), user_path(current_user), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -14,13 +32,17 @@
             <% current_investment_sum = project.current_investment_sum
             investment_goal = project.investment_goal
             @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
-              <div class="progress-bar bg-success"
-                    role="progressbar"
-                    style="width: <%= @investement_percentage %>%"
-                    aria-valuenow="25"
-                    aria-valuemin="0"
-                    aria-valuemax="100">
+            <div class="project-progress">
+              <div class="progress">
+                <div class="progress-bar"
+                      role="progressbar"
+                      style="width: <%= @investement_percentage %>%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100">
+                </div>
               </div>
+            </div>
            </div>
            <%= link_to "Invest now", project_path(project), class: "btn-card-project" %>
         </div>
