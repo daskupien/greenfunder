@@ -1,22 +1,24 @@
 // CARDS HOW INVESTING WORKS
 
 .cards-hiw-header {
-  margin: 40px 0 20px 0;
+  padding: 40px 0 40px 0;
+  margin-bottom: 0;
+  background-color: $background-grey;
 }
 
 .cards-hiw-all {
-  padding: 10px 80px 30px 80px;
+  padding: 0 80px 50px 80px;
+  background-color: $background-grey;
 }
 
 .card-hiw {
   position: relative;
-  width: 300px;
+  width: 350px;
   height: 350px;
-  padding: 24px;
 }
 
 .card-hiw p {
-  padding: 0px 20px;
+  padding: 0px 40px;
 }
 
 .card-hiw-content {
@@ -30,21 +32,16 @@
   box-shadow: $box-shadow;
 }
 
-.card-hiw-number {
-  background-color: $master-opacity;
-  position: absolute;
-  padding: 19px 0;
-  font-size: 27px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
 // CARDS HOME
 
 .card-home-header {
-  margin-bottom: 40px;
-  color: white;
+  padding-bottom: 40px;
+  background-color: $background-grey;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .card-home-all {
@@ -52,17 +49,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding-bottom: 40px;
-}
-
-.background-image-bar {
-  height: 80px;
-  background: linear-gradient(#385439, rgba(0, 61, 43, 0.05)),
-    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-bottom: 60px;
+  background-color: $background-grey;
 }
 
 .card-home {
@@ -88,6 +76,7 @@
   height: 220px;
   background-color: $master;
   opacity: 0.25;
+  border-radius: $border-radius;
 }
 
 .picture-layer:hover {
@@ -100,6 +89,10 @@
 
 .card-home-header {
   color: black;
+}
+
+.investment_goal {
+  padding-bottom: 10px;
 }
 
 // PROJECTS CARDS
@@ -258,4 +251,16 @@
 
 .card-project-infos {
   margin-right: 60px;
+}
+
+// IMAGE BAR HOME PAGE
+
+.background-image-bar {
+  height: 100px;
+  background: linear-gradient(#385439, rgba(0, 61, 43, 0.05)),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
