@@ -15,22 +15,8 @@
                 <%= f.input :comment %>
                 <%= f.input :investment_amount%>
                 
-                
-                <button class="btn-card-project">Charge</button>
-                </div>
-              <% end %>
-            
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
+                <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://checkout.stripe.com/checkout.js" turbolinks:false></script>
 <script>
   $(document).ready(function () {
 
@@ -47,11 +33,7 @@
   var handler = StripeCheckout.configure({
     key: "<%= Rails.configuration.stripe[:publishable_key] %>",
     image: "<%= cl_image_path (@project.image.key) %>",
-    locale: 'en',
-    token: function(token) {
-      // Use the token to create the charge with a server-side script.
-      // You can access the token ID with `token.id`
-    }
+    locale: 'en'
   });
 
   $('.btn-card-project').on('click', function(e) {
@@ -71,3 +53,14 @@
   });
 });
 </script>
+                <button class="btn-card-project">Charge</button>
+                
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
