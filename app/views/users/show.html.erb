@@ -37,6 +37,7 @@
                   <ul>
                     <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
                     <li><strong>Category: </strong><%= investment.project.category %></li>
+                    <li><strong>Investors:  </strong><%= Investment.where(project: investment.project).count %></li>
                     <li><strong>My Investment: </strong><%= investment.investment_amount %> €</li>
                   </ul>
                 </div>
@@ -56,7 +57,9 @@
                   </div>
                     <div class="card-project-infos">
                       <h2><%= project.name %></h2>
-                      <p><strong>Category:</strong> <%= project.category %></p>
+                      <p><strong>Category: </strong><%= project.category %></p>
+                      <p><strong>Investors: </strong><%= Investment.where(project: project).count %></p>
+
                       <p><strong>Investment Goal:</strong> <%= project.investment_goal %></p>
                     </div>
                   <div class="btn-profile">
