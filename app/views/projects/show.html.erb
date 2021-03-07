@@ -32,6 +32,14 @@
             <H4><%= @project.current_investment_sum %> €</h4>
           </div>
           <div class="d-flex justify-content-between">
+            <h4>INVESTORS : </h4>
+            <H4><%= Investment.where(project: @project).count %></h4>
+          </div>
+
+
+
+
+          <div class="d-flex justify-content-between">
             <h4>GOAL : </h4>
             <H4><%= @project.investment_goal %> €</H4>
           </div>
