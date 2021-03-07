@@ -31,25 +31,25 @@
     <div class="card-hiw col-sm-4 col-md-3">
       <div class="card-hiw-content text-center">
         <img class="how-icon" src="https://res.cloudinary.com/rentmylife/image/upload/v1614945248/assets/01_invest_x89g8t.svg" alt="pick">
-        <p class='text-center'>Pick a project you want to support and choose how much to invest</p>
+        <p class='text-center'>1. Pick a project you want to support & choose how much you want to invest</p>
       </div>
     </div>
     <div class="card-hiw col-sm-4 col-md-3">
       <div class="card-hiw-content text-center">
         <img class="how-icon" src="https://res.cloudinary.com/rentmylife/image/upload/v1614945248/assets/02_growth_a3zmz3.svg" alt="pick">
-        <p>Watch the progress of your investments</p>
+        <p>2. Watch the progress & postive impact of the investments you made</p>
       </div>
     </div>
     <div class="card-hiw col-sm-4 col-md-3">
       <div class="card-hiw-content text-center">
         <img class="how-icon" src="https://res.cloudinary.com/rentmylife/image/upload/v1614945248/assets/03_reward_f33bux.svg" alt="pick">
-        <p>Get your rewards if the investment goal is reached</p>
+        <p>3. Receive your rewards if the investment goal is reached & the project is funded</p>
       </div>
     </div>
   </div>
 
-  <%# HOME CARDS %>
-  <h2 class="card-home-header text-center">Our Recommended Projects</h2>
+  <%# CARDS HOME %>
+  <h2 class="card-home-header text-center">Recommended Projects</h2>
   <div class="card-home-all">
     <% @projects.first(4).each do | project | %>
       <div class="card-home">
@@ -68,7 +68,7 @@
           </div>
           <div class="card-text">
             <p class="punchline"><%= project.punchline %> </p>
-            <p class="category"><strong>Category: </strong><%= project.category %> </p>
+            <p class="category"><strong>Category: </strong><%= project.category.capitalize %> </p>
             <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
             <div class="card-project-progress">
               <% current_investment_sum = project.current_investment_sum
