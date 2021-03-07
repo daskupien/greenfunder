@@ -14,9 +14,10 @@
               <%= simple_form_for [ @project, @investment ] do |f| %>
                 <%= f.input :comment %>
                 <%= f.input :investment_amount%>
+              <% end %>
                 
-                <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-<script src="https://checkout.stripe.com/checkout.js" turbolinks:false></script>
+<script src="https://checkout.stripe.com/checkout.js" data-turbolinks="false"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 <script>
   $(document).ready(function () {
 
@@ -33,7 +34,12 @@
   var handler = StripeCheckout.configure({
     key: "<%= Rails.configuration.stripe[:publishable_key] %>",
     image: "<%= cl_image_path (@project.image.key) %>",
-    locale: 'en'
+    locale: 'en',
+    currency: 'EUR',
+    token: function(token) {
+    // Use the token to create the charge with a server-side script.
+    // You can access the token ID with `token.id`
+    }
   });
 
   $('.btn-card-project').on('click', function(e) {
@@ -55,7 +61,7 @@
 </script>
                 <button class="btn-card-project">Charge</button>
                 
-              <% end %>
+              
             </div>
           </div>
 
