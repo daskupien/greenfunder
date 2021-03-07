@@ -8,7 +8,7 @@
           class: "search-input",
           placeholder: "Search for category..."
         %>
-        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+        <%= button_tag(type: "submit", class: "btn btn-default", data: { turbolinks: false }) do %>
           <i class="fas fa-search"></i>
         <% end %>
       <% end %>
@@ -18,8 +18,8 @@
       <h3>investing green to make our world better</h3>
     </div>
     <div class="hero-buttons text-center">
-      <a class="btn-large-white btn-hero" href="/projects">Invest Now</a>
-      <a class="btn-large-green btn-hero" href="/projects/new">Create Project</a>
+      <%= link_to "Invest Now", projects_path, class: "btn-large-white btn-hero", data: { turbolinks: false } %>
+      <%= link_to "Create Project", new_project_path, class: "btn-large-green btn-hero", data: { turbolinks: false } %>
     </div>
   </div>
 
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="text-center">
-            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
+            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
           </div>
         </div>
       </div>
