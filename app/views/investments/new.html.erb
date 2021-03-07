@@ -1,20 +1,4 @@
-<div class="container-wide">
-  <div class="container-general">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8 offset-md-2">
-
-
-          <div class="investment-content">
-            <div class="investment-header">
-              <h2>Invest In:</h2>
-              <h2><%= @project.name %></h2>
-            </div>
-            <div class="investment-form">
-              <%= simple_form_for [ @project, @investment ] do |f| %>
-                <%= f.input :comment %>
-                <%= f.input :investment_amount, input_html: { name: 'amount' }  %>
-                <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
                 <script src="https://checkout.stripe.com/checkout.js"></script>
                 <script>
                 $(document).ready(function () {
@@ -56,10 +40,29 @@
   });
 });
                 </script>
-                <button class="btn-card-project">Charge</button>
+
+<div class="container-wide">
+  <div class="container-general">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+
+
+          <div class="investment-content">
+            <div class="investment-header">
+              <h2>Invest In:</h2>
+              <h2><%= @project.name %></h2>
             </div>
+            <div class="investment-form">
+              <%= simple_form_for [ @project, @investment ] do |f| %>
+                <%= f.input :comment %>
+                <%= f.input :investment_amount, input_html: { name: 'amount' }, :label => "Amount in Euro" %>
+                
+                
+                <%= f.submit class: "btn-card-project" %>
                 
               <% end %>
+              </div>
           </div>
 
         </div>
@@ -69,3 +72,4 @@
 </div>
 
 
+<%# <button class="btn-card-project">Charge</button> %>
