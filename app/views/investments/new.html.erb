@@ -12,12 +12,12 @@
             </div>
             <div class="investment-form">
               <%= simple_form_for [ @project, @investment ] do |f| %>
-                <%= f.input :comment %>
-                <%= f.input :investment_amount %>
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="Invest in this project" data-amount="" data-locale="auto" data-turbolinks="true"></script>
-            </div>
-                
+                <%= f.input :investment_amount, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
               <% end %>
+                <button class="btn-card-project">Pay</button>
+                
+              
+            </div>
           </div>
 
         </div>
@@ -25,3 +25,67 @@
     </div>
   </div>
 </div>
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script>
+  $(document).ready(function () {
+
+  var stripe_helpers = {
+    getAmount: function(raw_amount) {
+      // Parses raw input and returns $-value in cents
+      if (raw_amount.indexOf('.') === -1) {
+        raw_amount = raw_amount + '.00';
+      }
+      return parseInt(parseFloat(raw_amount) * 100);
+    }
+  };
+
+  var handler = StripeCheckout.configure({
+    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+    image: "<%= cl_image_path (@project.image.key) %>",
+    locale: 'en',
+    currency: 'EUR',
+    token: function(token) {
+    // Use the token to create the charge with a server-side script.
+    // You can access the token ID with `token.id`
+       // Prevent user from leaving page
+
+    // Dynamically create a form element to submit the results
+    // to your backend server
+    var form = document.getElementById("new_investment");
+    form.setAttribute('method', "POST");
+    form.setAttribute('action', "<%= project_investments_path %>")
+
+    // Add the token ID as a hidden field to the form payment-form
+    var inputToken = document.createElement("input");
+    inputToken.setAttribute('type', "hidden");
+    inputToken.setAttribute('name', "stripeToken");
+    inputToken.setAttribute('value', token.id);
+    form.appendChild(inputToken);
+
+        // Finally, submit the form
+    document.body.appendChild(form);
+
+    document.forms["new_investment"].submit()
+  }
+  });
+
+  $('.btn-card-project').on('click', function(e) {
+    // Open Checkout with further options
+    var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount]"]').val());
+    handler.open({
+      name: '<%= @project.name %>',
+      description: 'Invest in this project',
+      amount: amount
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation
+  $(window).on('popstate', function() {
+    handler.close();
+  });
+});
+</script>
