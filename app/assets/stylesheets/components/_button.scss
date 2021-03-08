@@ -128,29 +128,11 @@
 
 // CARDS PROJECTS SPECIFIC
 
-.btn-card-project {
-  display: inline-block;
-  width: 100%;
-  border: 1px solid;
-  border-color: $master;
-  background-color: $master-opacity;
-  color: white;
-  border-radius: $border-radius;
-  text-align: center;
-  padding: 8px;
-  text-decoration: none;
-}
-.btn-card-project:hover {
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
-
 .submit-btn {
   padding-bottom: 60px;
 }
 
-//stripe button style change
+// STRIPE BUTTON
 
 body
   > div
@@ -170,7 +152,7 @@ body
   display: inline-block !important;
 }
 
-//  PROFILE MY PROJECT
+// PROFILE - MY PROJECT
 
 .btn-profile {
   margin-right: 10px;
