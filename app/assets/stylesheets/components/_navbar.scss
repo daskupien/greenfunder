@@ -5,24 +5,52 @@
   background-color: white;
 }
 
-.nav-item {
-  list-style-type: none;
-  padding: 7px 0;
+// ALL NAVBAR LINKS
+
+.nav-link {
+  color: #696969;
 }
 
-#navbarSupportedContent {
-  background-color: white;
-  padding: 10px;
+.nav-link:hover {
+  color: $master;
 }
+
+// LEFT SIDE OF NAVBAR LINKS (all projects/ categories/ about us/ create project)
+
+.taps {
+  align-items: center;
+}
+
+
+// CATEGORY NAVLINK (DROPDOWN)
 .dropdown {
   background-color: white;
 }
+
+.dropdown-menu {
+  padding-top: 23px;
+}
+
 .dropdown-button {
   color: #696969;
 }
+
+// get rid of dropdown triangle
+.dropdown-toggle::after {
+  display: none;
+}
+
 .dropdown-button:focus {
   box-shadow: none;
 }
+
+.dropdown-button:hover {
+  color: $master;
+}
+
+
+
+// CATEGORY DROPDOWN-ITEM DETAILS
 
 .category-dropdown-icon {
   width: 18px;
@@ -33,13 +61,14 @@
   margin-top: -4px;
 }
 
-.nav-link {
-  color: #696969;
+.category-dropdown-link:hover {
+  color: $master;
 }
 
-.account {
-  margin-bottom: 5px;
-}
+
+
+// LOG IN - RESISTER - AVATAR
+
 .log-in {
   margin-right: 10px;
 }
@@ -48,8 +77,7 @@
 }
 
 #avatar-items {
-  margin-right: 50px;
-  margin-bottom: 6px;
+  margin-right: 35px;
 }
 .username {
   margin-right: 4px;
