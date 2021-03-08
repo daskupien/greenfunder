@@ -7,6 +7,7 @@
 }
 
 .cards-hiw-all {
+  padding-bottom: 50px;
   width: 100vw;
   background-color: $background-grey;
 }
@@ -247,4 +248,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+// CARD MAP
+
+.card-map {
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.card-map-header {
+  padding-bottom: 20px;
+}
+
+.card-map-content {
+  padding: 0 20px;
+}
+
+.card-map-image {
+  background-color: grey;
 }
