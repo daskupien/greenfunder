@@ -27,9 +27,27 @@
 
 // SUB-BANNER - PROJECTS/:ID PAGE
 .project-sub-banner {
-  min-height: 350px;
+  height: 380px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+  color: white;
 }
 
-.project-sub-banner-video {
-  box-shadow: $box-shadow;
+.project-sub-text {
+  padding-top: 120px;
+}
+
+.project-sub-text h1 {
+  font-size: 45px;
+  font-weight: 600;
+  color: white;
+}
+
+.project-sub-text h3 {
+  font-size: 22px;
+  font-weight: normal;
+  color: white;
 }
