@@ -10,7 +10,7 @@ class Project < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  monetize :investment_goal_cents
+  monetize :investment_goal_cents, :current_investment_sum_cents
 
   # def calculate_current_investment
 
