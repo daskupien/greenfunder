@@ -9,4 +9,7 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  register_currency :eur
+  monetize :goal_amount
 end
