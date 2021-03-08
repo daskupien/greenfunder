@@ -30,7 +30,7 @@
                   <strong>Project: </strong><%= link_to investment.project.name, project_path(investment.project) %>
                   <div class="progress">
                     <% current_investment_sum = investment.project.current_investment_sum
-                    investment_goal = investment.project.investment_goal
+                    investment_goal = investment.project.investment_goal_cents
                     @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
                     <div class="progress-bar bg-success" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
@@ -57,7 +57,7 @@
                     <div class="card-project-infos">
                       <h2><%= project.name %></h2>
                       <p><strong>Category:</strong> <%= project.category %></p>
-                      <p><strong>Investment Goal:</strong> <%= project.investment_goal %></p>
+                      <p><strong>Investment Goal:</strong> <%= project.investment_goal_cents %></p>
                     </div>
                   <div class="btn-profile">
                     <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>

@@ -9,4 +9,6 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  monetize :investment_goal_cents
 end

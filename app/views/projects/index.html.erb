@@ -30,7 +30,7 @@
             <h6 class="card-project-punchline">"<%= project.punchline %>"</h6>
             <div class="card-project-progress-all">
               <% current_investment_sum = project.current_investment_sum
-              investment_goal = project.investment_goal
+              investment_goal = project.investment_goal_cents
               @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
               <div class="card-project-progress">
                 <div class="progress">
@@ -44,7 +44,7 @@
                 </div>
               </div>
              </div>
-            <p class="card-project-goal">goal: <%= project.investment_goal %>€</p>
+            <p class="card-project-goal">goal: <%= project.investment_goal_cents %>€</p>
             <%= link_to "Invest now", project_path(project), class: "btn-card-project" %>
           </div>
         </div>
@@ -56,5 +56,5 @@
          data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
     </div>
   </div>
-  
+
 </div>

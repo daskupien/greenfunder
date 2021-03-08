@@ -32,7 +32,7 @@
           </div>
           <div class="d-flex justify-content-between">
             <h4>GOAL : </h4>
-            <H4><%= @project.investment_goal %> €</H4>
+            <H4><%= humanized_money_with_symbol(@project.investment_goal) %></H4>
           </div>
         </div>
 
@@ -43,6 +43,11 @@
 
 
       <div class="project-paragraph">
+
+        <!-- <% if @project %>
+
+        <% end %> -->
+
         <%= link_to cl_image_tag(@project.image.key), user_path(current_user), class: "project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <h3 style="text-align: center; margin: 20px; margin-top: 45px;">"<%= @project.punchline %>"</h3>
           <div class="project-category-goal d-flex">
@@ -52,7 +57,7 @@
             </li>
             <li class="project-goal">
               <p class="p-sub">Investment goal</p>
-              <p class="p-con"><%= @project.investment_goal %>€</p>
+              <p class="p-con"><%= humanized_money_with_symbol(@project.investment_goal) %></p>
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>

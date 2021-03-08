@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @investment = Investment.new
     current_investment_sum = @project.current_investment_sum
-    investment_goal = @project.investment_goal
+    investment_goal = @project.investment_goal_cents
     @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0
   end
 
@@ -57,7 +57,7 @@ class ProjectsController < ApplicationController
       :video,
       :image,
       :category,
-      :investment_goal,
+      :investment_goal_cents,
       :investment_goal_date
     )
   end
