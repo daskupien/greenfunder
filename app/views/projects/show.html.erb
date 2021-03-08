@@ -57,6 +57,11 @@
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>
+            <div id="map"
+       style="width: 100%; height: 300px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
+  </div>
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-card-project", style: "height: 55px; font-size: 24px;" %>
         </ul>
