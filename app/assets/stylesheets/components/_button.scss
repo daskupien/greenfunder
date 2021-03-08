@@ -1,39 +1,39 @@
 // BTN NAVBAR - WHITE + GREEN
 
-.btn-normal-white-nav {
-  border: 1px solid;
-  border-color: $master;
-  border-radius: $border-radius;
-  text-align: center;
-  list-style-type: none;
-  padding: 0 22px;
-}
+// .btn-normal-white-nav {
+//   border: 1px solid;
+//   border-color: $master;
+//   border-radius: $border-radius;
+//   text-align: center;
+//   list-style-type: none;
+//   padding: 0 22px;
+// }
 
-.btn-normal-white-nav .nav-link {
-  color: $master;
-}
+// .btn-normal-white-nav{
+//   color: $master;
+// }
 
-.btn-normal-white-nav .nav-link:hover {
-  font-weight: bolder;
-}
+// .btn-normal-white-nav:hover {
+//   font-weight: bolder;
+// }
 
-.btn-normal-green-nav {
-  border: 1px solid;
-  border-color: $master;
-  background-color: $master-opacity;
-  border-radius: 5px;
-  text-align: center;
-  padding: 0 22px;
-  list-style-type: none;
-}
+// .btn-normal-green-nav {
+//   border: 1px solid;
+//   border-color: $master;
+//   background-color: $master-opacity;
+//   border-radius: 5px;
+//   text-align: center;
+//   padding: 0 22px;
+//   list-style-type: none;
+// }
 
-.btn-normal-green-nav .nav-link {
-  color: white;
-}
+// .btn-normal-green-nav{
+//   color: white;
+// }
 
-.btn-normal-green-nav .nav-link:hover {
-  background-color: $master;
-}
+// .btn-normal-green-nav:hover {
+//   background-color: $master;
+// }
 
 // BTN NORMAL - WHITE + GREEN
 
@@ -54,6 +54,7 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
+  background-color: $master;
 }
 
 .btn-normal-white {
@@ -116,6 +117,7 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
+  background-color: $master;
 }
 
 // HERO SPECIFIC
