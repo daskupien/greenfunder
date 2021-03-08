@@ -1,5 +1,9 @@
 .progress-bar {
   background-color: $master;
+  border-radius: 5px;
+  margin-bottom: 14px;
+  height: 100%;
+  width: 100%;
 }
 
 .progress-status {
