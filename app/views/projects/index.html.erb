@@ -27,10 +27,10 @@
           <h2 class="card-project-title"><%= project.name %></h2>
           <p class="card-project-punchline"><%= project.punchline %></p>
           <p class="card-project-address"><%= project.address %></p>
-          <p class="card-project-goal">Goal: <%= project.investment_goal %>€</p>
+          <p class="card-project-goal">Goal: <%= project.investment_goal_cents %>€</p>
           <div class="card-project-progress">
             <% current_investment_sum = project.current_investment_sum
-            investment_goal = project.investment_goal
+            investment_goal = project.investment_goal_cents
             @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
             <div class="project-progress">
               <div class="progress">

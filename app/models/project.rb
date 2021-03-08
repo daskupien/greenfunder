@@ -10,6 +10,5 @@ class Project < ApplicationRecord
       tsearch: { prefix: true }
     }
 
-  register_currency :eur
-  monetize :goal_amount
+  monetize :investment_goal_cents
 end
