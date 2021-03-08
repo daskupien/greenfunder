@@ -97,10 +97,10 @@
             <div class="card-text">
               <p class="punchline"><%= project.punchline %> </p>
               <p class="category"><strong>Category: </strong><%= project.category.capitalize %> </p>
-              <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal %> </p>
+              <p class="investment_goal"><strong>Investment Goal: </strong><%= project.investment_goal_cents %> </p>
               <div class="card-project-progress">
                 <% current_investment_sum = project.current_investment_sum
-                investment_goal = project.investment_goal
+                investment_goal = project.investment_goal_cents
                 @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
                 <div class="project-progress">
                   <div class="progress">
