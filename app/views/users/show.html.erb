@@ -37,7 +37,7 @@
                   <ul>
                     <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
                     <li><strong>Category: </strong><%= investment.project.category %></li>
-                    <li><strong>My Investment: </strong><%= investment.investment_amount_cents %> €</li>
+                    <li><strong>My Investment: </strong><%= humanized_money_with_symbol(investment.investment_amount_cents) %></li>
                   </ul>
                 </div>
               <% end %>
@@ -57,7 +57,7 @@
                     <div class="card-project-infos">
                       <h2><%= project.name %></h2>
                       <p><strong>Category:</strong> <%= project.category %></p>
-                      <p><strong>Investment Goal:</strong> <%= project.investment_goal_cents %></p>
+                      <p><strong>Investment Goal:</strong> <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
                     </div>
                   <div class="btn-profile">
                     <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
