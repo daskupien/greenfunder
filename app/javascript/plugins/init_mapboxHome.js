@@ -5,8 +5,8 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: "map-home",
-    style: "mapbox://styles/jonnasson/ckm0fg0iz1sci17linzzr96nq",
-    interactive: true,
+    style: "mapbox://styles/jonnasson/ckm0u49dl6zao17ryfls7n00o",
+    interactive: false,
     // center: [50, 48],
     // zoom: 3,
   });
@@ -22,15 +22,13 @@ const addMarkersToMap = (map, markers) => {
 
     const element = document.createElement("div");
     element.className = "marker";
-    element.style.backgroundImage = `url('${marker.image_url}')`;
-    element.style.backgroundSize = "contain";
     element.style.width = "30px";
     element.style.height = "30px";
-    element.style.borderColor = "#00bf7c";
-    element.style.border = "0px solid";
+    element.style.border = "1px solid";
+    element.style.borderColor = "#fff";
     element.style.borderRadius = "50%";
     element.style.backgroundColor = "rgba(86, 130, 89, 0.8)";
-    element.style.opacity = "0.5";
+    element.style.opacity = "0.75";
 
     // map.on("load", function () {
     //   map.addSource("markercircles", {
