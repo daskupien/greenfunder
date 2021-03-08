@@ -1,0 +1,42 @@
+// Specific CSS for your about us page
+.about-us {
+  background-color: #073B3A;
+  text-align: center;
+}
+
+.about-us-title {
+  font-size: 64px;
+  padding: 70px;
+  color: white;
+  border-bottom: 1px solid;
+}
+
+.about-us-sub-banner {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: white;
+    align-content: center;
+    height: 125px;
+    padding: 10px;
+    margin: 15px;
+  }
+
+}
+
+.our-mission {
+  width: 50%;
+}
+
+.our-promise {
+  width: 50%;
+}
+
+
