@@ -6,7 +6,7 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/jonnasson/ckm0fg0iz1sci17linzzr96nq",
-    interactive: true,
+    interactive: false,
   });
 };
 
@@ -24,6 +24,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = "contain";
     element.style.width = "30px";
     element.style.height = "30px";
+    element.style.borderc = "1px solid green";
 
     new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])

@@ -6,7 +6,7 @@ const buildMap = (mapElement) => {
   return new mapboxgl.Map({
     container: "map-home",
     style: "mapbox://styles/jonnasson/ckm0fg0iz1sci17linzzr96nq",
-    interactive: false,
+    interactive: true,
     // center: [50, 48],
     // zoom: 3,
   });
@@ -26,6 +26,61 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = "contain";
     element.style.width = "30px";
     element.style.height = "30px";
+
+    map.on("load", function () {
+      map.addSource("markercircles", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: [
+            {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates: [marker.lng, marker.lat],
+              },
+              properties: {
+                modelId: 1,
+              },
+            },
+            {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates: [45, 35],
+              },
+              properties: {
+                modelId: 1,
+              },
+            },
+            {
+              type: "Feature",
+              geometry: {
+                type: "Point",
+                coordinates: [40, 30],
+              },
+              properties: {
+                modelId: 1,
+              },
+            },
+          ],
+        },
+      });
+      map.addLayer({
+        id: "circles1",
+        source: "markercircles",
+        type: "circle",
+        paint: {
+          "circle-radius": 20,
+          "circle-opacity": 0.5,
+          "circle-color": "rgb(90, 207, 168)",
+          "circle-stroke-width": 1,
+          "circle-stroke-color": "#00bf7c",
+          "circle-stroke-opacity": 1,
+        },
+        filter: ["==", "modelId", 1],
+      });
+    });
 
     new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])
