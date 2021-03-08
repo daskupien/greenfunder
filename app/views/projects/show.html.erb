@@ -56,7 +56,7 @@
             </li>
             <li class="project-goal">
               <p class="p-sub">Investment goal</p>
-              <p class="p-con"><%= humanized_money_with_symbol(@project.investment_goal) %></p>
+              <p class="p-con"><%= humanized_money_with_symbol(@project.investment_goal_cents) %></p>
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>
