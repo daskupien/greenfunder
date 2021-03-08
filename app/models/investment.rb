@@ -10,8 +10,8 @@ class Investment < ApplicationRecord
   def update_project_sum
     @project = self.project
 
-    new_investment_sum = investment_amount_cents + @project.current_investment_sum.to_i
-    @project.current_investment_sum = new_investment_sum
+    new_investment_sum = investment_amount_cents + @project.current_investment_sum_cents.to_i
+    @project.current_investment_sum_cents = new_investment_sum
     @project.save
   end
 end

@@ -28,7 +28,7 @@ project1 = Project.new(
     video: 'https://www.youtube.com/watch?v=HPJKxAhLw5I',
     category: 'planting',
     investment_goal_cents: 3453400,
-    current_investment_sum: 23452,
+    current_investment_sum_cents: 23452,
     address: 'Frankfurt am Main',
     user_id: begana.id,
 )
@@ -43,7 +43,7 @@ project2 = Project.new(
     video: 'https://www.youtube.com/watch?v=LRPy8UZv9V0',
     category: 'energy',
     investment_goal_cents: 1000000,
-    current_investment_sum: 7523,
+    current_investment_sum_cents: 7523,
     address: 'Berlin',
     user_id: loretta.id,
 )
@@ -58,7 +58,7 @@ project3 = Project.new(
     video: 'https://www.youtube.com/watch?v=EXGxUCxrL04',
     category: 'animals',
     investment_goal_cents: 1629300,
-    current_investment_sum: 5823,
+    current_investment_sum_cents: 5823,
     address: 'Dresden',
     user_id: jonas.id,
 )
@@ -73,7 +73,7 @@ project4 = Project.new(
     video: 'https://www.youtube.com/watch?v=9vFJHQxPbDY',
     category: 'plastic alternatives',
     investment_goal_cents: 2862300,
-    current_investment_sum: 2365,
+    current_investment_sum_cents: 2365,
     address: 'Hamburg',
     user_id: daniel.id,
 )

@@ -8,7 +8,7 @@ class InvestmentsController < ApplicationController
     @investment = Investment.new(investment_params)
     @project = Project.find(params[:project_id])
 
-    # current_investment_sum is calculated as callback in Investment
+    # current_investment_sum_cents is calculated as callback in Investment
 
     @investment.user = current_user
     @investment.project = @project

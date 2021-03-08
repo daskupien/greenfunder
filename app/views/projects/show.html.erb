@@ -34,7 +34,7 @@
         <div class="progress-status">
           <div class="d-flex justify-content-between">
             <h4>Currently Invested : </h4>
-            <H4><%= @project.current_investment_sum %> €</h4>
+            <H4><%= humanized_money_with_symbol(@project.current_investment_sum_cents) %></h4>
           </div>
           <div class="d-flex justify-content-between">
             <h4>Goal : </h4>
