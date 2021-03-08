@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_103220) do
+ActiveRecord::Schema.define(version: 2021_03_08_113930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_03_05_103220) do
     t.string "video"
     t.string "image"
     t.string "category"
-    t.integer "investment_goal"
     t.date "investment_goal_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -63,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_03_05_103220) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.integer "investment_goal_cents", default: 0, null: false
+    t.string "investment_goal_currency", default: "EUR", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 

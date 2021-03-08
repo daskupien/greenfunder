@@ -22,7 +22,7 @@
               </div>
               <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'] %>
               <%= f.input :address, placeholder: "Berlin" %>
-              <%= f.input :investment_goal, placeholder: "e.g. 10.000€" %>
+              <%= f.input :investment_goal_cents, placeholder: "e.g. 10.000€" %>
               <%= f.input :investment_goal_date, as: :date, start_year: Date.today.year,
                                     end_year: Date.today.year + 1,
                                     order: [:day, :month, :year] %>

@@ -36,6 +36,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'cloudinary'
 gem 'pg_search', '~> 2.3.0'
+gem 'money-rails', '~>1.12'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

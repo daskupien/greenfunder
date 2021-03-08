@@ -1,19 +1,24 @@
+<%# SUB HERO BANNER %>
+<div class="project-sub-banner d-flex justify-content-around align-items-center">
+  <div>
+    <h1><i class="far fa-lightbulb"></i> <%= @project.name %> <i class="far fa-lightbulb"></i></h1>
+    <br>
+    <h3><strong>"<%= @project.punchline %>"</strong></h3>
+  </div>
+  <div class="project-sub-banner-video">
+    <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+  </div>
+</div>
+
+<%# MAIN CONTENT %>
 <div class="container-wide">
-
   <div class="container-general">
-    <h1 class="project-name"><i class="far fa-lightbulb"></i> <%= @project.name %> <i class="far fa-lightbulb"></i></h1>
-    <div class="project-sub-banner d-flex justify-content-between">
-      <div class="project-sub-banner-punchline">
-        <h3><strong>"<%= @project.punchline %>"</strong></h3>
-      </div>
-      <div class="project-sub-banner-video">
-        <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-      </div>
-    </div>
-
+  
     <div class="project-content">
 
-      <div class="project-progress">
+      <div class="project-progress-all text-center">
+        <h2>Booster Bar</h2>
+        <br>
         <div class="progress">
           <div class="progress-bar"
             role="progressbar"
@@ -28,55 +33,57 @@
 
         <div class="progress-status">
           <div class="d-flex justify-content-between">
-            <h4>CURRENTLY INVESTED : </h4>
+            <h4>Currently Invested : </h4>
             <H4><%= @project.current_investment_sum %> €</h4>
           </div>
           <div class="d-flex justify-content-between">
-            <h4>GOAL : </h4>
-            <H4><%= @project.investment_goal %> €</H4>
+            <h4>Goal : </h4>
+            <H4><%= humanized_money_with_symbol(@project.investment_goal) %></H4>
           </div>
         </div>
-
-        <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-card-project", style: "height: 55px; font-size: 24px;" %>
-
+        <div class="text-center">
+          <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px", data: { turbolinks: false } %>
+        </div>
       </div>
 
-
-
       <div class="project-paragraph">
+
+        <!-- <% if @project %>
+
+        <% end %> -->
+
         <%= link_to cl_image_tag(@project.image.key), user_path(current_user), class: "project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <h3 style="text-align: center; margin: 20px; margin-top: 45px;">"<%= @project.punchline %>"</h3>
+        <h2 style="text-align: center; margin: 45px 20px">"<%= @project.punchline %>"</h2>
           <div class="project-category-goal d-flex">
             <li class="project-category">
               <p class="p-sub">Category</p>
-              <p class="p-con"><%= @project.category %></p>
+              <p class="p-con"><%= @project.category.capitalize %></p>
             </li>
             <li class="project-goal">
               <p class="p-sub">Investment goal</p>
-              <p class="p-con"><%= @project.investment_goal %>€</p>
+              <p class="p-con"><%= humanized_money_with_symbol(@project.investment_goal) %></p>
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>
-            <div id="map"
-       style="width: 100%; height: 300px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
-  </div>
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
-          <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-card-project", style: "height: 55px; font-size: 24px;" %>
-        </ul>
-
-        <div class="project-other-option">
-          <h5 style="text-align: center;">Want to check other projects?</h5>
-          <div class="project-other-btn">
-            <%= link_to "back", projects_path, class: "btn-normal-green" %>
-            <%= link_to "home", root_path, class: "btn-normal-white" %>
+          <div class="text-center">
+            <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px" %>
           </div>
+        </ul>
+      </div>
+
+      <div class="project-other-option d-flex justify-content-around text-center">
+        <div>
+          <h5>Want to see other Projects?</h5>
+        </div>
+        <div class="project-other-btn">
+          <%= link_to "back", projects_path, class: "btn-normal-green" %>
+          <%= link_to "home", root_path, class: "btn-normal-white" %>
         </div>
       </div>
+
     </div>
   </div>
-
 </div>
 
 
