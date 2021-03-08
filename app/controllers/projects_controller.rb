@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  
+
   def index
     if params[:query].present?
       sql_query = "category ILIKE :query OR address ILIKE :query"
@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @investment = Investment.new
-    current_investment_sum = @project.current_investment_sum
+    current_investment_sum = @project.current_investment_sum_cents
     investment_goal = @project.investment_goal_cents
     @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0
   end
