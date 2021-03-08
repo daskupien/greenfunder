@@ -1,10 +1,9 @@
 .searchbar {
-  padding: 10px 20px;
   background-color: white;
   width: 487px;
   height: 50px;
-  position: absolute;
   border-radius: 69px;
+  position: absolute;
   top: 120px;
   left: 0;
   right: 0;
@@ -13,28 +12,18 @@
 }
 
 .search-form{
-  padding: 3px;
-  padding-left: 12px;
+  padding: 5px 4px 0 40px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .search-input {
-  margin-left: 11px;
   border: none;
   background: transparent;
   outline: none;
-  vertical-align: middle;
-  width: 397px;
-  padding-top: 0;
-  margin-top: -17px;
-  padding-bottom: 0;
+  padding-bottom: 5px;
 }
 
 .fa-search {
   font-size: 27px;
-  margin: -18px;
-  margin-left: -3px;
-  margin-top: -7px;
 }
