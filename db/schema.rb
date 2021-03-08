@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_113930) do
+ActiveRecord::Schema.define(version: 2021_03_08_145554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,12 @@ ActiveRecord::Schema.define(version: 2021_03_08_113930) do
 
   create_table "investments", force: :cascade do |t|
     t.string "comment"
-    t.integer "investment_amount"
     t.bigint "user_id", null: false
     t.bigint "project_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "investment_amount_cents", default: 0, null: false
+    t.string "investment_amount_currency", default: "EUR", null: false
     t.index ["project_id"], name: "index_investments_on_project_id"
     t.index ["user_id"], name: "index_investments_on_user_id"
   end

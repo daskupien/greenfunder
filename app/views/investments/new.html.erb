@@ -12,11 +12,11 @@
             </div>
             <div class="investment-form">
               <%= simple_form_for [ @project, @investment ] do |f| %>
-                <%= f.input :investment_amount, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
+                <%= f.input :investment_amount_cents, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
               <% end %>
                 <button class="btn-card-project">Pay</button>
-                
-              
+
+
             </div>
           </div>
 
@@ -74,7 +74,7 @@
 
   $('.btn-card-project').on('click', function(e) {
     // Open Checkout with further options
-    var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount]"]').val());
+    var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount_cents]"]').val());
     handler.open({
       name: '<%= @project.name %>',
       description: 'Invest in this project',

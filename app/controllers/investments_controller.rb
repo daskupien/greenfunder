@@ -8,10 +8,8 @@ class InvestmentsController < ApplicationController
     @investment = Investment.new(investment_params)
     @project = Project.find(params[:project_id])
 
-    # TODO create this as a callback
-    new_investment_sum = @investment.investment_amount + @project.current_investment_sum
-    @project.current_investment_sum = new_investment_sum
-    @project.save
+    # current_investment_sum is calculated as callback in Investment
+
     @investment.user = current_user
     @investment.project = @project
     if @investment.save
@@ -24,6 +22,6 @@ class InvestmentsController < ApplicationController
   private
 
   def investment_params
-    params.require(:investment).permit(:comment, :investment_amount)
+    params.require(:investment).permit(:comment, :investment_amount_cents)
   end
 end
