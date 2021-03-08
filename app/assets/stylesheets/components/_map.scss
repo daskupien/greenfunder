@@ -12,6 +12,14 @@
   flex-wrap: wrap;
 }
 
+#map-home {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .mapboxgl-popup {
   width: 250px;
   height: 200px;

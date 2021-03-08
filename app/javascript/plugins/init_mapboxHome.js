@@ -7,18 +7,18 @@ const buildMap = (mapElement) => {
     container: "map-home",
     style: "mapbox://styles/jonnasson/ckm0fg0iz1sci17linzzr96nq",
     interactive: false,
-    center: [50, 48],
-    zoom: 3,
+    // center: [50, 48],
+    // zoom: 3,
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup({
-      offset: [0, 0],
-      closeButton: false,
-      showCompass: false,
-    }).setHTML(marker.infoWindow); // add this
+    // const popup = new mapboxgl.Popup({
+    //   offset: [0, 0],
+    //   closeButton: false,
+    //   showCompass: false,
+    // }).setHTML(marker.infoWindow); // add this
 
     const element = document.createElement("div");
     element.className = "marker";
@@ -34,11 +34,11 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
-// const fitMapToMarkers = (map, markers) => {
-//   const bounds = new mapboxgl.LngLatBounds();
-//   markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
-//   map.fitBounds(bounds, { padding: 60, zoom: 5, maxZoom: 15 });
-// };
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
+  map.fitBounds(bounds, { padding: 60, zoom: 4.2, maxZoom: 15 });
+};
 
 const initMapboxHome = () => {
   const mapElement = document.getElementById("map-home");
@@ -46,7 +46,7 @@ const initMapboxHome = () => {
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
-    // fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers);
   }
 };
 
