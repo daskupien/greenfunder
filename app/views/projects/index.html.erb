@@ -25,7 +25,7 @@
           <%= link_to cl_image_tag(project.image.key), user_path(current_user), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="card-project-content">
             <h3 class="card-project-title"><%= project.name %></h3>
-            <p class="card-project-category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category %></p>
+            <p class="card-project-category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
             <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
             <h6 class="card-project-punchline">"<%= project.punchline %>"</h6>
             <div class="card-project-progress-all">
@@ -44,7 +44,7 @@
                 </div>
               </div>
              </div>
-            <p class="card-project-goal">goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+            <p class="card-project-goal">Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
             <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
           </div>
         </div>
