@@ -11,4 +11,9 @@ class Project < ApplicationRecord
     }
 
   monetize :investment_goal_cents
+
+  # def calculate_current_investment
+
+  # end
 end
+# random comment can be deleted
