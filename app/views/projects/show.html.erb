@@ -1,12 +1,9 @@
 <%# SUB HERO BANNER %>
-<div class="project-sub-banner d-flex justify-content-around align-items-center">
-  <div>
-    <h1><i class="far fa-lightbulb"></i> <%= @project.name %> <i class="far fa-lightbulb"></i></h1>
+<div class="project-sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
+  <div class="project-sub-text">
+    <h1><!-- <i class="far fa-lightbulb"> --></i> <%= @project.name %> <!-- <i class="far fa-lightbulb"> --></i></h1>
     <br>
-    <h3><strong>"<%= @project.punchline %>"</strong></h3>
-  </div>
-  <div class="project-sub-banner-video">
-    <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+    <h3>"<%= @project.punchline %>"</h3>
   </div>
 </div>
 
@@ -36,6 +33,7 @@
             <h4>Currently Invested : </h4>
             <H4><%= humanized_money_with_symbol(@project.current_investment_sum_cents) %></h4>
           </div>
+          <br>
           <div class="d-flex justify-content-between">
             <h4>Goal : </h4>
             <H4><%= humanized_money_with_symbol(@project.investment_goal_cents) %></H4>
@@ -47,12 +45,9 @@
       </div>
 
       <div class="project-paragraph">
-
-        <!-- <% if @project %>
-
-        <% end %> -->
-
-        <%= link_to cl_image_tag(@project.image.key), user_path(current_user), class: "project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="text-center">
+          <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        </div>
         <h2 style="text-align: center; margin: 45px 20px">"<%= @project.punchline %>"</h2>
           <div class="project-category-goal d-flex">
             <li class="project-category">
