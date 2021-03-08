@@ -15,7 +15,9 @@
   <div class="container-general">
     <div class="project-content">
 
-      <div class="project-progress-all">
+      <div class="project-progress-all text-center">
+        <h2>Booster Bar</h2>
+        <br>
         <div class="progress">
           <div class="progress-bar"
             role="progressbar"
@@ -39,17 +41,17 @@
           </div>
         </div>
         <div class="text-center">
-          <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px", data: { turbolinks: false } %>
+          <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px", data: { turbolinks: false } %>
         </div>
       </div>
 
       <div class="project-paragraph">
         <%= link_to cl_image_tag(@project.image.key), user_path(current_user), class: "project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <h3 style="text-align: center; margin: 20px; margin-top: 45px;">"<%= @project.punchline %>"</h3>
+        <h2 style="text-align: center; margin: 45px 20px">"<%= @project.punchline %>"</h2>
           <div class="project-category-goal d-flex">
             <li class="project-category">
               <p class="p-sub">Category</p>
-              <p class="p-con"><%= @project.category %></p>
+              <p class="p-con"><%= @project.category.capitalize %></p>
             </li>
             <li class="project-goal">
               <p class="p-sub">Investment goal</p>
@@ -57,11 +59,6 @@
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>
-            <div id="map"
-       style="width: 100%; height: 300px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
-  </div>
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <div class="text-center">
             <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px" %>
