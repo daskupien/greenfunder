@@ -5,7 +5,7 @@
   width: 140px;
   border: 1px solid;
   border-color: $master;
-  background-color: $master-opacity;
+  background-color: $master;
   color: white;
   border-radius: $border-radius;
   text-align: center;
@@ -17,7 +17,7 @@
   font-weight: bold;
   text-decoration: none;
   color: white;
-  background-color: $master;
+  background-color: $master-opacity;
 }
 
 .btn-normal-white {
