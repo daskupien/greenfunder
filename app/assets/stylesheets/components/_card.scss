@@ -153,11 +153,18 @@
 }
 
 .project-content {
-  padding: 40px;
+  padding: 40px 0;
 }
 
 .project-content li {
   list-style-type: none;
+}
+
+.project-progress-all  {
+  padding: 40px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  margin-bottom: 40px;
 }
 
 .project-paragraph {
@@ -198,7 +205,7 @@
 
 .project-other-option {
   display: flex;
-  margin-top: 94px;
+  margin-top: 60px;
   justify-content: space-around;
 }
 
