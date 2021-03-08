@@ -48,12 +48,8 @@
       </li>
 
     <% else %>
-      <li class="btn-normal-white-nav log-in">
-        <%= link_to "Log in", new_user_session_path, class: "nav-link", data: { turbolinks: false } %>
-      </li>
-      <li class="btn-normal-green-nav register">
-        <%= link_to "Register", new_user_registration_path, class: "nav-link", data: { turbolinks: false } %>
-      </li>
+      <%= link_to "Log in", new_user_session_path, class: "btn-normal-white log-in", data: { turbolinks: false } %>
+      <%= link_to "Register", new_user_registration_path,class: "btn-normal-green register", data: { turbolinks: false } %>
     <% end %>
   </div>
 </div>
