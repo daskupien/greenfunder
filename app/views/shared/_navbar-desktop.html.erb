@@ -1,19 +1,18 @@
 
 <div class="navbar positon-fixed navbar-expand-sm">
+
+
   <div class="d-flex justify-content-start taps">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614698393/logo_aghnot.png") %>
     <% end %>
-
-    <li class="nav-item">
-        <%= link_to "All projects", projects_path, class: "nav-link", data: { turbolinks: false } %>
-    </li>
+    <%= link_to "All projects", projects_path, class: "nav-link", data: { turbolinks: false } %>
 
     <div class="dropdown nav-item">
       <button type="button" class="btn dropdown-toggle dropdown-button" data-toggle="dropdown">
         Categories
       </button>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu nav-dropdown">
         <p class="dropdown-item d-flex"><i class="fas fa-seedling category-dropdown-icon"></i><%= link_to "Planting", "/projects?query=planting", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
         <p class="dropdown-item d-flex"><i class="fas fa-solar-panel category-dropdown-icon"></i><%= link_to "Energy", "/projects?query=energy", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
         <p class="dropdown-item d-flex"><i class="fab fa-forumbee category-dropdown-icon"></i><%= link_to "Animals", "/projects?query=animals", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
@@ -21,14 +20,11 @@
 
       </div>
     </div>
-
-    <li class="nav-item">
-        <%= link_to "About Us", about_path, class: "nav-link", data: { turbolinks: false }  %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Create Project", new_project_path, class: "nav-link", data: { turbolinks: false } %>
-    </li>
+    <%= link_to "About Us", about_path, class: "nav-link", data: { turbolinks: false }  %>
+    <%= link_to "Create Project", new_project_path, class: "nav-link", data: { turbolinks: false } %>
   </div>
+
+
 
    <div class="d-flex justify-content-end account">
     <% if user_signed_in? %>
