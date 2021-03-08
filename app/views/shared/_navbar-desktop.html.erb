@@ -6,7 +6,7 @@
     <% end %>
 
     <li class="nav-item">
-        <%= link_to "All projects", projects_path, class: "nav-link" %>
+        <%= link_to "All projects", projects_path, class: "nav-link", data: { turbolinks: false } %>
     </li>
 
     <div class="dropdown nav-item">
@@ -14,21 +14,19 @@
         Categories
       </button>
       <div class="dropdown-menu">
-        <p class="dropdown-item d-flex"><i class="fas fa-seedling category-dropdown-icon"></i><%= link_to "Planting", "/projects?query=planting", class: "nav-link category-dropdown-link" %></p>
-        <p class="dropdown-item d-flex"><i class="fas fa-solar-panel category-dropdown-icon"></i><%= link_to "Energy", "/projects?query=energy", class: "nav-link category-dropdown-link" %></p>
-        <p class="dropdown-item d-flex"><i class="fab fa-forumbee category-dropdown-icon"></i><%= link_to "Animals", "/projects?query=animals", class: "nav-link category-dropdown-link" %></p>
-        <p class="dropdown-item d-flex"><i class="fas fa-box-open category-dropdown-icon"></i><%= link_to "Plastic alternatives", "/projects?query=plastic+alternatives", class: "nav-link category-dropdown-link" %></p>
+        <p class="dropdown-item d-flex"><i class="fas fa-seedling category-dropdown-icon"></i><%= link_to "Planting", "/projects?query=planting", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
+        <p class="dropdown-item d-flex"><i class="fas fa-solar-panel category-dropdown-icon"></i><%= link_to "Energy", "/projects?query=energy", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
+        <p class="dropdown-item d-flex"><i class="fab fa-forumbee category-dropdown-icon"></i><%= link_to "Animals", "/projects?query=animals", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
+        <p class="dropdown-item d-flex"><i class="fas fa-box-open category-dropdown-icon"></i><%= link_to "Plastic alternatives", "/projects?query=plastic+alternatives", class: "nav-link category-dropdown-link", data: { turbolinks: false } %></p>
 
       </div>
     </div>
 
-
     <li class="nav-item">
-        <%= link_to "About Us", about_path, class: "nav-link" %>
+        <%= link_to "About Us", about_path, class: "nav-link", data: { turbolinks: false }  %>
     </li>
-
     <li class="nav-item">
-      <%= link_to "Create Project", new_project_path, class: "nav-link" %>
+      <%= link_to "Create Project", new_project_path, class: "nav-link", data: { turbolinks: false } %>
     </li>
   </div>
 
@@ -54,7 +52,7 @@
         <%= link_to "Log in", new_user_session_path, class: "nav-link", data: { turbolinks: false } %>
       </li>
       <li class="btn-normal-green-nav register">
-        <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
+        <%= link_to "Register", new_user_registration_path, class: "nav-link", data: { turbolinks: false } %>
       </li>
     <% end %>
   </div>
