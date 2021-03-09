@@ -2,22 +2,25 @@
   <div class="project-container">
     <div class="cards-projects-all">
 
-      <%# SEARCH BAR %>
-      <%# deleted class 'searchbar' for now, so it is a own row %>
-      <div class="">
-        <%= form_tag projects_path, class: "search-form", method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-input",
-            placeholder: "Search for category..."
-          %>
-          <%= button_tag(type: "submit", class: "btn btn-default") do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        <% end %>
+      <%# SUB HERO BANNER %>
+      <div class="sub-banner-index">
+        <div class="sub-text-index">
+          <h1>Check out our Projects</h1>
+          <h4>and make your BOOST for a green planet!</h4>
+          <div class="searchbar-subhero">
+            <%= form_tag projects_path, class: "search-form", method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "search-input search-input-subhero",
+                placeholder: "Search..."
+              %>
+              <%= button_tag(type: "submit", class: "btn btn-default") do %>
+                <i class="fas fa-search"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
-
-      <h1 style="padding: 78px 109px 30px 30px;">Check out our awesome projects <br> and make the first move for the planet!</h1>
 
       <%# PROJECTS %>
       <% @projects.each do |project| %>
@@ -46,7 +49,7 @@
              </div>
             <p class="card-project-goal"><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
             <% if project.user != current_user %>
-              <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
+              <%= link_to "Boost now", project_path(project), class: "btn-normal-green w-100" %>
               <% else %>
               <%= link_to "Show project", project_path(project), class: "btn-normal-green w-100" %>
             <% end %>
@@ -60,5 +63,4 @@
          data-mapbox-api-key="pk.eyJ1Ijoiam9ubmFzc29uIiwiYSI6ImNrbHRjNWw0MTE3a2wyb2xsZTZkbzN1cHEifQ.Bn8A3OsroPo72zNpSH5LxA">
     </div>
   </div>
-
 </div>
