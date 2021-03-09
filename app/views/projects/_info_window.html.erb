@@ -3,7 +3,11 @@
         <a href="<%= project_path(project)%>" target="_blank">
             <div class="map-popup">
                 <div class="map-img">
+                <% if project.image.attached? %>
                     <%= cl_image_tag(project.image.key, :height=>40) %>
+                <% else %>
+                    <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg", :height=>40)%>
+                <% end %>
                 </div>
                 <div class="map-meta">
                     <h4><%= project.name %></h4>

@@ -79,6 +79,10 @@
   margin: 0px;
 }
 
+.marker {
+  background-repeat: no-repeat !important;
+  fill-opacity: 10%;
+}
 .marker:hover {
   cursor: pointer;
 }
