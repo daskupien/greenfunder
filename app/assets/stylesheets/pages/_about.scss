@@ -11,7 +11,7 @@
   margin: 0 auto;
   width: 100%;
   padding-top: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 45px;
   background-size: cover;
 }
 
@@ -19,25 +19,33 @@
 .about-us-title {
   width: 50%;
   margin: 0 auto;
-  font-size: 55px;
   padding: 30px;
   padding-top: 40px;
   color: white;
-  border-bottom: 1px solid;
+
+  h1 {
+    font-size: 55px;
+    color: white;
+    padding-bottom: 35px;
+  }
+
+  h3 {
+    color: white;
+  }
 }
 
-.about-us-sub-content {
+.about-us-content {
   margin: 0 auto;
   width: 900px;
+  height: 310px;
+  margin-top: 45px;
 
   h1 {
     padding-top: 40px;
-    color: white;
   }
 
   p {
     width: 300px;
-    color: white;
     align-content: center;
     height: 80px;
     padding: 10px;
@@ -51,18 +59,28 @@
 }
 
 .about-us-card {
+  width: 300px;
   margin-bottom: 40px;
-  background-color: rgba(249, 252, 250, 0.7);
   box-shadow: $box-shadow;
   border-radius: $border-radius;
 }
 
 .about-img {
-  height: 400px;
-  padding: 16px 0px;
+  height: 250px;
+  width: 300px;
   object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.about-body {
+  margin: 25px;
 }
 
 .about-name {
   font-size: 24px;
+}
+
+.about-boost {
+  margin: 65px;
 }
