@@ -1,18 +1,16 @@
 // Specific CSS for your about us page
 .about-us {
-//   background: url(
-// https://res.cloudinary.com/rentmylife/image/upload/v1615285071/assets/daniil-silantev-F6Da4r2x5to-unsplash_ihkccn.jpg );
-//   background-size: cover;
   text-align: center;
 }
 
 .about-us-sub-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg');
+  background-image: url('https://res.cloudinary.com/rentmylife/image/upload/v1615305170/assets/photo-1593456262749-da640d87fcc0_vw6zvf.jpg');
   margin: 0 auto;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 45px;
   background-size: cover;
+  background-position: center;
 }
 
 
@@ -31,6 +29,7 @@
 
   h3 {
     color: white;
+    margin-bottom: 20px;
   }
 }
 
@@ -82,5 +81,9 @@
 }
 
 .about-boost {
-  margin: 65px;
+  padding: 65px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
 }
