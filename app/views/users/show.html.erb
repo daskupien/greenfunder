@@ -81,7 +81,7 @@
                     </div>
                       <div class="card-project-infos">
                         <h2><%= link_to project.name, project_path(project) %></h2>
-                        <p><strong>Category:</strong> <%= project.category %></p>
+                        <p><strong>Category:</strong> <%= project.category.capitalize %></p>
                         <p><strong>Investment Goal:</strong> <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
                       </div>
                     <div class="btn-profile">
