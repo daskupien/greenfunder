@@ -20,10 +20,12 @@
               <%= f.input :name, placeholder: "Our awesome project" %>
               <%= f.input :punchline, placeholder: "We aim to save the world" %>
               <%= f.input :description, placeholder: "Cool description" %>
-              <div>
-                <%= f.label "Photos" %>
-                <br>
-                <%= f.file_field :image, direct_upload: true %>
+              <%= f.label "Photo" %>
+              <div style="">
+                <div class="upload-preview" >
+                  <img style="width: 100px; height: 100px; border: 0px solid; margin-bottom: 10px; border-radius:5px;"/>
+                </div>
+                <%= f.file_field :image, direct_upload: true%>
               </div>
               <br>
               <div>
@@ -31,7 +33,7 @@
               </div>
               <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'] %>
               <%= f.input :address, placeholder: "Berlin" %>
-              <%= f.input :investment_goal_cents, placeholder: "e.g. 10.000€" %>
+              <%= f.input :investment_goal_cents, :label => "Investment Goal" %>
               <%= f.input :investment_goal_date, as: :date, start_year: Date.today.year,
                                     end_year: Date.today.year + 1,
                                     order: [:day, :month, :year] %>
@@ -45,3 +47,25 @@
     </div>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script>
+$(document).ready(function(){
+    var preview = $(".upload-preview img");
+
+    $("#project_image").change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+           image_base64 = e.target.result;
+           preview.attr("src", image_base64);
+       };
+       reader.readAsDataURL(file);
+    });
+});
+
+  $('input[type=file]').change(function(){
+      $(".upload-preview").show();
+  });
+</script>
