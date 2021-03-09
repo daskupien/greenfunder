@@ -81,6 +81,20 @@
     e.preventDefault();
   });
 
+    $('#investment_investment_amount_cents').on('keypress', function(e) {
+    // Open Checkout with further options
+    if (e.key === 'Enter') {
+      var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount_cents]"]').val());
+      handler.open({
+      name: '<%= @project.name %>',
+      description: 'Invest in this project',
+      amount: amount
+    });
+    e.preventDefault();
+    
+    }
+});
+
   // Close Checkout on page navigation
   $(window).on('popstate', function() {
     handler.close();

@@ -1,6 +1,6 @@
 <%# SUB HERO BANNER %>
-<div class="project-sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
-  <div class="project-sub-text">
+<div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
+  <div class="sub-text">
     <h1><!-- <i class="far fa-lightbulb"> --></i> <%= @project.name %> <!-- <i class="far fa-lightbulb"> --></i></h1>
     <br>
     <h3>"<%= @project.punchline %>"</h3>
@@ -40,7 +40,9 @@
           </div>
         </div>
         <div class="text-center">
-          <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px", data: { turbolinks: false } %>
+          <% if @project.user != current_user %>
+            <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px", data: { turbolinks: false } %>
+          <% end %>
         </div>
       </div>
 
@@ -62,7 +64,9 @@
           <li class="project-description"><%= @project.description %></li>
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <div class="text-center">
-            <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px" %>
+            <% if @project.user != current_user %>
+              <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px" %>
+            <% end %>
           </div>
         </ul>
       </div>
