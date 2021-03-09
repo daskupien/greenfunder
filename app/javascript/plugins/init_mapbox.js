@@ -24,6 +24,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.backgroundSize = "contain";
     element.style.width = "30px";
     element.style.height = "30px";
+    element.style.opacity = "0.65";
 
     new mapboxgl.Marker(element)
       .setLngLat([marker.lng, marker.lat])

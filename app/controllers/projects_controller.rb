@@ -15,7 +15,16 @@ class ProjectsController < ApplicationController
         lat: project.latitude,
         lng: project.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { project: project}),
-        image_url: helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1614858978/assets/tree-1578_t6y8ak.png')
+        image_url: 
+        if project.category == 'planting'
+        helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg')
+        elsif project.category == 'energy'
+         helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1615300158/assets/solar-panel-solid_qifuhb.svg')
+        elsif project.category == 'animals'
+          helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1615300194/assets/forumbee-brands_tdqp7f.svg')
+        elsif project.category == 'plastic alternatives'
+          helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1615300227/assets/box-open-solid_hh8yu2.svg')
+        end
       }
     end
   end
