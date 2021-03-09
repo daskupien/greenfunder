@@ -14,13 +14,13 @@
           <%# TABS %>
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorites</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="boosted-tab" data-toggle="tab" href="#boosted" role="tab" aria-controls="boosted" aria-selected="false">Boosted ideas</a>
+              <a class="nav-link active" id="boosted-tab" data-toggle="tab" href="#boosted" role="tab" aria-controls="boosted" aria-selected="false">Boosted ideas</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="false">My Projects</a>
@@ -29,7 +29,7 @@
           <div class="tab-content" id="myTabContent">
 
             <%# PROFILE tab content %>
-            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
               <div class="user-information">
                 <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
@@ -48,11 +48,8 @@
             </div>
 
             <%# BOOSTED IDEAS tab content %>
-            <div class="tab-pane fade" id="boosted" role="tabpanel" aria-labelledby="boosted-tab">
+            <div class="tab-pane fade show active" id="boosted" role="tabpanel" aria-labelledby="boosted-tab">
               <div class="profile-investments">
-                <div class="investments-header">
-                  <h2>My Investments</h2>
-                </div>
                 <div>
                   <% @investments.each do |investment| %>
                     <div>
@@ -77,25 +74,21 @@
             <%# MY PROJECTS tab content %>
             <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
               <div class="profile-projects">
-                <div class="projects-header">
-                  <h2>My Projects</h2>
-                </div>
-                  <% @projects.each do |project| %>
-                    <div class="card-profile-project d-flex justify-content-between w-100 align-items-center">
-                      <div>
-                        <%= cl_image_tag project.image.key, crop: :fill %>
-                      </div>
-                        <div class="card-project-infos">
-                          <h2><%= project.name %></h2>
-                          <p><strong>Category:</strong> <%= project.category %></p>
-                          <p><strong>Investment Goal:</strong> <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
-                        </div>
-                      <div class="btn-profile">
-                        <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
-                      </div>
+                <% @projects.each do |project| %>
+                  <div class="card-profile-project d-flex justify-content-between w-100 align-items-center">
+                    <div>
+                      <%= cl_image_tag project.image.key, crop: :fill %>
                     </div>
-                  <% end %>
-                </div>
+                      <div class="card-project-infos">
+                        <h2><%= link_to project.name, project_path(project) %></h2>
+                        <p><strong>Category:</strong> <%= project.category %></p>
+                        <p><strong>Investment Goal:</strong> <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+                      </div>
+                    <div class="btn-profile">
+                      <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
