@@ -91,8 +91,32 @@
   color: black;
 }
 
+.card-title {
+  height: 35px;
+}
+
+.card-text p {
+  margin: 0;
+}
+
+.category {
+  padding-bottom: 4px;
+}
+
+.address {
+  padding-bottom: 20px;
+}
+
+.punchline {
+  height: 65px;
+}
+
 .investment_goal {
   padding-bottom: 10px;
+}
+
+.investement_percentage {
+  text-align: end;
 }
 
 // PROJECTS CARDS
