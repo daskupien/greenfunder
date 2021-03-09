@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [ :home, :about ]
 
   def home
     @projects = Project.all
@@ -11,5 +11,8 @@ class PagesController < ApplicationController
         image_url: helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1614858978/assets/tree-1578_t6y8ak.png')
       }
     end
+  end
+
+  def about
   end
 end

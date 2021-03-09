@@ -22,7 +22,7 @@
       <%# PROJECTS %>
       <% @projects.each do |project| %>
         <div class="card-project">
-          <%= link_to cl_image_tag(project.image.key), user_path(current_user), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to cl_image_tag(project.image.key), project_path(project), class: "card-project-image", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="card-project-content">
             <h3 class="card-project-title"><%= project.name %></h3>
             <p class="card-project-category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
@@ -44,7 +44,7 @@
                 </div>
               </div>
              </div>
-            <p class="card-project-goal">Goal: <%= money_without_cents_and_with_symbol(project.investment_goal_cents) %></p>
+            <p class="card-project-goal"><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
             <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
           </div>
         </div>
