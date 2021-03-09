@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="text-center">
-          <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px", data: { turbolinks: false } %>
+          <%= link_to 'Become a Booster!', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px", data: { turbolinks: false } %>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
           <li class="project-description"><%= @project.description %></li>
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <div class="text-center">
-            <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-large-green", style: "width: 280px" %>
+            <%= link_to 'Invest in this project', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px" %>
           </div>
         </ul>
       </div>
