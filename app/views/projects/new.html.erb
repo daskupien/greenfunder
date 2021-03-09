@@ -25,16 +25,16 @@
                 <div class="upload-preview" >
                   <img style="width: 100px; height: 100px; border: 0px solid; margin-bottom: 10px; border-radius:5px;"/>
                 </div>
-                <%= f.file_field :image, direct_upload: true%>
+                <%= f.file_field :image, direct_upload: true, required: true%>
               </div>
               <br>
               <div>
                 <%= f.input :video, :label => "YouTube Video" , placeholder: "https://www.youtube.com/watch?v=Ubjq7DaP6Yc" %>
               </div>
-              <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'] %>
-              <%= f.input :address, placeholder: "Berlin" %>
-              <%= f.input :investment_goal_cents, :label => "Investment Goal" %>
-              <%= f.input :investment_goal_date, as: :date, start_year: Date.today.year,
+              <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'], required: true%>
+              <%= f.input :address, placeholder: "Berlin", required: true %>
+              <%= f.input :investment_goal_cents, :label => "Investment Goal", required: true%>
+              <%= f.input :investment_goal_date, as: :date, required: true, start_year: Date.today.year,
                                     end_year: Date.today.year + 1,
                                     order: [:day, :month, :year] %>
           </div>
