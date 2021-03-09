@@ -21,7 +21,7 @@ const addMarkersToMap = (map, markers) => {
     // }).setHTML(marker.infoWindow); // add this
 
     const element = document.createElement("div");
-    element.className = "marker";
+    element.className = "markerhome";
     element.style.width = "30px";
     element.style.height = "30px";
     element.style.border = "0px solid";
