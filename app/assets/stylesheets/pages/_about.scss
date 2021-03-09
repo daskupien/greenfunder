@@ -1,12 +1,17 @@
 // Specific CSS for your about us page
 .about-us {
-  background-color: #073B3A;
+//   background: url(
+// https://res.cloudinary.com/rentmylife/image/upload/v1615285071/assets/daniil-silantev-F6Da4r2x5to-unsplash_ihkccn.jpg );
+//   background-size: cover;
+  background-color: $master;
   text-align: center;
 }
 
 .about-us-title {
+  width: 50%;
+  margin: 0 auto;
   font-size: 64px;
-  padding: 70px;
+  padding: 30px;
   color: white;
   border-bottom: 1px solid;
 }
@@ -14,22 +19,34 @@
 .about-us-sub-banner {
   margin: 0 auto;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 50px;
 
   h1 {
+    padding-top: 40px;
     color: white;
   }
 
   p {
     color: white;
     align-content: center;
-    height: 125px;
+    height: 80px;
     padding: 10px;
     margin: 15px;
   }
 }
 
+.about-img {
+  height: 400px;
+  padding: 16px 0px;
+  object-fit: cover;
+}
+
+.about-name {
+  font-size: 24px;
+}
+
 .about-us-card {
   margin-bottom: 40px;
+  background-color: rgba(249, 252, 250, 0.7);
 }
