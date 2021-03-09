@@ -6,8 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 User.destroy_all
 Project.destroy_all
+
+puts 'creating faker user'
+
+faker = User.create!(email: 'faker@greenfunder.de', password: '123456', first_name: 'Faker', last_name: 'User', address: 'Nürnberg')
+
 
 puts 'creating users'
 
@@ -18,6 +25,7 @@ loretta = User.create!(email: 'loretta@greenfunder.de', password: '123456', firs
 jonas = User.create!(email: 'jonas@greenfunder.de', password: '123456', first_name: 'Jonas', last_name: 'K.', address: 'Berlin Street')
 
 daniel = User.create!(email: 'daniel@greenfunder.de', password: '123456', first_name: 'Daniel', last_name: 'Skupien', address: 'Berlin Street')
+
 
 puts 'creating projects'
 
@@ -80,6 +88,89 @@ project4 = Project.new(
 file = URI.open('https://takeawaypackaging.co.uk/wp-content/uploads/2019/04/small_no_plastics.jpg')
 project4.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg')
 project4.save
+
+# FAKERS
+
+# Planting
+puts 'creating 3 planting faker projects'
+3.times do
+  faker_project = Project.new(
+    name: "FAKE Planting Project",
+    punchline: 'We will make the world much less platic poluted',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: 'planting',
+    investment_goal_cents: Faker::Number.between(from: 8000, to: 10000),
+    current_investment_sum_cents: Faker::Number.between(from: 100, to: 7999),
+    address: 'Jena',
+    user_id: faker.id,
+  )
+  file = URI.open('https://reformedforum.org/wp-content/blogs.dir/1/files/2015/01/shutterstock_154639625-e1423258271198.jpg')
+  faker_project.image.attach(io: file, filename: 'faker_planting.jpg', content_type: 'image/jpg')
+  faker_project.save
+end
+
+# Energy
+puts 'creating 3 animal faker projects'
+3.times do
+  faker_project = Project.new(
+    name: "FAKE Energy Project",
+    punchline: 'We will make the world much less platic poluted',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: 'energy',
+    investment_goal_cents: Faker::Number.between(from: 90000, to: 100000),
+    current_investment_sum_cents: Faker::Number.between(from: 1000, to: 89999),
+    address: 'Bremen',
+    user_id: faker.id,
+  )
+  file = URI.open('https://energywatch-inc.com/wp-content/uploads/2015/05/Power-Generation-Picture.jpg')
+  faker_project.image.attach(io: file, filename: 'faker_energy.jpg', content_type: 'image/jpg')
+  faker_project.save
+end
+
+# Animals
+puts 'creating 3 animal faker projects'
+3.times do
+  faker_project = Project.new(
+    name: "FAKE Animal Project",
+    punchline: 'We will make the world much less platic poluted',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: 'animals',
+    investment_goal_cents: Faker::Number.between(from: 8000, to: 10000),
+    current_investment_sum_cents: Faker::Number.between(from: 100, to: 7999),
+    address: 'Dortmund',
+    user_id: faker.id,
+  )
+  file = URI.open('https://virginiazoo.org/wp-content/uploads/2015/07/honeybees.jpg')
+  faker_project.image.attach(io: file, filename: 'faker_animals.jpg', content_type: 'image/jpg')
+  faker_project.save
+end
+
+# Plastic alternatives
+puts 'creating 3 plastic alternatives faker projects'
+3.times do
+  faker_project = Project.new(
+    name: "FAKE Animal Project",
+    punchline: 'We will make the world much less platic poluted',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: 'plastic alternatives',
+    investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
+    current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
+    address: 'Stuttgart',
+    user_id: faker.id,
+  )
+  file = URI.open('https://s3files.core77.com/blog/images/689444_81_68988_NIPwfF3mB.jpg')
+  faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
+  faker_project.save
+end
+
+
+# puts 'installing 200 faker projects'
+
+
 
 puts 'seed finished'
 
