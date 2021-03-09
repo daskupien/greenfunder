@@ -45,7 +45,11 @@
               </div>
              </div>
             <p class="card-project-goal"><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
-            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
+            <% if project.user != current_user %>
+              <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100" %>
+              <% else %>
+              <%= link_to "Show project", project_path(project), class: "btn-normal-green w-100" %>
+            <% end %>
           </div>
         </div>
       <% end %>
