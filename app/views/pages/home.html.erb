@@ -1,28 +1,28 @@
-<div class="container-wide">
-  <div class="hero-banner">
-    <%# SEARCHBAR #%>
-    <div class="searchbar">
-      <%= form_tag projects_path, class: "search-form", method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "search-input",
-          placeholder: "Search for category..."
-        %>
-        <%= button_tag(type: "submit", class: "btn btn-default", data: { turbolinks: false }) do %>
-          <i class="fas fa-search"></i>
-        <% end %>
+<div class="hero-banner">
+  <%# SEARCHBAR #%>
+  <div class="searchbar">
+    <%= form_tag projects_path, class: "search-form", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "search-input",
+        placeholder: "Search for category..."
+      %>
+      <%= button_tag(type: "submit", class: "btn btn-default", data: { turbolinks: false }) do %>
+        <i class="fas fa-search"></i>
       <% end %>
-    </div>
-    <div class="hero-content">
-      <h1>Green Booster</h1>
-      <h3>investing green to make our world better</h3>
-    </div>
-    <div class="hero-buttons text-center">
-      <%= link_to "Invest Now", projects_path, class: "btn-large-white btn-hero", data: { turbolinks: false } %>
-      <%= link_to "Create Project", new_project_path, class: "btn-large-green btn-hero", data: { turbolinks: false } %>
-    </div>
+    <% end %>
   </div>
+  <div class="hero-content">
+    <h1>Green Booster</h1>
+    <h3>investing green to make our world better</h3>
+  </div>
+  <div class="hero-buttons text-center">
+    <%= link_to "Invest Now", projects_path, class: "btn-large-white btn-hero", data: { turbolinks: false } %>
+    <%= link_to "Create Project", new_project_path, class: "btn-large-green btn-hero", data: { turbolinks: false } %>
+  </div>
+</div>
 
+<div class="container-wide">
   <div class="container-home">
     <%# HOW INVESTING WORKS %>
     <h2 class="cards-hiw-header text-center">How To Invest</h2>
@@ -75,60 +75,57 @@
     </div>
   </div>
 
-    <%# CARDS HOME %>
-    <h2 class="card-home-header text-center">Recommended Projects</h2>
-    <div class="card-home-all">
-      <% @projects.first(4).each do | project | %>
-        <div class="card-home">
-          <% if project.image.attached? %>
-            <div class="card-home-image">
-              <div class="picture-layer"></div>
-              <%= cl_image_tag project.image.key, crop: :fill %>
-            </div>
-          <% else %>
-            <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
-            </div>
-          <% end %>
-          <div class="card-content">
-            <h4 class="card-title"><%= project.name %></h4>
-            <div class="card-text">
-
-              <p class="category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
-              <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
-              <h6 class="punchline">"<%= project.punchline %>"</h6>
-
-              <p class="investment_goal"><i class="fas fa-money-bill-wave"></i>  Investment Goal:<%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
-              <div class="home-progress">
-                <% current_investment_sum = project.current_investment_sum_cents
-                investment_goal = project.investment_goal_cents
-                @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
-                <div class="project-progress">
-                  <div class="progress">
-                    <div class="progress-bar"
-                          role="progressbar"
-                          style="width: <%= @investement_percentage %>%"
-                          aria-valuenow="25"
-                          aria-valuemin="0"
-                          aria-valuemax="100">
-                    </div>
+  <%# CARDS HOME %>
+  <h2 class="card-home-header text-center">Recommended Projects</h2>
+  <div class="card-home-all">
+    <% @projects.first(4).each do | project | %>
+      <div class="card-home">
+        <% if project.image.attached? %>
+          <div class="card-home-image">
+            <div class="picture-layer"></div>
+            <%= cl_image_tag project.image.key, crop: :fill %>
+          </div>
+        <% else %>
+          <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
+          </div>
+        <% end %>
+        <div class="card-content">
+          <h4 class="card-title"><%= project.name %></h4>
+          <div class="card-text">
+            <p class="category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
+            <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
+            <h6 class="punchline">"<%= project.punchline %>"</h6>
+            <p class="investment_goal"><i class="fas fa-money-bill-wave"></i>  Investment Goal:<%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
+            <div class="home-progress">
+              <% current_investment_sum = project.current_investment_sum_cents
+              investment_goal = project.investment_goal_cents
+              @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
+              <div class="project-progress">
+                <div class="progress">
+                  <div class="progress-bar"
+                        role="progressbar"
+                        style="width: <%= @investement_percentage %>%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100">
                   </div>
-                  <p class="investement_percentage">(<%= @investement_percentage.round %>%)</p>
                 </div>
+                <p class="investement_percentage">(<%= @investement_percentage.round %>%)</p>
               </div>
+            </div>
 
-            </div>
-            <div class="text-center">
-              <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
-            </div>
+          </div>
+          <div class="text-center">
+            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
 
   <%# BAR %>
   <div class="background-image-bar"></div>
 </div>
-
 <script>
 window.map.resize();
 </script>

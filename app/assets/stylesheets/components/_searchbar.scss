@@ -11,7 +11,7 @@
   opacity: 0.8;
 }
 
-.search-form{
+.search-form {
   padding: 5px 4px 0 40px;
   display: flex;
   justify-content: space-between;
@@ -26,4 +26,17 @@
 
 .fa-search {
   font-size: 27px;
+}
+
+.searchbar-subhero {
+  background-color: white;
+  width: 300px;
+  height: 40px;
+  border-radius: 69px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+.search-input-subhero {
+  padding-bottom: 20px !important;
 }

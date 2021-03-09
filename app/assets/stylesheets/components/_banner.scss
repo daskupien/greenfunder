@@ -28,7 +28,7 @@
 // SUB-BANNER - PROJECTS/:ID PAGE
 
 .sub-banner {
-  height: 380px;
+  height: 340px;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -57,4 +57,17 @@
 
 .sub-text-CYP {
   padding-top: 150px;
+}
+
+// SUB BANNER - INDEX PROJECTS
+
+.sub-banner-index {
+  height: 240px;
+  text-align: center;
+  color: black;
+  background-color: $background-grey;
+}
+
+.sub-text-index {
+  padding-top: 40px;
 }

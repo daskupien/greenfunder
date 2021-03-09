@@ -1,23 +1,29 @@
+<%# SUB HERO BANNER %>
+<div class="sub-banner-index">
+  <div class="sub-text-index">
+    <h1>Check out all Projects</h1>
+    <h4>and make the first move for a green planet!</h4>
+    <div class="searchbar-subhero">
+      <%= form_tag projects_path, class: "search-form", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-input search-input-subhero",
+          placeholder: "Search..."
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <div class="container-wide">
   <div class="project-container">
     <div class="cards-projects-all">
 
       <%# SEARCH BAR %>
       <%# deleted class 'searchbar' for now, so it is a own row %>
-      <div class="">
-        <%= form_tag projects_path, class: "search-form", method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-input",
-            placeholder: "Search for category..."
-          %>
-          <%= button_tag(type: "submit", class: "btn btn-default") do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        <% end %>
-      </div>
-
-      <h1 style="padding: 78px 109px 30px 30px;">Check out our awesome projects <br> and make the first move for the planet!</h1>
 
       <%# PROJECTS %>
       <% @projects.each do |project| %>
