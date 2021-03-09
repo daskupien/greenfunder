@@ -3,24 +3,32 @@
 //   background: url(
 // https://res.cloudinary.com/rentmylife/image/upload/v1615285071/assets/daniil-silantev-F6Da4r2x5to-unsplash_ihkccn.jpg );
 //   background-size: cover;
-  background-color: $master;
   text-align: center;
 }
+
+.about-us-sub-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg');
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-size: cover;
+}
+
 
 .about-us-title {
   width: 50%;
   margin: 0 auto;
-  font-size: 64px;
+  font-size: 55px;
   padding: 30px;
+  padding-top: 40px;
   color: white;
   border-bottom: 1px solid;
 }
 
-.about-us-sub-banner {
+.about-us-sub-content {
   margin: 0 auto;
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 50px;
+  width: 900px;
 
   h1 {
     padding-top: 40px;
@@ -28,12 +36,25 @@
   }
 
   p {
+    width: 300px;
     color: white;
     align-content: center;
     height: 80px;
     padding: 10px;
     margin: 15px;
   }
+}
+
+.who-we-are {
+  padding: 48px;
+  padding-top: 80px;
+}
+
+.about-us-card {
+  margin-bottom: 40px;
+  background-color: rgba(249, 252, 250, 0.7);
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
 }
 
 .about-img {
@@ -44,9 +65,4 @@
 
 .about-name {
   font-size: 24px;
-}
-
-.about-us-card {
-  margin-bottom: 40px;
-  background-color: rgba(249, 252, 250, 0.7);
 }
