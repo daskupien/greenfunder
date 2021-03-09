@@ -1,10 +1,19 @@
+<%# SUB HERO BANNER %>
+<div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
+  <div class="sub-text sub-text-CYP">
+    <h1>Create Your Project</h1>
+  </div>
+</div>
+
 <div class="container-wide">
   <div class="container-general">
     <div class="container background-grey">
       <div class="row">
         <div class="col-10 offset-md-1">
-          <div class="projects-header">
-            <h1>Create Your Project</h1>
+          <div class="projects-description">
+            <p><strong>Hello there</strong> - We are very happy about your decission to start your very own project on <strong>Green Booster</strong>.
+               Please fill out all the necessary infos and make sure to upload a nice picture and video. Feel free
+               to reach out if you have any questions & thanks one more time for becoming a <strong>Green Booster!</strong></p>
           </div>
           <div class="projects-form">
             <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
