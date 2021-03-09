@@ -32,7 +32,19 @@
         <% end %>
           <div class="card-project-content">
             <h3 class="card-project-title"><%= project.name %></h3>
-            <p class="card-project-category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
+            <p class="card-project-category">
+              <% if project.category == "planting" %>
+                <i class="fas fa-seedling category-dropdown-icon"> </i>
+              <% elsif project.category == "energy" %>
+                <i class="fas fa-solar-panel category-dropdown-icon"> </i>
+              <% elsif project.category == "animals" %>
+                <i class="fab fa-forumbee category-dropdown-icon"> </i>
+              <% elsif project.category == "plastic alternatives" %>
+                <i class="fas fa-box-open category-dropdown-icon"> </i>
+              <% end %>
+              <%= project.category.capitalize %>
+            </p>
+
             <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
             <h6 class="card-project-punchline">"<%= project.punchline %>"</h6>
             <div class="card-project-progress-all">

@@ -1,35 +1,86 @@
 // Specific CSS for your about us page
 .about-us {
-  background-color: #073B3A;
+//   background: url(
+// https://res.cloudinary.com/rentmylife/image/upload/v1615285071/assets/daniil-silantev-F6Da4r2x5to-unsplash_ihkccn.jpg );
+//   background-size: cover;
   text-align: center;
 }
 
-.about-us-title {
-  font-size: 64px;
-  padding: 70px;
-  color: white;
-  border-bottom: 1px solid;
-}
-
 .about-us-sub-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg');
   margin: 0 auto;
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 40px;
+  padding-bottom: 45px;
+  background-size: cover;
+}
+
+
+.about-us-title {
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
+  padding-top: 40px;
+  color: white;
 
   h1 {
+    font-size: 55px;
     color: white;
+    padding-bottom: 35px;
+  }
+
+  h3 {
+    color: white;
+  }
+}
+
+.about-us-content {
+  margin: 0 auto;
+  width: 900px;
+  height: 310px;
+  margin-top: 45px;
+
+  h1 {
+    padding-top: 40px;
   }
 
   p {
-    color: white;
+    width: 300px;
     align-content: center;
-    height: 125px;
+    height: 80px;
     padding: 10px;
     margin: 15px;
   }
 }
 
+.who-we-are {
+  padding: 48px;
+  padding-top: 80px;
+}
+
 .about-us-card {
+  width: 300px;
   margin-bottom: 40px;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+
+.about-img {
+  height: 250px;
+  width: 300px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.about-body {
+  margin: 25px;
+}
+
+.about-name {
+  font-size: 24px;
+}
+
+.about-boost {
+  margin: 65px;
 }
