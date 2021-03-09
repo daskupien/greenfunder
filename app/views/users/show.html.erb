@@ -3,8 +3,6 @@
     <div class="row background-grey">
       <div class="col-12 col-sm-12">
 
-
-
         <%# USER-PROFILE %>
         <div class="profile-user">
           <div class="user-header">
@@ -20,15 +18,16 @@
               <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorites</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="boosted-tab" data-toggle="tab" href="#boosted" role="tab" aria-controls="boosted" aria-selected="false">Boosted ideas</a>
+              <a class="nav-link active" id="boosted-tab" data-toggle="tab" href="#boosted" role="tab" aria-controls="boosted" aria-selected="false">Boosted Projects</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="false">My Projects</a>
             </li>
           </ul>
+
           <div class="tab-content" id="myTabContent">
 
-            <%# PROFILE tab content %>
+          <%# PROFILE tab content %>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
               <div class="user-information">
@@ -53,7 +52,7 @@
                 <div>
                   <% @investments.each do |investment| %>
                     <div>
-                      <strong>Project: </strong><%= link_to investment.project.name, project_path(investment.project) %>
+                      <strong>Project: </strong><%= project.name %>
                       <div class="progress">
                         <% current_investment_sum = investment.project.current_investment_sum_cents
                         investment_goal = investment.project.investment_goal_cents
@@ -79,13 +78,31 @@
                     <div>
                       <%= cl_image_tag project.image.key, crop: :fill %>
                     </div>
-                      <div class="card-project-infos">
-                        <h2><%= link_to project.name, project_path(project) %></h2>
-                        <p><strong>Category:</strong> <%= project.category.capitalize %></p>
-                        <p><strong>Investment Goal:</strong> <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+                    <div class="card-project-infos profile-p">
+                      <h2><%= project.name %></h2>
+                      <p class="card-project-category">
+                        <% if project.category == "planting" %>
+                          <i class="fas fa-seedling category-dropdown-icon"> </i>
+                        <% elsif project.category == "energy" %>
+                          <i class="fas fa-solar-panel category-dropdown-icon"> </i>
+                        <% elsif project.category == "animals" %>
+                          <i class="fab fa-forumbee category-dropdown-icon"> </i>
+                        <% elsif project.category == "plastic alternatives" %>
+                          <i class="fas fa-box-open category-dropdown-icon"> </i>
+                        <% end %>
+                        <%= project.category.capitalize %>
+                      </p>
+                      <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
+                      <p class=""><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+                    </div>
+                    <div d-flex>
+                      <div class="btn-profile">
+                        <%= link_to "Show", project_path(project), class: "btn-normal-white" %>
                       </div>
-                    <div class="btn-profile">
-                      <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
+                      <br>
+                      <div class="btn-profile">
+                        <%= link_to "Cancel", project_path(project), class: "btn-normal-green", method: :delete, data: { confirm: "Are you sure?" } %>
+                      </div>
                     </div>
                   </div>
                 <% end %>
