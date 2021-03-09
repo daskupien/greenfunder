@@ -75,7 +75,7 @@
   width: 320px;
   height: 220px;
   background-color: $master;
-  opacity: 0.25;
+  opacity: 0.1;
   border-radius: $border-radius;
 }
 
@@ -110,10 +110,10 @@
 .card-project {
   display: flex;
   width: 860px;
-  height: 260px;
+  height: 265px;
   margin: 26px;
   padding-bottom: 40px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #696969;
   align-items: center;
 }
 
@@ -135,12 +135,12 @@
 
 .card-project-content p{
   margin: 0;
-  color: grey;
+  color: #696969;
+  padding-bottom: 7px;
 }
 
 .card-project-goal {
   text-align: end;
-  padding-bottom: 10px;
 }
 
 // PROJECTS/:ID CARDS
