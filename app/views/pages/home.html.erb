@@ -17,7 +17,7 @@
     <h3>investing green to make our world better</h3>
   </div>
   <div class="hero-buttons text-center">
-    <%= link_to "Invest Now", projects_path, class: "btn-large-white btn-hero", data: { turbolinks: false } %>
+    <%= link_to "Boost Now", projects_path, class: "btn-large-white btn-hero", data: { turbolinks: false } %>
     <%= link_to "Create Project", new_project_path, class: "btn-large-green btn-hero", data: { turbolinks: false } %>
   </div>
 </div>
@@ -32,7 +32,7 @@
       <div class="card-hiw col-sm-4 col-md-3">
         <div class="card-hiw-content text-center">
           <img class="how-icon" src="https://res.cloudinary.com/rentmylife/image/upload/v1614945248/assets/01_invest_x89g8t.svg" alt="pick">
-          <p class='text-center'>1. Pick a project you want to support & choose how much you want to invest</p>
+          <p class='text-center'>1. Pick a project you want to boost & choose how much you want to invest</p>
         </div>
       </div>
       <div class="card-hiw col-sm-4 col-md-3">
@@ -95,7 +95,7 @@
             <p class="category"><i class="fas fa-seedling category-dropdown-icon"></i><%= project.category.capitalize %></p>
             <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
             <h6 class="punchline">"<%= project.punchline %>"</h6>
-            <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal:<%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
+            <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
             <div class="home-progress">
               <% current_investment_sum = project.current_investment_sum_cents
               investment_goal = project.investment_goal_cents
@@ -115,7 +115,7 @@
             </div>
           </div>
           <div class="text-center">
-            <%= link_to "Invest now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
+            <%= link_to "Boost Now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
           </div>
         </div>
       </div>
