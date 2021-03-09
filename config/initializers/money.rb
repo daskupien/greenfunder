@@ -48,7 +48,7 @@ MoneyRails.configure do |config|
   # Example:
   config.register_currency = {
     priority:            1,
-    iso_code:            "EU4",
+    iso_code:            "EUR",
     name:                "Euro with subunit of 4 digits",
     symbol:              "€",
     symbol_first:        false,
@@ -57,6 +57,7 @@ MoneyRails.configure do |config|
     thousands_separator: ".",
     decimal_mark:        ","
   }
+
 
   # Specify a rounding mode
   # Any one of:
