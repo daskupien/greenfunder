@@ -34,7 +34,3 @@ document.addEventListener("turbolinks:load", () => {
   initMapboxHome();
   // stripeAmount();
 });
-
-// $(function () {
-//   map.resize();
-// });
