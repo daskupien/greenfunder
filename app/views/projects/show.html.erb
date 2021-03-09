@@ -1,5 +1,9 @@
 <%# SUB HERO BANNER %>
+<% if @project.image.attached? %>
 <div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
+<% else %>
+<div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path('https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg') %>')">
+<% end %>
   <div class="sub-text">
     <h1 class="mb-4"><!-- <i class="far fa-lightbulb"> --></i> <%= @project.name %> <!-- <i class="far fa-lightbulb"> --></i></h1>
     <h3 class="mb-4">"<%= @project.punchline %>"</h3>
