@@ -26,7 +26,8 @@
 }
 
 // SUB-BANNER - PROJECTS/:ID PAGE
-.project-sub-banner {
+
+.sub-banner {
   height: 380px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,18 +37,24 @@
   color: white;
 }
 
-.project-sub-text {
-  padding-top: 120px;
+.sub-text {
+  padding-top: 110px;
 }
 
-.project-sub-text h1 {
-  font-size: 45px;
+.sub-text h1 {
+  font-size: 55px;
   font-weight: 600;
   color: white;
 }
 
-.project-sub-text h3 {
+.sub-text h3 {
   font-size: 22px;
   font-weight: normal;
   color: white;
+}
+
+// SUB BANNER - CREATE YOUR PROJECT
+
+.sub-text-CYP {
+  padding-top: 150px;
 }
