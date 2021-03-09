@@ -8,7 +8,7 @@
           <h1>Check out our Projects</h1>
           <h4>and make your BOOST for a green planet!</h4>
           <div class="searchbar-subhero">
-            <%= form_tag projects_path, class: "search-form", method: :get do %>
+            <%= form_tag projects_path, class: "search-form search-form-subhero", method: :get do %>
               <%= text_field_tag :query,
                 params[:query],
                 class: "search-input search-input-subhero",
