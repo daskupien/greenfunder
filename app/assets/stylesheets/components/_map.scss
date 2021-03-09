@@ -83,6 +83,10 @@
   cursor: pointer;
 }
 
+.markerhome:hover {
+  cursor: auto;
+}
+
 .mapboxgl-popup-tip {
   display: none;
 }
