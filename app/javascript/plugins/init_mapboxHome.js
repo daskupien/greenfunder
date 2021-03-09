@@ -24,11 +24,11 @@ const addMarkersToMap = (map, markers) => {
     element.className = "marker";
     element.style.width = "30px";
     element.style.height = "30px";
-    element.style.border = "1px solid";
+    element.style.border = "0px solid";
     element.style.borderColor = "#fff";
     element.style.borderRadius = "50%";
-    element.style.backgroundColor = "rgba(86, 130, 89, 0.8)";
-    element.style.opacity = "0.75";
+    element.style.backgroundColor = "rgba(86, 130, 89, 1)";
+    element.style.opacity = "1.0";
 
     // map.on("load", function () {
     //   map.addSource("markercircles", {
