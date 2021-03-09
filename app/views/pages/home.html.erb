@@ -97,7 +97,7 @@
               <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
               <h6 class="punchline">"<%= project.punchline %>"</h6>
 
-              <p class="investment_goal"><i class="fas fa-money-bill-wave"></i>  Investment Goal:<%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
+              <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
               <div class="home-progress">
                 <% current_investment_sum = project.current_investment_sum_cents
                 investment_goal = project.investment_goal_cents
