@@ -1,64 +1,84 @@
 <div class="container-wide about-us">
-  <div class="container-general about">
 
-    <h1 class="about-us-title ">ABOUT US</h1>
-
-    <div class="about-us-sub-banner">
-      <h1>Our Mission</h1>
-      <p>Let you feel free to make the first move for environment<br>and make better future for our planet and next generation</p>
-      <h1>Our Promise</h1>
-      <p>Return 10% of commission<br>to help 'Save the Arctic' campaign from GREENPEACE<br> and other more projects are related with global warmning</p>
+  <div class="about-us-sub-banner">
+    <div class="about-us-title">
+      <h1>About Us</h1>
+      <h3>Greenbooster team is<br>always ready to boost your green energy!</h3>
     </div>
 
+  </div>
+
+  <div class="container-general about">
+
+    <div class="about-us-content d-flex justify-content-around">
+      <div class="about-mission">
+        <h1>Our Mission</h1>
+        <p>Let you feel free to make the first move for environment<br>and make better future for our planet and next generation</p>
+      </div>
+      <div class="about-promise">
+        <h1>Our Promise</h1>
+        <p>Return 10% of commission<br>to help 'Save the Arctic' campaign from GREENPEACE<br> and other more projects are related with global warmning</p>
+      </div>
+    </div>
+
+    <!-- <div class="who-we-are">
+      <h1>Who We Are</h1>
+    </div> -->
+
     <div class="about-us-member d-flex justify-content-around row">
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Daniel Skupien</h5>
-          <p class="card-text">Founder and CEO<br>Senior Back-end developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615221943/assets/daniel_vcfkrf.jpg" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Daniel Skupien</h3>
+            <p class="about-text">Founder and CEO<br>Senior Back-end developer</p>
+          </div>
       </div>
 
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Loretta Matzke</h5>
-          <p class="card-text">Co-Founder and CEO<br>Senior Front-end developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615221906/assets/lori_lp3pu1.png" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Loretta Matzke</h3>
+            <p class="about-text">Co-Founder and CEO<br>Senior Front-end developer</p>
+          </div>
       </div>
 
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Begana Choi</h5>
-          <p class="card-text">Co-Founder and CEO<br>Senior Front-end developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615277021/assets/begana-min_jntweg.png" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Begana Choi</h3>
+            <p class="about-text">Co-Founder and CEO<br>Senior Front-end developer</p>
+          </div>
       </div>
 
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jonas Kozik</h5>
-          <p class="card-text">Co-Founder and CEO<br>Senior Back-end developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615276940/assets/Jonas_Kozik_530_h5uvat.jpg" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Jonas Kozik</h3>
+            <p class="about-text">Co-Founder and CEO<br>Senior Back-end developer</p>
+          </div>
       </div>
 
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Sebastian Remm</h5>
-          <p class="card-text">Head of Management Support Team<br>Junior full-stack developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615221943/assets/sebi_x34cy9.jpg" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Sebastian Remm</h3>
+            <p class="about-text">Head of Management<br>Support Team<br>Junior full-stack developer</p>
+          </div>
       </div>
 
-      <div class="about-us-card card col-5">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Santiago Sanchez</h5>
-          <p class="card-text">Intern of Management Support Team<br>Junior full-stack developer</p>
-        </div>
+      <div class="about-us-card">
+        <img class="about-img" src="https://res.cloudinary.com/rentmylife/image/upload/v1615221944/assets/santi_lewtif.jpg" alt="Card image cap">
+          <div class="about-body">
+            <h3 class="about-name">Santiago Sanchez</h3>
+            <p class="about-text">Intern<br>formal president of banana union</p>
+          </div>
       </div>
 
+    </div>
+
+    <div class="about-boost">
+      <h1>Let's Boost Together!</h1>
+      <%= link_to "check out projects", projects_path, class: "btn-large-green" %>
     </div>
 
   </div>
