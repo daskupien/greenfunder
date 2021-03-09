@@ -13,11 +13,9 @@
 }
 
 #map-home {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
   width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .mapboxgl-popup {
@@ -89,6 +87,10 @@
 
 .markerhome:hover {
   cursor: auto;
+}
+
+.markerhome {
+  margin-top: -20px;
 }
 
 .mapboxgl-popup-tip {

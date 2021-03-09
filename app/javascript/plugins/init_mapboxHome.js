@@ -7,19 +7,11 @@ const buildMap = (mapElement) => {
     container: "map-home",
     style: "mapbox://styles/jonnasson/ckm0u49dl6zao17ryfls7n00o",
     interactive: false,
-    // center: [50, 48],
-    // zoom: 3,
   });
 };
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    // const popup = new mapboxgl.Popup({
-    //   offset: [0, 0],
-    //   closeButton: false,
-    //   showCompass: false,
-    // }).setHTML(marker.infoWindow); // add this
-
     const element = document.createElement("div");
     element.className = "markerhome";
     element.style.width = "30px";
@@ -27,55 +19,17 @@ const addMarkersToMap = (map, markers) => {
     element.style.border = "0px solid";
     element.style.borderColor = "#fff";
     element.style.borderRadius = "50%";
-    element.style.backgroundColor = "rgba(86, 130, 89, 1)";
+    element.style.backgroundColor = "#7fb742";
     element.style.opacity = "1.0";
 
-    // map.on("load", function () {
-    //   map.addSource("markercircles", {
-    //     type: "geojson",
-    //     data: {
-    //       type: "FeatureCollection",
-    //       features: [
-    //         {
-    //           type: "Feature",
-    //           geometry: {
-    //             type: "Point",
-    //             coordinates: [marker.lng, marker.lat],
-    //           },
-    //           properties: {
-    //             modelId: 1,
-    //           },
-    //         },
-    //       ],
-    //     },
-    //   });
-    //   map.addLayer({
-    //     id: "circles1",
-    //     source: "markercircles",
-    //     type: "circle",
-    //     paint: {
-    //       "circle-radius": 20,
-    //       "circle-opacity": 0.5,
-    //       "circle-color": "rgb(90, 207, 168)",
-    //       "circle-stroke-width": 1,
-    //       "circle-stroke-color": "#00bf7c",
-    //       "circle-stroke-opacity": 1,
-    //     },
-    //     filter: ["==", "modelId", 1],
-    //   });
-    // });
-
-    new mapboxgl.Marker(element)
-      .setLngLat([marker.lng, marker.lat])
-      // .setPopup(popup) // add this
-      .addTo(map);
+    new mapboxgl.Marker(element).setLngLat([marker.lng, marker.lat]).addTo(map);
   });
 };
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
-  map.fitBounds(bounds, { zoom: 4.35 });
+  map.fitBounds(bounds, { zoom: 4.38 });
 };
 
 const initMapboxHome = () => {
