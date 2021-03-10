@@ -121,7 +121,7 @@ puts 'creating 3 planting faker projects'
 end
 
 # Energy
-puts 'creating 3 animal faker projects'
+puts 'creating 3 energy faker projects'
 3.times do
   faker_project = Project.new(
     name: "FAKE Energy Project",
@@ -164,7 +164,7 @@ counter = 0
 puts 'creating 3 plastic alternatives faker projects'
 3.times do
   faker_project = Project.new(
-    name: "FAKE Animal Project",
+    name: "FAKE Plastic Alternative Project",
     punchline: 'We will make the world much less platic poluted',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
     video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
@@ -174,10 +174,9 @@ puts 'creating 3 plastic alternatives faker projects'
     address: cities.sample,
     user_id: faker.id,
   )
-  file = URI.open('https://s3files.core77.com/blog/images/689444_81_68988_NIPwfF3mB.jpg')
-  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
+  file = URI.open('https://source.unsplash.com/random/2560x1440')
+  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives.jpg", content_type: 'image/jpg')
   faker_project.save
-  counter += 1
 end
 
 
