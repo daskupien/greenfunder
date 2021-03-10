@@ -80,7 +80,7 @@
           <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <div class="text-center">
             <% if @project.user != current_user %>
-              <%= link_to 'Boost this Project', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px" %>
+              <%= link_to 'Boost this Project', new_project_investment_path(@project), class: "btn-normal-green", style: "width: 280px", data: { turbolinks: false } %>
             <% end %>
           </div>
         </ul>
