@@ -27,7 +27,7 @@
 
           <div class="tab-content" id="myTabContent">
 
-          <%# PROFILE tab content %>
+            <%# PROFILE tab content %>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
               <div class="user-information">
@@ -48,31 +48,61 @@
 
             <%# BOOSTED IDEAS tab content %>
             <div class="tab-pane fade show active" id="boosted" role="tabpanel" aria-labelledby="boosted-tab">
-              <div class="profile-investments">
-                <div>
-                  <% @investments.each do |investment| %>
-                    <div>
-                      <strong>Project: </strong><%= investment.project.name %>
-                      <div class="progress">
-                        <% current_investment_sum = investment.project.current_investment_sum_cents
-                        investment_goal = investment.project.investment_goal_cents
-                        @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
-                        <div class="progress-bar bg-success" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+              <% @investments.each do |investment| %>
+                <div class="card-profile-project">
+                  <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div class="d-flex justify-content-start">
+                      <%= cl_image_tag investment.project.image.key, crop: :fill %>
+                      <div class="card-project-infos profile-p">
+                        <h2><%= investment.project.name %></h2>
+                        <p class="card-project-category">
+                          <% if investment.project.category.capitalize == "Planting" %>
+                            <i class="fas fa-seedling category-dropdown-icon"> </i>
+                          <% elsif investment.project.category.capitalize == "Energy" %>
+                            <i class="fas fa-solar-panel category-dropdown-icon"> </i>
+                          <% elsif investment.project.category.capitalize == "Animals" %>
+                            <i class="fab fa-forumbee category-dropdown-icon"> </i>
+                          <% elsif investment.project.category.capitalize == "Plastic alternatives" %>
+                            <i class="fas fa-box-open category-dropdown-icon"> </i>
+                          <% end %>
+                          &nbsp;<%= investment.project.category.capitalize %>
+                        </p>
+                        <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<%= investment.project.address %></p>
+
+                        <div class="d-flex justify-content-start mb-3">
+                          <p class="pr-3"><i class="fas fa-money-bill-wave"></i>&nbsp;&nbsp;Goal: <%= humanized_money_with_symbol(investment.project.investment_goal_cents) %></p>
+                          <p><strong>My Boost: </strong><%= humanized_money_with_symbol(investment.investment_amount_cents) %></p>
+                        </div>
+
+                        <div class="progress">
+                          <% current_investment_sum = investment.project.current_investment_sum_cents
+                          investment_goal = investment.project.investment_goal_cents
+                          @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
+                          <div class="progress-bar bg-success" role="progressbar" style="width: <%= @investement_percentage %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
                       </div>
-                      <ul>
-                        <li><strong>Punchline: </strong><%= investment.project.punchline %></li>
-                        <li><strong>Category: </strong><%= investment.project.category %></li>
-                        <li><strong>My Investment: </strong><%= humanized_money_with_symbol(investment.investment_amount_cents) %></li>
-                      </ul>
+
                     </div>
-                  <% end %>
+
+                    <div>
+                      <div class="btn-profile pr-3">
+                        <%= link_to "Show", @project, class: "btn-normal-white" %>
+                      </div>
+                      <br>
+                      <div class="btn-profile pr-3">
+                        <%= link_to "Boost More", @project, class: "btn-normal-green" %>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
 
             <%# MY PROJECTS tab content %>
             <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-
               <% @projects.each do |project| %>
               <div class="card-profile-project">
                 <div class="d-flex justify-content-between w-100 align-items-center">
@@ -92,11 +122,12 @@
                         <% end %>
                         &nbsp;<%= project.category.capitalize %>
                       </p>
-                      <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
-                      <p class=""><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+                      <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<%= project.address %></p>
+                      <p class="mb-3"><i class="fas fa-money-bill-wave"></i>&nbsp;&nbsp;Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
+                      <h6>"<%= project.punchline %>"</h6>
                     </div>
                   </div>
-                  <div>
+                  <div class="pr-3">
                     <div class="btn-profile">
                       <%= link_to "Show", project_path(project), class: "btn-normal-white" %>
                     </div>
@@ -115,3 +146,4 @@
     </div>
   </div>
 </div>
+

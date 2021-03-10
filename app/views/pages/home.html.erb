@@ -76,9 +76,10 @@
   </div>
 
   <%# CARDS HOME %>
-  <h2 class="card-home-header text-center">Recommended Projects</h2>
-  <div class="card-home-all">
-    <% @projects.first(4).each do | project | %>
+<h2 class="card-home-header text-center">Recommended Projects</h2>
+<div class="card-home-all">
+<div class="multiple-items">
+<% @projects.each do | project | %>
       <div class="card-home">
         <% if project.image.attached? %>
           <div class="card-home-image">
@@ -131,11 +132,32 @@
         </div>
       </div>
     <% end %>
-  </div>
+</div>
+</div>
+
+
 
   <%# BAR %>
   <div class="background-image-bar"></div>
 </div>
 <script>
 window.map.resize();
+</script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+$(document).ready(function(){
+ $('.multiple-items').slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 2,
+  nextArrow: '<i class="fas fa-caret-right fa-3x"></i>',
+  prevArrow: '<i class="fas fa-caret-left fa-3x"></i>',
+  variableWidth: true,
+  useTransform: false
+});
+});
 </script>

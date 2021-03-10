@@ -241,20 +241,20 @@
 
 .card-profile-project {
   overflow: hidden;
-  height: 200px;
+  height: 230px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
 .card-profile-project img {
-  height: 200px;
+  height: 230px;
   width: 300px;
   object-fit: cover;
 }
 
 .card-project-infos {
-  margin-right: 60px;
+
   padding: 20px 0 0 20px;
 }
 
@@ -289,4 +289,42 @@
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+//CARD SLIDER @ HOME
+
+.multiple-items {
+  max-width: 100vw;
+  display: flex;
+  // background-color: #f8f8f8;
+  justify-content: space-evenly;
+}
+
+.fa-caret-right {
+  // align-self: center;
+  align-self: center;
+  padding: 30px;
+  color: #0e0000;
+}
+
+.fa-caret-right:hover {
+  cursor: pointer;
+}
+
+.fa-caret-left {
+  align-self: center;
+  padding: 30px;
+  color: #0e0000;
+}
+
+.fa-caret-left:hover {
+  cursor: pointer;
+}
+
+.slick-slide {
+  margin-right: 50px;
+}
+
+.slick-list {
+  padding-bottom: 35px;
 }
