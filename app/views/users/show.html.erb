@@ -52,7 +52,7 @@
                 <div>
                   <% @investments.each do |investment| %>
                     <div>
-                      <strong>Project: </strong><%= project.name %>
+                      <strong>Project: </strong><%= investment.project.name %>
                       <div class="progress">
                         <% current_investment_sum = investment.project.current_investment_sum_cents
                         investment_goal = investment.project.investment_goal_cents

@@ -7,14 +7,13 @@
 
           <div class="investment-content">
             <div class="investment-header">
-              <h2>Invest In:</h2>
-              <h2><%= @project.name %></h2>
+              <h2>Invest In: "<%= @project.name %>"</h2>
             </div>
             <div class="investment-form">
               <%= simple_form_for [ @project, @investment ] do |f| %>
                 <%= f.input :investment_amount_cents, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
               <% end %>
-                <button class="btn-large-green">Pay</button>
+                <button class="btn-normal-green">Pay Now</button>
             </div>
           </div>
 
@@ -23,7 +22,6 @@
     </div>
   </div>
 </div>
-
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -91,7 +89,7 @@
       amount: amount
     });
     e.preventDefault();
-    
+
     }
 });
 
