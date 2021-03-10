@@ -27,6 +27,7 @@ import "bootstrap";
 
 import { initMapbox } from "../plugins/init_mapbox";
 import { initMapboxHome } from "../plugins/init_mapboxHome";
+
 document.addEventListener("turbolinks:load", () => {
   initMapbox();
   initMapboxHome();
