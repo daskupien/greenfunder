@@ -75,3 +75,5 @@ gem 'mapbox-gl-rails'
 
 #stripe
 gem 'stripe'
+
+gem 'popper_js', '~> 1.9', '>= 1.9.9'

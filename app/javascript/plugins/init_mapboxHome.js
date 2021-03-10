@@ -14,9 +14,9 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const element = document.createElement("div");
     element.className = "markerhome";
-    element.style.width = "30px";
-    element.style.height = "30px";
-    element.style.border = "0px solid";
+    element.style.width = "20px";
+    element.style.height = "20px";
+    element.style.border = "0.1px solid";
     element.style.borderColor = "#fff";
     element.style.borderRadius = "50%";
     element.style.backgroundColor = "#7fb742";

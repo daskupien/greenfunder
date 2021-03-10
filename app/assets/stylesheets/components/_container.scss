@@ -16,3 +16,28 @@
 .container-home {
   padding: 0 40px 0 40px;
 }
+
+.modal-open {
+  overflow-y: auto;
+}
+
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+.modal:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#investment_investment_amount_cents {
+  width: 140px;
+}
