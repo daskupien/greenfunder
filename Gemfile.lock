@@ -162,7 +162,6 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    owlcarousel-rails (2.2.3.5)
     pg (1.2.3)
     pg_search (2.3.5)
       activerecord (>= 5.2)
@@ -310,7 +309,6 @@ DEPENDENCIES
   listen (~> 3.2)
   mapbox-gl-rails
   money-rails (~> 1.12)
-  owlcarousel-rails
   pg (>= 0.18, < 2.0)
   pg_search (~> 2.3.0)
   pry-byebug
