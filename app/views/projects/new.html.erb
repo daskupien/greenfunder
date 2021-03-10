@@ -34,9 +34,7 @@
               <%= f.input :category, :collection => ['Planting', 'Energy', 'Animals', 'Plastic Alternatives'], required: true%>
               <%= f.input :address, placeholder: "Berlin", required: true %>
               <%= f.input :investment_goal_cents, :label => "Investment Goal", required: true%>
-              <%= f.input :investment_goal_date, as: :date, required: true, start_year: Date.today.year,
-                                    end_year: Date.today.year + 1,
-                                    order: [:day, :month, :year] %>
+              <%= f.input :investment_goal_date, as: :string, input_html: {id: "flatpickr-input"}%>
           </div>
           <div class="submit-btn">
               <%= f.submit class: "btn-normal-green w-100" %>
@@ -67,5 +65,13 @@ $(document).ready(function(){
 
   $('input[type=file]').change(function(){
       $(".upload-preview").show();
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    flatpickr('#flatpickr-input');
   });
 </script>
