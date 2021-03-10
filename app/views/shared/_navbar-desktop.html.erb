@@ -3,7 +3,7 @@
 
 
   <div class="d-flex justify-content-start taps">
-    <%= link_to "/", class: "navbar-brand" do %>
+    <%= link_to "/", data: { turbolinks: false }, class: "navbar-brand" do %>
       <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614698393/logo_aghnot.png") %>
     <% end %>
     <%= link_to "All projects", projects_path, class: "nav-link", data: { turbolinks: false } %>
