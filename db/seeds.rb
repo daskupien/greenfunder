@@ -9,13 +9,14 @@
 require 'faker'
 require 'csv'
 
-# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-# filepath = "de.csv"
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath = "db/de.csv"
 
-# CSV.foreach(filepath, 'r', headers: true) do |row|
-#   puts "#{row['city']}"
-# end
+cities = []
 
+CSV.foreach(filepath, csv_options) do |row|
+  cities << row['city']
+end
 
 User.destroy_all
 Project.destroy_all
@@ -111,7 +112,7 @@ puts 'creating 3 planting faker projects'
     category: 'planting',
     investment_goal_cents: Faker::Number.between(from: 8000, to: 10000),
     current_investment_sum_cents: Faker::Number.between(from: 100, to: 7999),
-    address: 'Jena',
+    address: cities.sample,
     user_id: faker.id,
   )
   file = URI.open('https://reformedforum.org/wp-content/blogs.dir/1/files/2015/01/shutterstock_154639625-e1423258271198.jpg')
@@ -130,7 +131,7 @@ puts 'creating 3 animal faker projects'
     category: 'energy',
     investment_goal_cents: Faker::Number.between(from: 90000, to: 100000),
     current_investment_sum_cents: Faker::Number.between(from: 1000, to: 89999),
-    address: 'Bremen',
+    address: cities.sample,
     user_id: faker.id,
   )
   file = URI.open('https://energywatch-inc.com/wp-content/uploads/2015/05/Power-Generation-Picture.jpg')
@@ -149,7 +150,7 @@ puts 'creating 3 animal faker projects'
     category: 'animals',
     investment_goal_cents: Faker::Number.between(from: 8000, to: 10000),
     current_investment_sum_cents: Faker::Number.between(from: 100, to: 7999),
-    address: 'Dortmund',
+    address: cities.sample,
     user_id: faker.id,
   )
   file = URI.open('https://virginiazoo.org/wp-content/uploads/2015/07/honeybees.jpg')
@@ -168,7 +169,7 @@ puts 'creating 3 plastic alternatives faker projects'
     category: 'plastic alternatives',
     investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
     current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
-    address: 'Stuttgart',
+    address: cities.sample,
     user_id: faker.id,
   )
   file = URI.open('https://s3files.core77.com/blog/images/689444_81_68988_NIPwfF3mB.jpg')
@@ -177,28 +178,26 @@ puts 'creating 3 plastic alternatives faker projects'
 end
 
 
-puts 'installing 4 faker projects'
+puts 'installing 120 faker projects'
 
-4.times do
-  @categories = ['planting', 'animals', 'energy', 'plastic alternatives']
-  @cities = ['Hamburg', 'Munich', 'Cologne', 'Frankfurt']
+categories = ['planting', 'animals', 'energy', 'plastic alternatives']
+
+120.times do
   faker_project = Project.new(
     name: "FAKE 200er Project",
     punchline: 'We will make the world much less platic poluted',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
-    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
-    category: @categories.sample,
+    # video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: categories.sample,
     investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
     current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
-    address: @cities.sample,
+    address: cities.sample,
     user_id: faker.id,
   )
-  file = URI.open('https://source.unsplash.com/random/2560x1440')
-  faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
+  # file = URI.open('https://source.unsplash.com/random/2560x1440')
+  # faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
   faker_project.save
 end
-
-
 
 # random pic
 # https://source.unsplash.com/random/2560x1440
