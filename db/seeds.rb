@@ -40,8 +40,8 @@ daniel = User.create!(email: 'daniel@greenfunder.de', password: '123456', first_
 puts 'creating projects'
 
 project1 = Project.new(
-    name: "Let's grow a forrest",
-    punchline: 'Help planting a forest in our neighborhood',
+    name: "We will grow a forrest",
+    punchline: 'Help planting a forest near our neighborhood',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
     video: 'https://www.youtube.com/watch?v=HPJKxAhLw5I',
     category: 'planting',
@@ -178,11 +178,11 @@ puts 'creating 3 plastic alternatives faker projects'
 end
 
 
-puts 'installing 120 faker projects'
+puts 'installing 100 faker projects'
 
 categories = ['planting', 'animals', 'energy', 'plastic alternatives']
 
-120.times do
+100.times do
   faker_project = Project.new(
     name: "FAKE 200er Project",
     punchline: 'We will make the world much less platic poluted',
