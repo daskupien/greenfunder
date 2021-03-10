@@ -289,3 +289,35 @@
   height: 100%;
   position: relative;
 }
+
+//CARD SLIDER @ HOME
+
+.multiple-items {
+  max-width: 100vw;
+  display: flex;
+  // background-color: #f8f8f8;
+  justify-content: space-evenly;
+}
+
+.fa-caret-right {
+  // align-self: center;
+  align-self: center;
+  padding: 30px;
+}
+
+.fa-caret-right:hover {
+  cursor: pointer;
+}
+
+.fa-caret-left {
+  align-self: center;
+  padding: 30px;
+}
+
+.fa-caret-left:hover {
+  cursor: pointer;
+}
+
+.slick-slide {
+  margin-right: 50px;
+}
