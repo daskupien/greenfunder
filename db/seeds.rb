@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'csv'
+
+# csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+# filepath = "de.csv"
+
+# CSV.foreach(filepath, 'r', headers: true) do |row|
+#   puts "#{row['city']}"
+# end
+
 
 User.destroy_all
 Project.destroy_all
@@ -85,7 +94,7 @@ project4 = Project.new(
     address: 'Hamburg',
     user_id: daniel.id,
 )
-file = URI.open('https://takeawaypackaging.co.uk/wp-content/uploads/2019/04/small_no_plastics.jpg')
+file = URI.open('https://i1.wp.com/pactivate.com/wp-content/uploads/2020/06/palm1.jpg?fit=985%2C689&ssl=1')
 project4.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg')
 project4.save
 
@@ -168,9 +177,31 @@ puts 'creating 3 plastic alternatives faker projects'
 end
 
 
-# puts 'installing 200 faker projects'
+puts 'installing 4 faker projects'
+
+4.times do
+  @categories = ['planting', 'animals', 'energy', 'plastic alternatives']
+  @cities = ['Hamburg', 'Munich', 'Cologne', 'Frankfurt']
+  faker_project = Project.new(
+    name: "FAKE 200er Project",
+    punchline: 'We will make the world much less platic poluted',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo donec enim diam vulputate ut pharetra sit amet. Malesuada nunc vel risus commodo viverra maecenas accumsan lacus. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Etiam erat velit scelerisque in dictum non. A condimentum vitae sapien pellentesque habitant morbi tristique. Ac tincidunt vitae semper quis. Convallis posuere morbi leo urna molestie. Mattis rhoncus urna neque viverra justo nec ultrices. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Mauris ultrices eros in cursus turpis massa. Quisque egestas diam in arcu cursus euismod. Pretium quam vulputate dignissim suspendisse in est ante in. Consequat ac felis donec et odio pellentesque diam volutpat commodo. Imperdiet dui accumsan sit amet nulla facilisi morbi tempus. In nulla posuere sollicitudin aliquam ultrices sagittis. Id venenatis a condimentum vitae sapien pellentesque habitant. Euismod nisi porta lorem mollis aliquam ut porttitor. Tellus rutrum tellus pellentesque eu.',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: @categories.sample,
+    investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
+    current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
+    address: @cities.sample,
+    user_id: faker.id,
+  )
+  file = URI.open('https://source.unsplash.com/random/2560x1440')
+  faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
+  faker_project.save
+end
 
 
+
+# random pic
+# https://source.unsplash.com/random/2560x1440
 
 puts 'seed finished'
 
