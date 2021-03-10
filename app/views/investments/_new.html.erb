@@ -1,0 +1,85 @@
+
+            <div class="investment-form" style="padding: 35px 70px; text-align: center">
+              <%= simple_form_for [ @project, @investment ] do |f| %>
+                <%= f.input :investment_amount_cents, :label => "Amount in Euro:", :placeholder => "e.g. 25€" %>
+              <% end %>
+                <button class="btn-normal-green" id="stripetriggerbutton" >Pay Now</button>
+            </div>
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script>
+  $(document).ready(function () {
+
+  var stripe_helpers = {
+    getAmount: function(raw_amount) {
+      // Parses raw input and returns $-value in cents
+      if (raw_amount.indexOf('.') === -1) {
+        raw_amount = raw_amount + '.00';
+      }
+      return parseInt(parseFloat(raw_amount) * 100);
+    }
+  };
+
+  var handler = StripeCheckout.configure({
+    key: "<%= Rails.configuration.stripe[:publishable_key] %>",
+    image: "<%= cl_image_path (@project.image.key) %>",
+    locale: 'en',
+    currency: 'EUR',
+    token: function(token) {
+    // Use the token to create the charge with a server-side script.
+    // You can access the token ID with `token.id`
+       // Prevent user from leaving page
+
+    // Dynamically create a form element to submit the results
+    // to your backend server
+    var form = document.getElementById("new_investment");
+    form.setAttribute('method', "POST");
+    form.setAttribute('action', "/projects/<%=@project.id%>/investments")
+
+    // Add the token ID as a hidden field to the form payment-form
+    var inputToken = document.createElement("input");
+    inputToken.setAttribute('type', "hidden");
+    inputToken.setAttribute('name', "stripeToken");
+    inputToken.setAttribute('value', token.id);
+    form.appendChild(inputToken);
+
+        // Finally, submit the form
+    document.body.appendChild(form);
+
+    document.forms["new_investment"].submit()
+  }
+  });
+
+  $('#stripetriggerbutton').on('click', function(e) {
+    // Open Checkout with further options
+    var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount_cents]"]').val());
+    handler.open({
+      name: '<%= @project.name %>',
+      description: 'Invest in this project',
+      amount: amount
+    });
+    e.preventDefault();
+  });
+
+    $('#investment_investment_amount_cents').on('keypress', function(e) {
+    // Open Checkout with further options
+    if (e.key === 'Enter') {
+      var amount = stripe_helpers.getAmount($('input[name="investment[investment_amount_cents]"]').val());
+      handler.open({
+      name: '<%= @project.name %>',
+      description: 'Invest in this project',
+      amount: amount
+    });
+    e.preventDefault();
+
+    }
+});
+
+  // Close Checkout on page navigation
+  $(window).on('popstate', function() {
+    handler.close();
+  });
+});
+</script>

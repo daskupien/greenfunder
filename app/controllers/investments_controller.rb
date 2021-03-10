@@ -2,6 +2,11 @@ class InvestmentsController < ApplicationController
   def new
     @investment = Investment.new
     @project = Project.find(params[:project_id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -13,7 +18,7 @@ class InvestmentsController < ApplicationController
     @investment.user = current_user
     @investment.project = @project
     if @investment.save
-      redirect_to current_user
+      redirect_to project_path(@project)
     else
       render 'new'
     end
