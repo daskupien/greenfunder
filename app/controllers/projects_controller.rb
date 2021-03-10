@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
         lat: project.latitude,
         lng: project.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { project: project}),
-        image_url: 
+        image_url:
         if project.category.downcase == 'planting'
         helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg')
         elsif project.category.downcase == 'energy'
