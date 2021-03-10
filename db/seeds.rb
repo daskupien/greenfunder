@@ -158,6 +158,8 @@ puts 'creating 3 animal faker projects'
   faker_project.save
 end
 
+counter = 0
+
 # Plastic alternatives
 puts 'creating 3 plastic alternatives faker projects'
 3.times do
@@ -173,8 +175,9 @@ puts 'creating 3 plastic alternatives faker projects'
     user_id: faker.id,
   )
   file = URI.open('https://s3files.core77.com/blog/images/689444_81_68988_NIPwfF3mB.jpg')
-  faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
+  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
   faker_project.save
+  counter += 1
 end
 
 
@@ -195,8 +198,9 @@ categories = ['planting', 'animals', 'energy', 'plastic alternatives']
     user_id: faker.id,
   )
   file = URI.open('https://source.unsplash.com/random/2560x1440')
-  faker_project.image.attach(io: file, filename: 'faker_plastic_alternatives.jpg', content_type: 'image/jpg')
+  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
   faker_project.save
+  counter += 1
 end
 
 # random pic
