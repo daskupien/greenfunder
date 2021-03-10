@@ -121,7 +121,7 @@ puts 'creating 3 planting faker projects'
 end
 
 # Energy
-puts 'creating 3 animal faker projects'
+puts 'creating 3 energy faker projects'
 3.times do
   faker_project = Project.new(
     name: "FAKE Energy Project",
@@ -174,7 +174,7 @@ puts 'creating 3 plastic alternatives faker projects'
     address: cities.sample,
     user_id: faker.id,
   )
-  file = URI.open('https://s3files.core77.com/blog/images/689444_81_68988_NIPwfF3mB.jpg')
+  file = URI.open('https://source.unsplash.com/random/2560x1440')
   faker_project.image.attach(io: file, filename: "faker_plastic_alternatives.jpg", content_type: 'image/jpg')
   faker_project.save
 end
