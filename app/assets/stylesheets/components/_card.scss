@@ -303,6 +303,7 @@
   // align-self: center;
   align-self: center;
   padding: 30px;
+  color: #0e0000;
 }
 
 .fa-caret-right:hover {
@@ -312,6 +313,7 @@
 .fa-caret-left {
   align-self: center;
   padding: 30px;
+  color: #0e0000;
 }
 
 .fa-caret-left:hover {
@@ -320,4 +322,8 @@
 
 .slick-slide {
   margin-right: 50px;
+}
+
+.slick-list {
+  padding-bottom: 35px;
 }
