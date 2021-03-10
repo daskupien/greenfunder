@@ -75,7 +75,7 @@
                           <p><strong>My Boost: </strong><%= humanized_money_with_symbol(investment.investment_amount_cents) %></p>
                         </div>
 
-                        <div class="progress">
+                        <div class="progress progress-width">
                           <% current_investment_sum = investment.project.current_investment_sum_cents
                           investment_goal = investment.project.investment_goal_cents
                           @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
@@ -86,11 +86,11 @@
                     </div>
                     <div>
                       <div class="btn-profile pr-3">
-                        <%= link_to "Show", @project, class: "btn-normal-white" %>
+                        <%= link_to "Show", project_path(investment.project), class: "btn-normal-white" %>
                       </div>
                       <br>
                       <div class="btn-profile pr-3">
-                        <%= link_to "Boost More", @project, class: "btn-normal-green" %>
+                        <%= link_to "Boost More", new_project_investment_path(investment.project), class: "btn-normal-green" %>
                       </div>
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                       </p>
                       <p class="card-project-address"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<%= project.address %></p>
                       <p class="mb-3"><i class="fas fa-money-bill-wave"></i>&nbsp;&nbsp;Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
-                      <div class="progress">
+                      <div class="progress progress-width">
                         <% current_investment_sum = project.current_investment_sum_cents
                         investment_goal = project.investment_goal_cents
                         @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
