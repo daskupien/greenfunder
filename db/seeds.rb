@@ -115,7 +115,7 @@ project5.save
 boosted1 = Project.new(
     name: 'Bees on our rooftop',
     punchline: "Let's give the flowers of our city some usefull bees",
-    category: 'planting',
+    category: 'animals',
     investment_goal_cents: 670,
     current_investment_sum_cents: 682,
     address: cities.sample,
@@ -137,6 +137,32 @@ boosted2 = Project.new(
 file = URI.open('https://www.preschools.sa.gov.au/sites/default/files/image_12_dscn9211.jpg')
 boosted2.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted2.save
+
+boosted3 = Project.new(
+    name: "First on profit energy company",
+    punchline: "Our company will not make green energy for money, but for us all",
+    category: 'energy',
+    investment_goal_cents: 97000,
+    current_investment_sum_cents: 114232,
+    address: cities.sample,
+    user_id: jonas.id,
+)
+file = URI.open('https://premierenergygroup.com/wp-content/uploads/2017/06/premier_heroHome_v05.jpg')
+boosted3.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted3.save
+
+boosted4 = Project.new(
+    name: 'Wooden bicycle helmet',
+    punchline: "This helmet is save and green all together",
+    category: 'plastic alternatives',
+    investment_goal_cents: 11500,
+    current_investment_sum_cents: 15456,
+    address: cities.sample,
+    user_id: jonas.id,
+)
+file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-2_eeh7Q_18770.jpg')
+boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted4.save
 
 # FAKERS
 
