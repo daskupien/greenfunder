@@ -4,8 +4,17 @@
   grid-template-rows: auto 1fr auto;
 }
 
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.sub-container {
+  align-items: center;
+}
+
 .footer-clean {
-  padding: 30px 0;
+  padding: 15px 0;
   background-color: #fff;
   color: #4b4c4d;
   width: 100vw;
@@ -73,11 +82,10 @@
 
 .category-list > a {
   padding: 0px 10px 0px 8px;
+  padding-right: 15px;
 }
 
 .category-list > i {
-  padding: 0px 5px 0px 0px;
-  width: 20px;
   line-height: unset !important;
 }
 
