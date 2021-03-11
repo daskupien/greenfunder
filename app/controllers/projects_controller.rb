@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
       @projects = Project.where(sql_query, query: "%#{params[:query]}%")
     else
       @projects = Project.all
-      @projects = @projects.sort_by(&:id)
     end
 
     @markers = @projects.geocoded.map do |project|

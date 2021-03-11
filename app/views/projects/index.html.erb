@@ -26,7 +26,7 @@
       </div>
 
       <%# PROJECTS %>
-      <% @projects.each do |project| %>
+      <% @projects.sort_by(&:id).each do |project| %>
         <div class="card-project">
         <% if project.image.attached? %>
           <%= link_to cl_image_tag(project.image.key), project_path(project), class: "card-project-image", 'aria-haspopup': true, 'aria-expanded': false %>
