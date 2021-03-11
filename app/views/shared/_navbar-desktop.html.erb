@@ -4,7 +4,7 @@
 
   <div class="d-flex justify-content-start taps">
     <%= link_to "/", data: { turbolinks: false }, class: "navbar-brand" do %>
-      <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615451081/assets/logo_greenbooster_hyxwrz.png") %>
+      <%= image_tag("logo.png", class: "logo") %>
     <% end %>
 
         <%= link_to "All projects", projects_path, class: "nav-link #{ 'active' if controller_name == 'projects' && action_name == 'index' }" , data: { turbolinks: false } %>
