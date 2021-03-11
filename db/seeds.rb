@@ -174,7 +174,7 @@ puts 'creating 3 plastic alternatives faker projects'
     address: cities.sample,
     user_id: faker.id,
   )
-  file = URI.open('https://source.unsplash.com/random/2560x1440')
+  file = URI.open('https://source.unsplash.com/random/320x250')
   faker_project.image.attach(io: file, filename: "faker_plastic_alternatives.jpg", content_type: 'image/jpg')
   faker_project.save
 end
@@ -196,14 +196,15 @@ categories = ['planting', 'animals', 'energy', 'plastic alternatives']
     address: cities.sample,
     user_id: faker.id,
   )
-  file = URI.open('https://source.unsplash.com/random/2560x1440')
+  file = URI.open('https://source.unsplash.com/random/320x250')
   faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
   faker_project.save
   counter += 1
 end
 
 # random pic
-# https://source.unsplash.com/random/2560x1440
+# https://source.unsplash.com/random/320x250
 
 puts 'seed finished'
+
 
