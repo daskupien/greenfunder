@@ -125,3 +125,38 @@ body
 .btn-profile {
   margin-right: 10px;
 }
+
+// CHOOSE FILE BUTTON
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  display: inline-block;
+  width: 140px;
+  border: 1px solid;
+  border-color: #ced4da;
+  background-color: white;
+  color: #0e0000;
+  border-radius: $border-radius;
+  text-align: center;
+  padding: 6px;
+  text-decoration: none;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  // font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(127, 183, 66, 0.1);
+  color: #0e0000;
+}
+
+.inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
