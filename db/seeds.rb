@@ -195,5 +195,3 @@ counter = 0
 end
 
 puts 'seed finished'
-
-

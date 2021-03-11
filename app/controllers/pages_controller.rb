@@ -11,6 +11,8 @@ class PagesController < ApplicationController
         image_url: helpers.asset_url('https://res.cloudinary.com/rentmylife/image/upload/v1614858978/assets/tree-1578_t6y8ak.png')
       }
     end
+    @projects = @projects.sort_by(&:id)
+
   end
 
   def about
