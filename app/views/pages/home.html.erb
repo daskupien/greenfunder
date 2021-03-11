@@ -143,7 +143,7 @@
                 </div>
               </div>
               <div class="text-center">
-                <%= link_to "Boost Now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
+                <%= link_to "More Details", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@
                     <%= project.category.capitalize %>
                   </p>
                   <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
-                  <h6 class="punchline">"<%= project.punchline %>"</h6>
+                  <h6 class="punchline mb-3">"<%= project.punchline %>"</h6>
                   <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
                   <div class="home-progress">
                     <% current_investment_sum = project.current_investment_sum_cents
