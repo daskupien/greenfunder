@@ -11,6 +11,10 @@
   </div>
 </div>
 
+  <div class="pyro" id="fireworks" style="display:none;">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
 <%# MAIN CONTENT %>
 <div class="container-wide">
   <div class="container-general">
@@ -100,6 +104,10 @@
   </div>
 </div>
 
+<%# FULLY FUNDED FIREWORKS %>
+
+
+<%# MODAL %>
 <div id="testModal" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content"><%= render "investments/new" %></div>
@@ -108,6 +116,10 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
+<script>
+var condition = <%=@project.current_investment_sum_cents%> >= <%=@project.investment_goal_cents%>;
+$('#fireworks').toggle(condition);
+</script>
 
 
 
