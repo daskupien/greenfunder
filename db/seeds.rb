@@ -82,12 +82,12 @@ project3.image.attach(io: file, filename: 'seed3.jpg', content_type: 'image/jpg'
 project3.save
 
 project4 = Project.new(
-    name: 'Plastic free vegetable packaging',
+    name: 'Plastic free packaging',
     punchline: 'We want to revolutionise packaging',
     description: "We have a clear goal: Find a different and more sustainable solution for plastic. In a view years we should all be able to say goodbye to plastic in packaging. All of our package waste should be compostable. With your help we want to make that possible. We have reason to believe that a fungus called mycelium can be an alternative to plastic. Incidentally, they are found in almost every square centimeter of the earth's soil and provide a very flexible material. Researchers have already been able to use them to make bricks or lampshades, for example. They only need water and a constant supply of carbon for their growth. For their growth, the fungi only need water and a constant supply of carbon. Production initially yields a kind of moist glue, which becomes a stable and resilient material after drying. Although mycelium is particularly well suited as a packaging alternative for plastic, it can also be used to produce very good sustainable leather. There is even a fungus that can eat petroleum-based plastic. It is called Pestalotiopsis microspora and grows in the rainforest of Ecuador. Help us to boost our research and bring this to life. We will prove this will work. With this initial step we will be able to get this up and running and will be a huge step further to make the planet free of plastic waste.",
     video: 'https://www.youtube.com/watch?v=6eiKSW3Tq_o',
     category: 'plastic alternatives',
-    investment_goal_cents: 30240,
+    investment_goal_cents: 30000,
     current_investment_sum_cents: 27532,
     address: 'Potsdam',
     user_id: daniel.id,
