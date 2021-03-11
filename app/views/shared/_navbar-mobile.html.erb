@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light sticky-top">
   <%= link_to "/", data: { turbolinks: false }, class: "navbar-brand" do %>
-    <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614698393/logo_aghnot.png") %>
+    <%= cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615451081/assets/logo_greenbooster_hyxwrz.png") %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
           <% if current_user.photo.attached? %>
             <%= link_to cl_image_tag(current_user.photo.key, :height=>40), user_path(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1614335184/kisspng-computer-icons-person-avatar-download-person-icon-5b480703d1f604.21741917153144704386_foan5y.png", :height=>40), user_path(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615451377/assets/pngegg_ypfvpt.png", :height=>40), user_path(current_user), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
