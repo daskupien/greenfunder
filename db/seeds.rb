@@ -169,7 +169,7 @@ file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-
 boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted4.save
 
-FAKERS
+# FAKERS
 
 puts 'installing 70 faker projects'
 
