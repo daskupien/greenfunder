@@ -175,6 +175,8 @@ puts 'installing 70 faker projects'
 
 categories = ['planting', 'animals', 'energy', 'plastic alternatives']
 
+counter = 0
+
 70.times do
   faker_project = Project.new(
     name: "FAKE 200er Project",
