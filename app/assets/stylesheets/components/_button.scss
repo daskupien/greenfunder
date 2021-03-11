@@ -140,9 +140,9 @@ body
   display: inline-block;
   width: 140px;
   border: 1px solid;
-  border-color: #ced4da;
+  border-color: $master;
   background-color: white;
-  color: #0e0000;
+  color: $master;
   border-radius: $border-radius;
   text-align: center;
   padding: 6px;
@@ -154,7 +154,7 @@ body
   // font-weight: bold;
   text-decoration: none;
   background-color: rgba(127, 183, 66, 0.1);
-  color: #0e0000;
+  color: $master;
 }
 
 .inputfile + label {
