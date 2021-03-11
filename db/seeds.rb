@@ -32,7 +32,7 @@ begana = User.create!(email: 'begana@greenfunder.de', password: '123456', first_
 
 loretta = User.create!(email: 'loretta@greenfunder.de', password: '123456', first_name: 'Loretta', last_name: 'M.', address: 'Berlin Street')
 
-jonas = User.create!(email: 'jonas@greenfunder.de', password: '123456', first_name: 'Jonas', last_name: 'K.', address: 'Berlin Street')
+jonas = User.create!(email: 'jonas@greenfunder.de', password: '123456', first_name: 'Vincent', last_name: 'K.', address: 'Berlin Street')
 
 daniel = User.create!(email: 'daniel@greenfunder.de', password: '123456', first_name: 'Daniel', last_name: 'Skupien', address: 'Berlin Street')
 
@@ -71,10 +71,11 @@ project3 = Project.new(
     name: 'Bees for our allot settlement',
     punchline: 'Help us grow bees to save the nearby plants',
     category: 'animals',
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
     investment_goal_cents: 900,
     current_investment_sum_cents: 547,
     address: 'Hamburg',
-    user_id: jonas.id,
+    user_id: daniel.id,
 )
 file = URI.open('https://d3qqlmv4he5rj8.cloudfront.net/blog/wp-content/uploads/2016/02/Why-Bees-are-Good-for-Your-Garden.jpg')
 project3.image.attach(io: file, filename: 'seed3.jpg', content_type: 'image/jpg')
@@ -89,7 +90,7 @@ project4 = Project.new(
     investment_goal_cents: 30240,
     current_investment_sum_cents: 27532,
     address: 'Potsdam',
-    user_id: jonas.id,
+    user_id: daniel.id,
 )
 file = URI.open('https://grendz.com/wp-content/uploads/2019/07/1564377080gn8k4.jpg')
 project4.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg')
@@ -103,7 +104,7 @@ project5 = Project.new(
     investment_goal_cents: 8750,
     current_investment_sum_cents: 3456,
     address: 'Cologne',
-    user_id: jonas.id,
+    user_id: daniel.id,
 )
 file = URI.open('https://live.staticflickr.com/2391/5710660746_0f2bac30fe_b.jpg')
 project5.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg')
@@ -115,11 +116,12 @@ project5.save
 boosted1 = Project.new(
     name: 'Bees on our rooftop',
     punchline: "Let's give the flowers of our city some usefull bees",
-    category: 'planting',
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
+    category: 'animals',
     investment_goal_cents: 670,
     current_investment_sum_cents: 682,
     address: cities.sample,
-    user_id: jonas.id,
+    user_id: daniel.id,
 )
 file = URI.open('https://live.staticflickr.com/1914/45037101982_d99b093451_b.jpg')
 boosted1.image.attach(io: file, filename: 'bees1.jpg', content_type: 'image/jpg')
@@ -128,38 +130,69 @@ boosted1.save
 boosted2 = Project.new(
     name: 'Nice garden for kindergarden',
     punchline: "Help us bring some flowers and plants to our children's kinder garden",
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
     category: 'planting',
     investment_goal_cents: 2470,
     current_investment_sum_cents: 2503,
     address: cities.sample,
-    user_id: jonas.id,
+    user_id: daniel.id,
 )
 file = URI.open('https://www.preschools.sa.gov.au/sites/default/files/image_12_dscn9211.jpg')
 boosted2.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted2.save
 
+boosted3 = Project.new(
+    name: "First on profit energy company",
+    punchline: "Our company will not make green energy for money, but for us all",
+    category: 'energy',
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
+    investment_goal_cents: 97000,
+    current_investment_sum_cents: 114232,
+    address: cities.sample,
+    user_id: daniel.id,
+)
+file = URI.open('https://premierenergygroup.com/wp-content/uploads/2017/06/premier_heroHome_v05.jpg')
+boosted3.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted3.save
+
+boosted4 = Project.new(
+    name: 'Wooden bicycle helmet',
+    punchline: "This helmet is save and green all together",
+    category: 'plastic alternatives',
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
+    investment_goal_cents: 11500,
+    current_investment_sum_cents: 15456,
+    address: cities.sample,
+    user_id: daniel.id,
+)
+file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-2_eeh7Q_18770.jpg')
+boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted4.save
+
 # FAKERS
 
-# puts 'installing 70 faker projects'
+puts 'installing 70 faker projects'
 
-# categories = ['planting', 'animals', 'energy', 'plastic alternatives']
+categories = ['planting', 'animals', 'energy', 'plastic alternatives']
 
-# 70.times do
-#   faker_project = Project.new(
-#     name: "FAKE 200er Project",
-#     punchline: 'We will make the world much less platic poluted',
-#     video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
-#     category: categories.sample,
-#     investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
-#     current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
-#     address: cities.sample,
-#     user_id: faker.id,
-#   )
-#   file = URI.open('https://source.unsplash.com/random/320x250')
-#   faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
-#   faker_project.save
-#   counter += 1
-# end
+counter = 0
+
+70.times do
+  faker_project = Project.new(
+    name: "FAKE 200er Project",
+    punchline: 'We will make the world much less platic poluted',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: categories.sample,
+    investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
+    current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
+    address: cities.sample,
+    user_id: faker.id,
+  )
+  file = URI.open('https://source.unsplash.com/random/320x250')
+  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
+  faker_project.save
+  counter += 1
+end
 
 puts 'seed finished'
 
