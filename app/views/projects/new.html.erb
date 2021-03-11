@@ -20,14 +20,13 @@
               <%= f.input :name, placeholder: "Our awesome project" %>
               <%= f.input :punchline, placeholder: "We aim to save the world" %>
               <%= f.input :description, placeholder: "Cool description" %>
-              <%= f.label "Photo" %>
-              <div style="">
+              <div style="padding-bottom:20px;">
                 <div class="upload-preview" >
                   <img style="width: 100px; height: 100px; border: 0px solid; margin-bottom: 10px; border-radius:5px;"/>
                 </div>
-                <%= f.file_field :image, direct_upload: true, required: true%>
+                <%= f.file_field :image, direct_upload: true, required: true, class: "inputfile"%>
+                <%= f.label "Choose a photo", for: 'project_image'%>
               </div>
-              <br>
               <div>
                 <%= f.input :video, :label => "YouTube Video" , placeholder: "https://www.youtube.com/watch?v=Ubjq7DaP6Yc" %>
               </div>
