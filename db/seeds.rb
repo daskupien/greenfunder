@@ -169,28 +169,28 @@ file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-
 boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted4.save
 
-# FAKERS
+FAKERS
 
-# puts 'installing 70 faker projects'
+puts 'installing 70 faker projects'
 
-# categories = ['planting', 'animals', 'energy', 'plastic alternatives']
+categories = ['planting', 'animals', 'energy', 'plastic alternatives']
 
-# 70.times do
-#   faker_project = Project.new(
-#     name: "FAKE 200er Project",
-#     punchline: 'We will make the world much less platic poluted',
-#     video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
-#     category: categories.sample,
-#     investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
-#     current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
-#     address: cities.sample,
-#     user_id: faker.id,
-#   )
-#   file = URI.open('https://source.unsplash.com/random/320x250')
-#   faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
-#   faker_project.save
-#   counter += 1
-# end
+70.times do
+  faker_project = Project.new(
+    name: "FAKE 200er Project",
+    punchline: 'We will make the world much less platic poluted',
+    video: 'https://www.youtube.com/watch?v=8ArSSjsxHBM',
+    category: categories.sample,
+    investment_goal_cents: Faker::Number.between(from: 17000, to: 20000),
+    current_investment_sum_cents: Faker::Number.between(from: 2000, to: 16999),
+    address: cities.sample,
+    user_id: faker.id,
+  )
+  file = URI.open('https://source.unsplash.com/random/320x250')
+  faker_project.image.attach(io: file, filename: "faker_plastic_alternatives#{counter.to_s}.jpg", content_type: 'image/jpg')
+  faker_project.save
+  counter += 1
+end
 
 puts 'seed finished'
 
