@@ -162,8 +162,15 @@
             <div class="card-home">
               <% if project.image.attached? %>
                 <div class="card-home-image">
-                  <div class="picture-layer"></div>
+                  <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fully-funded-icon icon icon-tabler icon-tabler-square-check" width="180" height="180" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7fb742"fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                  </div>
                   <%= cl_image_tag project.image.key, crop: :fill %>
+
                 </div>
               <% else %>
                 <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">

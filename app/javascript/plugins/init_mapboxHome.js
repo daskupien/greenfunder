@@ -17,7 +17,7 @@ const addMarkersToMap = (map, markers) => {
     element.style.width = "20px";
     element.style.height = "20px";
     element.style.border = "0.1px solid";
-    element.style.borderColor = "#fff";
+    element.style.borderColor = "rgb(123 154 115)";
     element.style.borderRadius = "50%";
     element.style.backgroundColor = "#7fb742";
     element.style.opacity = "1.0";
@@ -29,7 +29,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach((marker) => bounds.extend([marker.lng, marker.lat]));
-  map.fitBounds(bounds, { zoom: 4.37 });
+  map.fitBounds(bounds, { zoom: 4.2 });
 };
 
 const initMapboxHome = () => {
