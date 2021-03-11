@@ -1,10 +1,6 @@
 city,lat,lng,country,iso2,admin_name,capital,population,population_proper
-Hamburg,53.5500,10.0000,Germany,DE,Hamburg,admin,1841179,1841179
-Munich,48.1372,11.5755,Germany,DE,Bavaria,admin,1471508,1471508
-Cologne,50.9422,6.9578,Germany,DE,North Rhine-Westphalia,,1085664,1085664
 Frankfurt,50.1136,8.6797,Germany,DE,Hesse,minor,753056,753056
 Bremen,53.1153,8.7975,Germany,DE,Bremen,admin,724909,546501
-Stuttgart,48.7761,9.1775,Germany,DE,Baden-Württemberg,admin,634830,634830
 Düsseldorf,51.2311,6.7724,Germany,DE,North Rhine-Westphalia,admin,619294,619294
 Dortmund,51.5139,7.4653,Germany,DE,North Rhine-Westphalia,minor,587010,587010
 Essen,51.4508,7.0131,Germany,DE,North Rhine-Westphalia,minor,583109,583109
@@ -41,7 +37,6 @@ Hagen,51.3594,7.4750,Germany,DE,North Rhine-Westphalia,minor,188814,188814
 Mainz,50.0000,8.2711,Germany,DE,Rhineland-Palatinate,admin,184997,184997
 Saarbrücken,49.2333,7.0000,Germany,DE,Saarland,admin,180741,180741
 Hamm,51.6667,7.8167,Germany,DE,North Rhine-Westphalia,minor,179111,179111
-Potsdam,52.4000,13.0667,Germany,DE,Brandenburg,admin,178089,178089
 Ludwigshafen,49.4811,8.4353,Germany,DE,Rhineland-Palatinate,minor,171061,171061
 Mülheim,51.4283,6.8789,Germany,DE,North Rhine-Westphalia,minor,170880,170880
 Oldenburg,53.1439,8.2139,Germany,DE,Lower Saxony,minor,168210,168210
