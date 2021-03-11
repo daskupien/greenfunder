@@ -89,7 +89,7 @@
       </div>
     </div>
 
-  <%# CARDS RECOMMENDED %>
+  <%# Best BOOSTER Projects %>
   <div class="card-home-header text-center d-flex justify-content-center">
     <h2>Best&nbsp;</h2><h2 class="green-word">BOOSTER&nbsp;</h2><h2>Projects</h2>
   </div>
@@ -151,68 +151,70 @@
       </div>
     </div>
 
-  <%# CARDS FULLY FUNDED%>
+  <%# CARDS FULLY FUNDED %>
   <div class="card-home-header text-center d-flex justify-content-center">
     <h2>Fully&nbsp;</h2><h2 class="green-word">BOOSTED&nbsp;</h2><h2>Projects</h2>
   </div>
     <div class="card-home-all">
       <div class="multiple-items">
         <% @projects.each do | project | %>
-          <div class="card-home">
-            <% if project.image.attached? %>
-              <div class="card-home-image">
-                <div class="">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="fully-funded-icon icon icon-tabler icon-tabler-square-check" width="180" height="180" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7fb742"fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <rect x="4" y="4" width="16" height="16" rx="2" />
-                    <path d="M9 12l2 2l4 -4" />
-                  </svg>
-                </div>
-                <%= cl_image_tag project.image.key, crop: :fill %>
+          <% if project.current_investment_sum_cents >= project.investment_goal_cents %>
+            <div class="card-home">
+              <% if project.image.attached? %>
+                <div class="card-home-image">
+                  <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="fully-funded-icon icon icon-tabler icon-tabler-square-check" width="180" height="180" viewBox="0 0 24 24" stroke-width="1.5" stroke="#7fb742"fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <path d="M9 12l2 2l4 -4" />
+                    </svg>
+                  </div>
+                  <%= cl_image_tag project.image.key, crop: :fill %>
 
-              </div>
-            <% else %>
-              <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
-              </div>
-            <% end %>
-            <div class="card-content">
-              <h4 class="card-title"><%= project.name %></h4>
-              <div class="card-text">
-                <p class="category">
-                  <% if project.category == "planting" %>
-                    <i class="fas fa-seedling category-dropdown-icon"> </i>
-                  <% elsif project.category == "energy" %>
-                    <i class="fas fa-solar-panel category-dropdown-icon"> </i>
-                  <% elsif project.category == "animals" %>
-                    <i class="fab fa-forumbee category-dropdown-icon"> </i>
-                  <% elsif project.category == "plastic alternatives" %>
-                    <i class="fas fa-box-open category-dropdown-icon"> </i>
-                  <% end %>
-                  <%= project.category.capitalize %>
-                </p>
-                <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
-                <h6 class="punchline">"<%= project.punchline %>"</h6>
-                <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
-                <div class="home-progress">
-                  <% current_investment_sum = project.current_investment_sum_cents
-                  investment_goal = project.investment_goal_cents
-                  @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
-                  <div class="project-progress">
-                    <div class="progress">
-                      <div class="progress-bar"
-                            role="progressbar"
-                            style="width: <%= @investement_percentage %>%"
-                            aria-valuenow="25"
-                            aria-valuemin="0"
-                            aria-valuemax="100">
+                </div>
+              <% else %>
+                <div class="card-home-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/rentmylife/image/upload/v1614768592/assets/photo-1473973266408-ed4e27abdd47_ohveth.jpg')">
+                </div>
+              <% end %>
+              <div class="card-content">
+                <h4 class="card-title"><%= project.name %></h4>
+                <div class="card-text">
+                  <p class="category">
+                    <% if project.category == "planting" %>
+                      <i class="fas fa-seedling category-dropdown-icon"> </i>
+                    <% elsif project.category == "energy" %>
+                      <i class="fas fa-solar-panel category-dropdown-icon"> </i>
+                    <% elsif project.category == "animals" %>
+                      <i class="fab fa-forumbee category-dropdown-icon"> </i>
+                    <% elsif project.category == "plastic alternatives" %>
+                      <i class="fas fa-box-open category-dropdown-icon"> </i>
+                    <% end %>
+                    <%= project.category.capitalize %>
+                  </p>
+                  <p class="address"><i class="fas fa-map-marker-alt"></i>  <%= project.address %></p>
+                  <h6 class="punchline">"<%= project.punchline %>"</h6>
+                  <p class="investment_goal"><i class="fas fa-money-bill-wave"></i> Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %> </p>
+                  <div class="home-progress">
+                    <% current_investment_sum = project.current_investment_sum_cents
+                    investment_goal = project.investment_goal_cents
+                    @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0 %>
+                    <div class="project-progress">
+                      <div class="progress">
+                        <div class="progress-bar"
+                              role="progressbar"
+                              style="width: <%= @investement_percentage %>%"
+                              aria-valuenow="25"
+                              aria-valuemin="0"
+                              aria-valuemax="100">
+                        </div>
                       </div>
+                      <p class="investement_percentage">(<%= @investement_percentage.round %>%)</p>
                     </div>
-                    <p class="investement_percentage">(<%= @investement_percentage.round %>%)</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>
