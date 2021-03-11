@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
       @projects = Project.where(sql_query, query: "%#{params[:query]}%")
     else
       @projects = Project.all
+      @projects = @projects.sort_by(&:id)
     end
 
     @markers = @projects.geocoded.map do |project|
@@ -35,7 +36,7 @@ class ProjectsController < ApplicationController
     current_investment_sum = @project.current_investment_sum_cents
     investment_goal = @project.investment_goal_cents
     @investement_percentage = current_investment_sum.to_f / investment_goal * 100.0
-    
+
     respond_to do |format|
       format.html
       format.js
