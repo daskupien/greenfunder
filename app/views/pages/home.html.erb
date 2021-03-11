@@ -95,7 +95,7 @@
   </div>
     <div class="card-home-all">
       <div class="multiple-items">
-        <% @projects.each do | project | %>
+        <% @projects.sort_by(&:id).each do | project | %>
           <% if project.current_investment_sum_cents < project.investment_goal_cents %>
             <div class="card-home">
               <% if project.image.attached? %>
@@ -159,7 +159,7 @@
   </div>
     <div class="card-home-all">
       <div class="multiple-items">
-        <% @projects.each do | project | %>
+        <% @projects.sort_by(&:id).each do | project | %>
           <% if project.current_investment_sum_cents >= project.investment_goal_cents %>
             <div class="card-home">
               <% if project.image.attached? %>
