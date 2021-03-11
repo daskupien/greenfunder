@@ -29,9 +29,9 @@
       <% @projects.sort_by(&:id).each do |project| %>
         <div class="card-project">
         <% if project.image.attached? %>
-          <%= link_to cl_image_tag(project.image.key), project_path(project), class: "card-project-image", 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to cl_image_tag(project.image.key), project_path(project), class: "card-project-image", 'aria-haspopup': true, 'aria-expanded': false, data: { turbolinks: false }%>
         <% else %>
-          <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg"), project_path(project), class: "card-project-image", 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= link_to cl_image_tag("https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg"), project_path(project), class: "card-project-image", 'aria-haspopup': true, 'aria-expanded': false, data: { turbolinks: false } %>
         <% end %>
           <div class="card-project-content">
             <h3 class="card-project-title"><%= project.name %></h3>
@@ -72,9 +72,9 @@
               <p class="card-project-goal"><i class="fas fa-money-bill-wave"></i>  Goal: <%= humanized_money_with_symbol(project.investment_goal_cents) %></p>
             </div>
             <% if project.user != current_user %>
-              <%= link_to "Boost now", project_path(project), class: "btn-normal-green w-100" %>
+              <%= link_to "Boost now", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
               <% else %>
-              <%= link_to "Show project", project_path(project), class: "btn-normal-green w-100" %>
+              <%= link_to "Show project", project_path(project), class: "btn-normal-green w-100", data: { turbolinks: false } %>
             <% end %>
           </div>
         </div>
