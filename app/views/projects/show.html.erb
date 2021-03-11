@@ -1,11 +1,11 @@
 <%# SUB HERO BANNER %>
 <% if @project.image.attached? %>
-<div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
+  <div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @project.image.key %>')">
 <% else %>
-<div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path('https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg') %>')">
+  <div class="sub-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path('https://res.cloudinary.com/rentmylife/image/upload/v1615300113/assets/seedling-solid_qrct50.svg') %>')">
 <% end %>
   <div class="sub-text">
-    <h1 class="mb-4"><!-- <i class="far fa-lightbulb"> --></i> <%= @project.name %> <!-- <i class="far fa-lightbulb"> --></i></h1>
+    <h1 class="mb-4"></i> <%= @project.name %></i></h1>
     <h3 class="mb-4">"<%= @project.punchline %>"</h3>
     <h4><i class="fas fa-map-marker-alt"></i> <%= @project.address %></h4>
   </div>
@@ -18,8 +18,21 @@
     <div class="project-content">
 
       <div class="project-progress-all text-center">
-        <h2>Booster Bar</h2>
-        <br>
+        <div class="mt-3 mb-4 d-flex justify-content-center">
+          <h2 class="green-word">BOOSTER&nbsp;</h2>&nbsp;&nbsp;<h2>Progress</h2>
+        </div>
+
+        <div class="progress-status d-flex justify-content-between mb-4">
+          <div class="d-flex justify-content-between">
+            <h4 class="pr-3"><i class="fas fa-hand-holding-usd"></i>&nbsp;&nbsp;Invested:</h4>
+            <H4><%= humanized_money_with_symbol(@project.current_investment_sum_cents) %></h4>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h4 class="pr-3"><i class="fas fa-money-bill-wave"></i>&nbsp;&nbsp;Goal:</h4>
+            <H4><%= humanized_money_with_symbol(@project.investment_goal_cents) %></H4>
+          </div>
+        </div>
+
         <div class="progress">
           <div class="progress-bar"
             role="progressbar"
@@ -29,20 +42,8 @@
             aria-valuemax="100">
           </div>
         </div>
-
         <p style="text-align: end;">(<%= @investement_percentage.round %>%)</p>
 
-        <div class="progress-status">
-          <div class="d-flex justify-content-between">
-            <h4>Currently Invested : </h4>
-            <H4><%= humanized_money_with_symbol(@project.current_investment_sum_cents) %></h4>
-          </div>
-          <br>
-          <div class="d-flex justify-content-between">
-            <h4>Goal : </h4>
-            <H4><%= humanized_money_with_symbol(@project.investment_goal_cents) %></H4>
-          </div>
-        </div>
         <div class="text-center">
           <% if @project.user != current_user %>
             <%= link_to "Become a Booster!", "#testModal", "data-toggle" => "modal", data: { turbolinks: false }, class: "btn-normal-green", style: "width: 280px"%>
@@ -54,7 +55,8 @@
         <div class="text-center">
           <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
         </div>
-        <h2 style="text-align: center; margin: 45px 20px">"<%= @project.punchline %>"</h2>
+        <h2 style="text-align: center; margin: 20px 20px"><%= @project.name %></h2>
+        <h2 style="text-align: center; margin: 20px 20px 40px 20px">"<%= @project.punchline %>"</h2>
           <div class="project-category-goal d-flex">
             <li class="project-category">
               <p class="p-sub">Category</p>
