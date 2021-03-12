@@ -180,10 +180,10 @@ boosted5 = Project.new(
     user_id: daniel.id,
 )
 file = URI.open('http://drive.google.com/uc?export=view&id=12UN2DM0WdPaQsigaqRuFZhKjxqpy0XLg')
-boosted5.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted5.image.attach(io: file, filename: 'garden5.jpg', content_type: 'image/jpg')
 boosted5.save
 
-FAKERS
+# FAKERS
 
 puts 'installing 70 faker projects'
 
