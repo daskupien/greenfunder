@@ -63,22 +63,22 @@
         <h4 style="text-align: center; margin: 20px 20px 40px 20px">"<%= @project.punchline %>"</h4>
           <div class="project-category-goal d-flex">
             <li class="project-category">
-              <p class="p-sub">Category</p>
+              <h4 class="p-sub">Category</h4>
               <p class="p-con card-project-category">
-                <% if @project.category == "Planting" %>
+                <% if @project.category.capitalize == "Planting" %>
                   <i class="fas fa-seedling category-dropdown-icon"> </i>
-                <% elsif @project.category == "Energy" %>
+                <% elsif @project.category.capitalize == "Energy" %>
                   <i class="fas fa-solar-panel category-dropdown-icon"> </i>
-                <% elsif @project.category == "Animals" %>
+                <% elsif @project.category.capitalize == "Animals" %>
                   <i class="fab fa-forumbee category-dropdown-icon"> </i>
-                <% elsif @project.category == "Plastic alternatives" %>
+                <% elsif @project.category.capitalize == "Plastic alternatives" %>
                   <i class="fas fa-box-open category-dropdown-icon"> </i>
                 <% end %>
                 &nbsp;<%= @project.category.capitalize %>
               </p>
             </li>
             <li class="project-goal">
-              <p class="p-sub">Investment goal</p>
+              <h4 class="p-sub">Goal</h4>
               <p class="p-con"><%= humanized_money_with_symbol(@project.investment_goal_cents) %></p>
             </li>
           </div>
