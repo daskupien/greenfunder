@@ -10,11 +10,11 @@
     <h4><i class="fas fa-map-marker-alt"></i> <%= @project.address %></h4>
   </div>
 </div>
-<%# PURE CSS FIREWORKS %>
-  <div class="pyro" id="fireworks" style="display:none;">
-    <div class="before"></div>
-    <div class="after"></div>
-  </div>
+
+<div class="pyro" id="fireworks" style="display:none;">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
 <%# MAIN CONTENT %>
 <div class="container-wide">
   <div class="container-general">
@@ -104,11 +104,6 @@
   </div>
 </div>
 
-<%# FULLY FUNDED POPUP %>
-
-<button class="btn-normal-white" id="fullyfunded">Funding goal reached 🚀 Thank you 🙏🏼</button>
-
-
 <%# MODAL %>
 <div id="testModal" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -121,12 +116,8 @@
 <script>
 var condition = <%=@project.current_investment_sum_cents%> >= <%=@project.investment_goal_cents%>;
 $('#fireworks').toggle(condition);
-$('#fullyfunded').toggle(condition);
 </script>
 
-<script>
-$("#fullyfunded").click(function(){
-  $("#fullyfunded, #fireworks").hide();
-});
-</script>
+
+
 

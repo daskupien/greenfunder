@@ -127,19 +127,19 @@ file = URI.open('https://live.staticflickr.com/1914/45037101982_d99b093451_b.jpg
 boosted1.image.attach(io: file, filename: 'bees1.jpg', content_type: 'image/jpg')
 boosted1.save
 
-boosted2 = Project.new(
-    name: 'Nice garden for kindergarden',
-    punchline: "Help us bring some flowers and plants to our children's kinder garden",
+boosted4 = Project.new(
+    name: 'Wooden bicycle helmet',
+    punchline: "This helmet is save and green all together",
+    category: 'plastic alternatives',
     video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
-    category: 'planting',
-    investment_goal_cents: 2470,
-    current_investment_sum_cents: 2503,
+    investment_goal_cents: 11500,
+    current_investment_sum_cents: 15456,
     address: cities.sample,
     user_id: daniel.id,
 )
-file = URI.open('https://www.preschools.sa.gov.au/sites/default/files/image_12_dscn9211.jpg')
-boosted2.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
-boosted2.save
+file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-2_eeh7Q_18770.jpg')
+boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted4.save
 
 boosted3 = Project.new(
     name: "First no profit energy company",
@@ -155,19 +155,34 @@ file = URI.open('https://premierenergygroup.com/wp-content/uploads/2017/06/premi
 boosted3.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted3.save
 
-boosted4 = Project.new(
-    name: 'Wooden bicycle helmet',
-    punchline: "This helmet is save and green all together",
-    category: 'plastic alternatives',
+boosted2 = Project.new(
+    name: 'Nice garden for kindergarden',
+    punchline: "Help us bring some flowers and plants to our children's kinder garden",
     video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
-    investment_goal_cents: 11500,
-    current_investment_sum_cents: 15456,
+    category: 'planting',
+    investment_goal_cents: 2470,
+    current_investment_sum_cents: 2503,
     address: cities.sample,
     user_id: daniel.id,
 )
-file = URI.open('https://gizmos.republica.com/files/2010/09/organic-liquid-wood-2_eeh7Q_18770.jpg')
-boosted4.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
-boosted4.save
+file = URI.open('https://www.preschools.sa.gov.au/sites/default/files/image_12_dscn9211.jpg')
+boosted2.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
+boosted2.save
+
+boosted5 = Project.new(
+    name: 'Plastic free body care',
+    punchline: "No more plastic waste in the bathroom",
+    category: 'plastic alternatives',
+    video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
+    investment_goal_cents: 18000,
+    current_investment_sum_cents: 18102,
+    address: cities.sample,
+    user_id: daniel.id,
+)
+# file = URI.open('http://drive.google.com/uc?export=view&id=12UN2DM0WdPaQsigaqRuFZhKjxqpy0XLg')
+file = URI.open('https://foto.wuestenigel.com/wp-content/uploads/api/holzzahnburste-kreatives-konzeptbild-zum-thema-plastikverbot.jpeg')
+boosted5.image.attach(io: file, filename: 'garden5.jpeg', content_type: 'image/jpeg')
+boosted5.save
 
 # FAKERS
 
