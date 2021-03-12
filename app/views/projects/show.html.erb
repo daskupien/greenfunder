@@ -65,15 +65,6 @@
             <li class="project-category">
               <h4 class="p-sub">Category</h4>
               <p class="p-con card-project-category">
-                <% if @project.category.capitalize == "Planting" %>
-                  <i class="padding-icon fas fa-seedling project-icon"> </i>
-                <% elsif @project.category.capitalize == "Energy" %>
-                  <i class="padding-icon fas fa-solar-panel project-icon-solar"> </i>
-                <% elsif @project.category.capitalize == "Animals" %>
-                  <i class="padding-icon fab fa-forumbee project-icon"> </i>
-                <% elsif @project.category.capitalize == "Plastic alternatives" %>
-                  <i class="padding-icon fas fa-box-open project-icon"> </i>
-                <% end %>
                 <%= @project.category.capitalize %>
               </p>
 
