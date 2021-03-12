@@ -10,11 +10,11 @@
     <h4><i class="fas fa-map-marker-alt"></i> <%= @project.address %></h4>
   </div>
 </div>
-<%# PURE CSS FIREWORKS %>
-  <div class="pyro" id="fireworks" style="display:none;">
-    <div class="before"></div>
-    <div class="after"></div>
-  </div>
+
+<div class="pyro" id="fireworks" style="display:none;">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
 <%# MAIN CONTENT %>
 <div class="container-wide">
   <div class="container-general">
@@ -66,13 +66,13 @@
               <h4 class="p-sub">Category</h4>
               <p class="p-con card-project-category">
                 <% if @project.category.capitalize == "Planting" %>
-                  <i class="fas fa-seedling project-icon"> </i>
+                  <i class="fas fa-seedling category-dropdown-icon"> </i>
                 <% elsif @project.category.capitalize == "Energy" %>
-                  <i class="fas fa-solar-panel project-icon-solar"> </i>
+                  <i class="fas fa-solar-panel category-dropdown-icon"> </i>
                 <% elsif @project.category.capitalize == "Animals" %>
-                  <i class="fab fa-forumbee project-icon"> </i>
+                  <i class="fab fa-forumbee category-dropdown-icon"> </i>
                 <% elsif @project.category.capitalize == "Plastic alternatives" %>
-                  <i class="fas fa-box-open project-icon"> </i>
+                  <i class="fas fa-box-open category-dropdown-icon"> </i>
                 <% end %>
                 &nbsp;<%= @project.category.capitalize %>
               </p>
@@ -103,11 +103,6 @@
   </div>
 </div>
 
-<%# FULLY FUNDED POPUP %>
-
-<button class="btn-normal-white" id="fullyfunded">Funding goal reached 🚀 Thank you 🙏🏼</button>
-
-
 <%# MODAL %>
 <div id="testModal" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -120,12 +115,8 @@
 <script>
 var condition = <%=@project.current_investment_sum_cents%> >= <%=@project.investment_goal_cents%>;
 $('#fireworks').toggle(condition);
-$('#fullyfunded').toggle(condition);
 </script>
 
-<script>
-$("#fullyfunded").click(function(){
-  $("#fullyfunded, #fireworks").hide();
-});
-</script>
+
+
 
