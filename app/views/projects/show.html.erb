@@ -60,7 +60,7 @@
           <iframe width="448" height="252" src="https://www.youtube.com/embed/<%= @project.video.scan(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/).join('')%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
         </div>
         <h2 style="text-align: center; margin: 20px 20px"><%= @project.name %></h2>
-        <h2 style="text-align: center; margin: 20px 20px 40px 20px">"<%= @project.punchline %>"</h2>
+        <h4 style="text-align: center; margin: 20px 20px 40px 20px">"<%= @project.punchline %>"</h4>
           <div class="project-category-goal d-flex">
             <li class="project-category">
               <p class="p-sub">Category</p>
@@ -83,7 +83,6 @@
             </li>
           </div>
           <li class="project-description"><%= @project.description %></li>
-          <%# <li><strong>Photo: </strong><%= cl_image_tag @project.image.key, width: 300, height: 300, crop: :fill %> <%#</li> %>
           <div class="text-center">
             <% if @project.user != current_user %>
               <%= link_to "Boost this Project", "#testModal", "data-toggle" => "modal", data: { turbolinks: false }, class: "btn-normal-green", style: "width: 280px"%>
