@@ -179,11 +179,11 @@ boosted5 = Project.new(
     address: cities.sample,
     user_id: daniel.id,
 )
-file = URI.open('https://images.unsplash.com/photo-1601546101063-0e0b2e0d11f8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+file = URI.open('http://drive.google.com/uc?export=view&id=12UN2DM0WdPaQsigaqRuFZhKjxqpy0XLg')
 boosted5.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jpg')
 boosted5.save
 
-# FAKERS
+FAKERS
 
 puts 'installing 70 faker projects'
 
