@@ -179,8 +179,9 @@ boosted5 = Project.new(
     address: cities.sample,
     user_id: daniel.id,
 )
-file = URI.open('http://drive.google.com/uc?export=view&id=12UN2DM0WdPaQsigaqRuFZhKjxqpy0XLg')
-boosted5.image.attach(io: file, filename: 'garden5.jpg', content_type: 'image/jpg')
+# file = URI.open('http://drive.google.com/uc?export=view&id=12UN2DM0WdPaQsigaqRuFZhKjxqpy0XLg')
+file = URI.open('https://foto.wuestenigel.com/wp-content/uploads/api/holzzahnburste-kreatives-konzeptbild-zum-thema-plastikverbot.jpeg')
+boosted5.image.attach(io: file, filename: 'garden5.jpeg', content_type: 'image/jpeg')
 boosted5.save
 
 # FAKERS
