@@ -68,7 +68,7 @@ project2.image.attach(io: file, filename: 'seed2.jpg', content_type: 'image/jpg'
 project2.save
 
 project3 = Project.new(
-    name: 'Bees for our allot settlement',
+    name: 'Bee our garden',
     punchline: 'Help us grow bees to save the nearby plants',
     category: 'animals',
     video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
@@ -97,7 +97,7 @@ project4.image.attach(io: file, filename: 'seed4.jpg', content_type: 'image/jpg'
 project4.save
 
 project5 = Project.new(
-    name: 'Rooftop garden for community property',
+    name: 'Rooftop garden',
     punchline: 'Invest in our rooftop garden and help make the Cologne greener',
     video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
     category: 'planting',
@@ -142,7 +142,7 @@ boosted2.image.attach(io: file, filename: 'garden2.jpg', content_type: 'image/jp
 boosted2.save
 
 boosted3 = Project.new(
-    name: "First on profit energy company",
+    name: "First no profit energy company",
     punchline: "Our company will not make green energy for money, but for us all",
     category: 'energy',
     video: 'https://www.youtube.com/watch?v=blUZPbNOprA',
